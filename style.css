@@ -1,0 +1,218 @@
+@charset "UTF-8";
+/* تعديل الجسم الخاص بالموقع */
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  direction: rtl;
+  /*  تعديل الخلفيه الخاصة بالصفحة */
+  background-image: url("background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* الخطط الخاص بالصفحة */
+  font-family: 'Cairo', sans-serif;
+}
+
+/* تعديل البارجرافات والعناوين فى اى صفحة */
+p,
+h4,
+h3 {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+/* تعديل الراس او بداية الصفحه (اللوجو واسم الصفحة) */
+.header {
+  background-color: #115973;
+  padding: 0.5rem 0;
+  text-align: center;
+  /* تعديل مقاس اللوجو */
+  /* تعديل اسم الصفحة */
+}
+
+.header .logo-img-h {
+  max-width: 100px;
+  -webkit-filter: drop-shadow(0px 0.4rem 0.8rem rgba(3, 13, 17, 0.3));
+          filter: drop-shadow(0px 0.4rem 0.8rem rgba(3, 13, 17, 0.3));
+}
+
+.header .page-name {
+  color: #f1eddc;
+  font-size: 1.1rem;
+}
+
+/* تعديل الصندوق الذى يحتوى على زرار شارك وزار اتصل بنا */
+.main-btns {
+  background-color: #f1eddc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* تعديل اللينكات */
+}
+
+.main-btns .link-main {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-weight: 600;
+  color: #10526a;
+  text-decoration: none;
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.main-btns .link-main:hover, .main-btns .link-main:active, .main-btns .link-main:active {
+  background-color: #10526a;
+  color: #f1eddc;
+}
+
+/* السكشن الخاص بالازرار */
+.buttons-pages {
+  padding-top: 1rem;
+  /* لا تعدل هنا (هذا يعدل المسافات الجانبيه بين الازرار) */
+  /* تعديل الازرار  */
+}
+
+.buttons-pages .col-6 {
+  text-align: center;
+}
+
+.buttons-pages .btn-whole-box {
+  width: calc(100% - 1rem);
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: none;
+  background: #115973;
+  border-radius: 7px;
+  color: #f1eddc;
+  letter-spacing: 2px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.buttons-pages .btn-whole-box:focus {
+  border: none;
+  outline: none;
+}
+
+.buttons-pages .btn-whole-box:hover {
+  background-color: #0e485d;
+}
+
+.buttons-pages .btn-whole-box .icon-btn {
+  width: 50px;
+  height: 50px;
+}
+
+/* الفوتر الاول */
+.footer-one {
+  background-color: #f1eddc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  /* تعديل الدوال (المشاهدات و اللايكات) */
+}
+
+.footer-one .footer-fn {
+  color: #10526a;
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.footer-one .footer-fn.views > span {
+  display: block;
+  margin-top: -10px;
+}
+
+.footer-one .footer-fn.likes .fb-like {
+  position: relative;
+  top: 25%;
+}
+
+/* فوتر الخاص بلحقوق */
+.footer-two {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  background-color: #10526a;
+  color: #f1eddc;
+}
+
+.footer-two p {
+  font-size: 0.8rem;
+  margin: 0 !important;
+}
+
+/* الناف بار الاسفل */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 200;
+  width: 100%;
+}
+
+.bottom-nav .n-links-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.bottom-nav .n-links-box .link-nav {
+  color: #f1eddc;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  background-color: #10526a;
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.bottom-nav .n-links-box .link-nav.dark-point {
+  color: #3c3c3f;
+}
+
+.bottom-nav .n-links-box .link-nav.dark-point:hover {
+  background-color: #11556e;
+}
+
+.bottom-nav .n-links-box .link-nav svg {
+  vertical-align: middle;
+}
+
+.bottom-nav .n-links-box .link-nav:hover {
+  background-color: #0d4154;
+}
+
+.bottom-nav .n-links-box button.link-nav {
+  border: none;
+  background: #10526a;
+  border-radius: 7px;
+  color: #f1eddc;
+  letter-spacing: 2px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.bottom-nav .n-links-box button.link-nav:focus {
+  border: none;
+  outline: none;
+}
+
+.bottom-nav .n-links-box button.link-nav:hover {
+  background-color: #0d4154;
+}
