@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/* تعديل الجسم الخاص بالموقع */
+body {
+  background: none;
+  background-color: #1e2a2f !important;
+}
+
+/* تعديل الراس او بداية الصفحه (اللوجو واسم الصفحة) */
+.header {
+  background-color: #2a3b41;
+  /* تعديل مقاس اللوجو */
+  /* تعديل اسم الصفحة */
+}
+
+.header .logo-img-h {
+  -webkit-filter: drop-shadow(0px 0.2rem 0.8rem rgba(0, 0, 0, 0.27));
+          filter: drop-shadow(0px 0.2rem 0.8rem rgba(0, 0, 0, 0.27));
+}
+
+.header .page-name {
+  color: #f3ecec;
+}
+
+/* تعديل الصندوق الذى يحتوى على زرار شارك وزار اتصل بنا */
+.main-btns {
+  background-color: #223035;
+  /* تعديل اللينكات */
+}
+
+.main-btns .link-main {
+  color: #f3ecec;
+}
+
+.main-btns .link-main:hover, .main-btns .link-main:active, .main-btns .link-main:active {
+  background-color: #f3ecec;
+  color: #223035;
+}
+
+/* السكشن الخاص بالازرار */
+.buttons-pages {
+  /* تعديل الازرار  */
+}
+
+.buttons-pages .btn-whole-box {
+  background: #2a3b41;
+  color: #f3ecec;
+}
+
+.buttons-pages .btn-whole-box:hover {
+  background-color: #202d32;
+}
+
+/* الفوتر الاول */
+.footer-one {
+  background-color: #223035;
+  /* تعديل الدوال (المشاهدات و اللايكات) */
+}
+
+.footer-one .footer-fn {
+  color: #f3ecec;
+}
+
+.footer-one .footer-fn.views h3 {
+  -webkit-box-shadow: 0px 0.2rem 0.8rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.8rem rgba(0, 0, 0, 0.27);
+}
+
+.footer-one .footer-fn.likes .btn-like {
+  background: #2a3b41;
+  color: #f3ecec;
+}
+
+.footer-one .footer-fn.likes .btn-like:hover {
+  background-color: #202d32;
+}
+
+/* الناف بار الاسفل */
+.bottom-nav {
+  /* Edit Whole Box */
+}
+
+.bottom-nav .n-links-box .link-nav {
+  color: #f3ecec;
+  background-color: #2a3b41;
+}
+
+.bottom-nav .n-links-box .link-nav.dark-point {
+  color: #6c6c6f;
+}
+
+.bottom-nav .n-links-box .link-nav.dark-point:hover {
+  background-color: #2c3e45;
+}
+
+.bottom-nav .n-links-box .link-nav:hover {
+  background-color: #202d32;
+}
+
+.bottom-nav .n-links-box button.link-nav {
+  background: #2a3b41;
+  color: #f3ecec;
+}
+
+.bottom-nav .n-links-box button.link-nav:hover {
+  background-color: #202d32;
+}
+
+/* القائمة المنسدله */
+.dropdown-list-clalender {
+  background: linear-gradient(30deg, #2a3b41, #3e5760);
+  /* تعديل زر الاغلاق */
+}
+
+.dropdown-list-clalender .list-close {
+  color: #f3ecec;
+}
+
+.dropdown-list-clalender .list-ul .item:not(:last-child)::before {
+  background-color: #f3ecec;
+}
+
+.dropdown-list-clalender .list-ul .item a {
+  color: #f3ecec;
+}
+
+.dropdown-list-clalender .list-ul .item.times-salah #iframe2 {
+  -webkit-box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.27);
+}
