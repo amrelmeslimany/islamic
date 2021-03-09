@@ -26,7 +26,7 @@ h3 {
 /* تعديل الراس او بداية الصفحه (اللوجو واسم الصفحة) */
 .header {
   background-color: #115973;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   text-align: center;
   /* تعديل مقاس اللوجو */
   /* تعديل اسم الصفحة */
@@ -34,8 +34,8 @@ h3 {
 
 .header .logo-img-h {
   max-width: 100px;
-  -webkit-filter: drop-shadow(0px 0.4rem 0.8rem rgba(3, 13, 17, 0.3));
-          filter: drop-shadow(0px 0.4rem 0.8rem rgba(3, 13, 17, 0.3));
+  -webkit-filter: drop-shadow(0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27));
+          filter: drop-shadow(0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27));
 }
 
 .header .page-name {
@@ -95,6 +95,7 @@ h3 {
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .buttons-pages .btn-whole-box:focus {
@@ -118,39 +119,58 @@ h3 {
   display: -ms-flexbox;
   display: flex;
   padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.6rem;
   /* تعديل الدوال (المشاهدات و اللايكات) */
 }
 
 .footer-one .footer-fn {
   color: #10526a;
   text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.footer-one .footer-fn.views > span {
-  display: block;
-  margin-top: -10px;
+.footer-one .footer-fn.views h3 {
+  padding: .08rem 0.4rem;
+  -webkit-box-shadow: 0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  border-radius: 5px;
 }
 
-.footer-one .footer-fn.likes .fb-like {
-  position: relative;
-  top: 25%;
-}
-
-/* فوتر الخاص بلحقوق */
-.footer-two {
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
-  background-color: #10526a;
+.footer-one .footer-fn.likes .btn-like {
+  vertical-align: sub;
+  border: none;
+  background: #115973;
+  border-radius: 7px;
   color: #f1eddc;
+  letter-spacing: 2px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0.6rem 0.4rem;
 }
 
-.footer-two p {
-  font-size: 0.8rem;
-  margin: 0 !important;
+.footer-one .footer-fn.likes .btn-like:focus {
+  border: none;
+  outline: none;
+}
+
+.footer-one .footer-fn.likes .btn-like:hover {
+  background-color: #0e485d;
+}
+
+.footer-one .footer-fn.likes .btn-like:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
 }
 
 /* الناف بار الاسفل */
@@ -160,6 +180,7 @@ h3 {
   right: 0;
   z-index: 200;
   width: 100%;
+  /* Edit Whole Box */
 }
 
 .bottom-nav .n-links-box {
@@ -205,6 +226,7 @@ h3 {
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
+  overflow: hidden;
   border-radius: 0;
 }
 
@@ -215,4 +237,126 @@ h3 {
 
 .bottom-nav .n-links-box button.link-nav:hover {
   background-color: #0d4154;
+}
+
+/* القائمة المنسدله */
+.dropdown-list-clalender {
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0%;
+  z-index: 800;
+  background: linear-gradient(30deg, #115973, #187b9f);
+  text-align: center;
+  /* تعديل زر الاغلاق */
+}
+
+.dropdown-list-clalender .list-close {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #f1eddc;
+  margin-top: 1rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.dropdown-list-clalender .list-close:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.dropdown-list-clalender .list-ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.dropdown-list-clalender .list-ul .item {
+  margin-bottom: 0.4rem;
+}
+
+.dropdown-list-clalender .list-ul .item:not(:last-child) {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.dropdown-list-clalender .list-ul .item:not(:last-child):hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.dropdown-list-clalender .list-ul .item:not(:last-child)::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  border-radius: 5px;
+  margin-left: 10px;
+  background-color: #f1eddc;
+  vertical-align: middle;
+}
+
+.dropdown-list-clalender .list-ul .item a {
+  font-size: 1.3rem;
+  color: #f1eddc;
+  text-decoration: none;
+}
+
+.dropdown-list-clalender .list-ul .item.socials a {
+  margin-left: 0.4rem;
+}
+
+.dropdown-list-clalender .list-ul .item.socials a:last-child {
+  margin-left: 0;
+}
+
+.dropdown-list-clalender .list-ul .item.socials a i {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.dropdown-list-clalender .list-ul .item.socials a i:hover {
+  -webkit-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+}
+
+.dropdown-list-clalender .list-ul .item.times-salah #iframe2 {
+  -webkit-box-shadow: 0px 0.2rem 0.5rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.5rem rgba(3, 13, 17, 0.27);
+  border-radius: 10px;
+}
+
+.dropdown-list-clalender .list-ul .item:last-child {
+  margin-bottom: 0;
+}
+
+/* انيميشن للزرار */
+.add-animation-scale {
+  -webkit-animation: scale-anm 0.29s forwards;
+          animation: scale-anm 0.29s forwards;
+}
+
+@-webkit-keyframes scale-anm {
+  0% {
+    -webkit-transform: scale(30);
+            transform: scale(30);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scale-anm {
+  0% {
+    -webkit-transform: scale(30);
+            transform: scale(30);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }

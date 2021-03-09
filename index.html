@@ -12,6 +12,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;900&display=swap" rel="stylesheet">
+    <!-- Fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <!-- Bootstrap Grid System -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-4-grid@3.4.0/css/grid.min.css">
     <link rel="stylesheet" href="style.css">
@@ -29,8 +31,8 @@
     </header>
     <!-- زر المشاركه واتصل بنا -->
     <main class="main-btns">
-        <a class="link-main call-us" href="222">اتصل بنا</a>
-        <a class="link-main share" href="https://www.addtoany.com/share">شاركنا</a>
+        <a class="link-main call-us" href="222"><i class="fas fa-phone ml-2"></i>اتصل بنا</a>
+        <a class="link-main share" href="https://www.addtoany.com/share"><i class="fas fa-people-carry ml-2"></i>شاركنا</a>
     </main>
     <!-- الازرار -->
     <section class="buttons-pages">
@@ -100,7 +102,7 @@
                     <button class="btn-whole-box">
                         <!--  الايقونة -->
                         <svg class="icon-btn" viewBox="0 0 24 24">
-                            <path fill="#f1eddc" d="M15.5,17H14L12,9.5L10,17H8.5L6.1,7H7.8L9.34,14.5L11.3,7H12.7L14.67,14.5L16.2,7H17.9M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" />
+                            <path fill="#f1eddc" d="M17.5 14.33C18.29 14.33 19.13 14.41 20 14.57V16.07C19.38 15.91 18.54 15.83 17.5 15.83C15.6 15.83 14.11 16.16 13 16.82V15.13C14.17 14.6 15.67 14.33 17.5 14.33M13 12.46C14.29 11.93 15.79 11.67 17.5 11.67C18.29 11.67 19.13 11.74 20 11.9V13.4C19.38 13.24 18.54 13.16 17.5 13.16C15.6 13.16 14.11 13.5 13 14.15M17.5 10.5C15.6 10.5 14.11 10.82 13 11.5V9.84C14.23 9.28 15.73 9 17.5 9C18.29 9 19.13 9.08 20 9.23V10.78C19.26 10.59 18.41 10.5 17.5 10.5M21 18.5V7C19.96 6.67 18.79 6.5 17.5 6.5C15.45 6.5 13.62 7 12 8V19.5C13.62 18.5 15.45 18 17.5 18C18.69 18 19.86 18.16 21 18.5M17.5 4.5C19.85 4.5 21.69 5 23 6V20.56C23 20.68 22.95 20.8 22.84 20.91C22.73 21 22.61 21.08 22.5 21.08C22.39 21.08 22.31 21.06 22.25 21.03C20.97 20.34 19.38 20 17.5 20C15.45 20 13.62 20.5 12 21.5C10.66 20.5 8.83 20 6.5 20C4.84 20 3.25 20.36 1.75 21.07C1.72 21.08 1.68 21.08 1.63 21.1C1.59 21.11 1.55 21.12 1.5 21.12C1.39 21.12 1.27 21.08 1.16 21C1.05 20.89 1 20.78 1 20.65V6C2.34 5 4.18 4.5 6.5 4.5C8.83 4.5 10.66 5 12 6C13.34 5 15.17 4.5 17.5 4.5Z" />
                         </svg>
                         <!-- وصف الايقونه والزر -->
                         <h4 class="title-btn">الفتاوى</h4>
@@ -146,6 +148,16 @@
                         <h4 class="title-btn">صوتيات</h4>
                     </button>
                 </div>
+                <div class="col-6">
+                    <button class="btn-whole-box">
+                        <!--  الايقونة -->
+                        <svg class="icon-btn" viewBox="0 0 24 24">
+                            <path fill="#f1eddc" d="M14,2L20,8V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2H14M18,20V9H13V4H6V20H18M16,18L13.5,16.3V18H8V13H13.5V14.7L16,13V18Z" />
+                        </svg>
+                        <!-- وصف الايقونه والزر -->
+                        <h4 class="title-btn">مقاطع</h4>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -158,19 +170,12 @@
         </div>
         <!-- اللايكات -->
         <div class="footer-fn likes">
-            <div3 class="fb-like" data-href="https://miraath.net/application/1.html" data-width="20px" data-layout="box_count" data-action="like" data-size="small" data-share="false"></div3>
-            <div id="fb-root"></div>
-            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v10.0" nonce="eFzuqO41"></script>
+            <button class="btn-like">
+                <span class="like-self">اعجاب <strong>42</strong></span>
+                <i class="fas fa-heart mr-1"></i>
+            </button>
         </div>
     </section>
-    <!-- الفوتر -->
-    <footer class="footer-two text-center">
-        <div class="container-fluid">
-            <p class="p-footer">
-                جميع الحقوق محفوظة لتطبيق موقع ميراث الأنبياء
-            </p>
-        </div>
-    </footer>
     <!-- الناف بار الاسفل الذى يحتوى على القائمة المنسدله -->
     <nav class="bottom-nav">
         <div class="n-links-box">
@@ -191,76 +196,59 @@
             </button>
         </div>
     </nav>
-    <!-- <ul>
-
-        <li><img border="0" src="https://miraath.net/wp-content/uploads/2020/04/401.png" width="55" height="63"> </li>
-        <li><a href="#home">تطبيق ميراث الأنبياء</a></li>
-
-
-        <li li style="float:left" class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">
-                <font color="#FFFFFF">☰</font>
-            </a>
-            <div class="dropdown-content">
-                <a href="#">أرسل لنا فائدة، لكي نتشارك الأجر</a>
-                <a href="#">جدول الدروس</a>
-                <a href="#">مواقع التواصل</a>
-                <iframe id="iframe2" style="background: rgb(255, 255, 255); border: 0px solid rgb(238, 238, 238); width: 100%; overflow: hidden; height: 442px;" src="https://timesprayer.today/widget_frame.php?frame=2&amp;sound=true&amp;id=1843&amp;theme=w3-teal"></iframe>
-            </div>
-        </li>
-        <p1 align="right">
-            <a href="11">
-                <font color="#FFFFFF">&#9679;</font>
-            </a>
-            <font color="#013830">_</font>
-            <a href="22">
-                <font color="#000000">&#9679;</font>
-            </a>
-        </p1>
-
-    </ul>
-
-
-    <button class="button button1">الموقع</button>
-    <button class="button button2">الإذاعات</button>
-    <button class="button button3">المجلات</button>
-    <button class="button button4">البطاقات</button>
-    <button class="button button5">المقالات</button>
-    <button class="button button6">التفريغات</button>
-    <button class="button button7">الفتاوى</button>
-    <button class="button button8">الفوائد</button>
-    <button class="button button9">الدروس</button>
-    <button class="button button10"><b>سلاسل دعوية</b></button>
-    <button class="button button11">الصوتيات</button>
-
-    <div class="footer1">
-        <p>جميع الحقوق محفوظة لتطبيق موقع ميراث الأنبياء</p> -->
-    <!-- AddToAny BEGIN -->
-    <!--  <a class="a2a_dd" href="https://www.addtoany.com/share">شاركنا</a>
-        <a href="222">اتصل بنا</a>
-
-
-
-        <script>
-            var a2a_config = a2a_config || {};
-            a2a_config.onclick = 1;
-            a2a_config.locale = "ar";
-        </script>
-        <script async src="https://static.addtoany.com/menu/page.js"></script> -->
-    <!-- AddToAny END -->
-
-    <!--  <div3 class="fb-like" data-href="https://miraath.net/application/1.html" data-width="20px" data-layout="box_count" data-action="like" data-size="small" data-share="false"></div3>
-
-    </div> -->
+    <!-- القائمة المنسدلة -->
+    <section class="dropdown-list-clalender">
+        <div class="container-fluid">
+            <i class="fas fa-times-circle list-close"></i>
+            <ul class="list-ul">
+                <li class="item send-us">
+                    <a href="#">ارسل لنا فائدة</a>
+                </li>
+                <li class="item socials">
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </li>
+                <li class="item times-salah">
+                    <iframe id="iframe2" style="border: 0px solid rgb(238, 238, 238); width: 100%; overflow: hidden; height: 442px;" src="https://timesprayer.today/widget_frame.php?frame=2&amp;sound=true&amp;id=1843&amp;theme=w3-teal"></iframe>
+                </li>
+            </ul>
+        </div>
+    </section>
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous"></script>
     <script>
         /* عمل ارتفاع من اسفل الصفحه لاظهار الفوتر */
         const bottom_nav = document.querySelector(".bottom-nav");
         document.body.style.paddingBottom = bottom_nav.offsetHeight + "px";
+        /* تعديل الزر الخاص باللايك */
+        const btn_like = document.querySelector('.footer-fn.likes .btn-like');
+        btn_like.addEventListener("click", (e) => {
+            e.preventDefault();
+            btn_like.setAttribute("disabled", "true");
+            btn_like.innerHTML = `<span class="like-self">جزاك الله خيراً</span><i class="fas fa-heart mr-1 add-animation-scale"></i>`;
+        });
+        /* تعديل القائمه المنسدله */
+        const list_btn = document.querySelector(".bottom-nav .list-nav"),
+            close_btn_list = document.querySelector(".dropdown-list-clalender .list-close"),
+            gsap_anm = gsap.to(".dropdown-list-clalender", {
+                duration: 1,
+                height: "100%",
+                paused: true,
+                ease: "slow(0.7,0.7,false)"
+            });
+        list_btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            gsap_anm.play();
+        });
+
+        close_btn_list.addEventListener("click", (e) => {
+            e.preventDefault();
+            gsap_anm.reverse();
+        });
     </script>
-    <!--  <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v10.0" nonce="eFzuqO41"></script> -->
 </body>
 
 </html>
