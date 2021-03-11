@@ -1,0 +1,746 @@
+@charset "UTF-8";
+/* استدعاء خط للارقام لوضعها فى الوقت */
+@font-face {
+  font-family: fontNumber;
+  src: url(font-number.ttf);
+}
+
+/* تعديل الجسم الخاص بالموقع */
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  direction: rtl;
+  /* الخطط الخاص بالصفحة */
+  font-family: 'Cairo', sans-serif;
+}
+
+/* تعديل البارجرافات والعناوين فى اى صفحة */
+p {
+  line-height: 1.3;
+}
+
+p,
+h5,
+h4,
+h3 {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+/* تعديل اللينكات فى كل الصفحات */
+a {
+  text-decoration: none;
+}
+
+/* الهيدر سيكون ثابت فى جميع الصفحات */
+/* تعديل الراس او بداية الصفحه (اللوجو واسم الصفحة) */
+.header {
+  background-color: #115973;
+  padding: 1rem 0;
+  text-align: center;
+  /* تعديل مقاس اللوجو */
+  /* تعديل اسم الصفحة */
+}
+
+.header .logo-img-h {
+  max-width: 100px;
+  -webkit-filter: drop-shadow(0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27));
+          filter: drop-shadow(0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27));
+}
+
+.header .page-name {
+  color: #f1eddc;
+  font-size: 1.1rem;
+}
+
+/* هذا الناف ايضا سيكون ثابت فى جميع الصفحات */
+/* الناف بار الاسفل */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 200;
+  width: 100%;
+  /* Edit Whole Box */
+}
+
+.bottom-nav .n-links-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.bottom-nav .n-links-box .link-nav {
+  color: #f1eddc;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  background-color: #10526a;
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.bottom-nav .n-links-box .link-nav.dark-point {
+  color: #3c3c3f;
+}
+
+.bottom-nav .n-links-box .link-nav.dark-point:hover {
+  background-color: #11556e;
+}
+
+.bottom-nav .n-links-box .link-nav.note-listen {
+  position: relative;
+}
+
+.bottom-nav .n-links-box .link-nav.note-listen[title]:hover::after {
+  content: attr(title);
+  background-color: #10526a;
+  color: #f1eddc;
+  position: absolute;
+  top: -25px;
+  right: 0px;
+  padding: 5px;
+  border-radius: 5px 5px 0 0px;
+  -webkit-box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
+}
+
+.bottom-nav .n-links-box .link-nav svg {
+  vertical-align: middle;
+}
+
+.bottom-nav .n-links-box .link-nav:hover {
+  background-color: #0d4154;
+}
+
+.bottom-nav .n-links-box button.link-nav {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: none;
+  background: #10526a;
+  border-radius: 7px;
+  color: #f1eddc;
+  letter-spacing: 2px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  overflow: visible;
+  border-radius: 0;
+}
+
+.bottom-nav .n-links-box button.link-nav:focus {
+  border: none;
+  outline: none;
+}
+
+.bottom-nav .n-links-box button.link-nav:hover {
+  background-color: #0d4154;
+}
+
+/* هذه القائمه ايضا ستكون ثابتة فى جميع الصفحات */
+/* القائمة المنسدله */
+.dropdown-list-clalender {
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0%;
+  z-index: 800;
+  background: linear-gradient(230deg, #115973, #187b9f);
+  text-align: center;
+  /* تعديل زر الاغلاق */
+}
+
+.dropdown-list-clalender .list-close {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #f1eddc;
+  margin-top: 1rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.dropdown-list-clalender .list-close:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.dropdown-list-clalender .list-ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.dropdown-list-clalender .list-ul .item {
+  margin-bottom: 0.4rem;
+}
+
+.dropdown-list-clalender .list-ul .item:not(:last-child) {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.dropdown-list-clalender .list-ul .item:not(:last-child):hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.dropdown-list-clalender .list-ul .item:not(:last-child)::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  border-radius: 5px;
+  margin-left: 10px;
+  background-color: #f1eddc;
+  vertical-align: middle;
+}
+
+.dropdown-list-clalender .list-ul .item a {
+  font-size: 1.3rem;
+  color: #f1eddc;
+  text-decoration: none;
+}
+
+.dropdown-list-clalender .list-ul .item.socials a {
+  margin-left: 0.4rem;
+}
+
+.dropdown-list-clalender .list-ul .item.socials a:last-child {
+  margin-left: 0;
+}
+
+.dropdown-list-clalender .list-ul .item.socials a i {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.dropdown-list-clalender .list-ul .item.socials a i:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
+.dropdown-list-clalender .list-ul .item.times-salah #iframe2 {
+  -webkit-box-shadow: 0px 0.2rem 0.5rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.5rem rgba(3, 13, 17, 0.27);
+  border-radius: 10px;
+}
+
+.dropdown-list-clalender .list-ul .item:last-child {
+  margin-bottom: 0;
+}
+
+/* القادم سيكون فى الصفحة الرئيسيه فقط */
+/* تعديل الصندوق الذى يحتوى على زرار شارك وزار اتصل بنا */
+.main-btns {
+  background-color: #f1eddc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* تعديل اللينكات */
+}
+
+.main-btns .link-main {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-weight: 600;
+  color: #10526a;
+  text-decoration: none;
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.main-btns .link-main:hover, .main-btns .link-main:active, .main-btns .link-main:active {
+  background-color: #10526a;
+  color: #f1eddc;
+}
+
+/* السكشن الخاص بالازرار */
+.buttons-pages {
+  padding-top: 1rem;
+  /*  تعديل الخلفيه الخاصة بالصفحة */
+  background-image: url("../img/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* لا تعدل هنا (هذا يعدل المسافات الجانبيه بين الازرار) */
+  /* تعديل الازرار  */
+}
+
+.buttons-pages .col-6 {
+  text-align: center;
+}
+
+.buttons-pages .btn-whole-box {
+  width: calc(100% - 1rem);
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: none;
+  background: #115973;
+  border-radius: 7px;
+  color: #f1eddc;
+  letter-spacing: 2px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.buttons-pages .btn-whole-box:focus {
+  border: none;
+  outline: none;
+}
+
+.buttons-pages .btn-whole-box:hover {
+  background-color: #0e485d;
+}
+
+.buttons-pages .btn-whole-box .icon-btn {
+  width: 50px;
+  height: 50px;
+}
+
+.buttons-pages .btn-whole-box h4 a {
+  color: #f1eddc;
+}
+
+/* الفوتر الاول */
+.footer-one {
+  background-color: #f1eddc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 0.4rem;
+  padding-bottom: 0.8rem;
+  /* تعديل الدوال (المشاهدات و اللايكات) */
+}
+
+.footer-one .footer-fn {
+  color: #10526a;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.footer-one .footer-fn.views h3 {
+  padding: .08rem 0.4rem;
+  -webkit-box-shadow: 0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.footer-one .footer-fn.views h3 a {
+  color: #115973 !important;
+  font-size: 0.8rem;
+}
+
+.footer-one .footer-fn.likes .btn-like {
+  vertical-align: sub;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: none;
+  background: #115973;
+  border-radius: 7px;
+  color: #f1eddc;
+  letter-spacing: 2px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0.6rem 0.4rem;
+}
+
+.footer-one .footer-fn.likes .btn-like:focus {
+  border: none;
+  outline: none;
+}
+
+.footer-one .footer-fn.likes .btn-like:hover {
+  background-color: #0e485d;
+}
+
+.footer-one .footer-fn.likes .btn-like:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+/* القادم سيكون فى صفحة الاذاعه فقط */
+/* لتعديل الناف بار الذى فى الاعلي */
+.top-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  right: 0;
+  z-index: 500;
+  width: 100%;
+  background-color: #115973;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.top-nav .wh-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* تعديل ايقونات البلاى ليست والنافبار */
+}
+
+.top-nav .wh-box .playlist,
+.top-nav .wh-box .nav-dropdown {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.top-nav .wh-box .playlist i,
+.top-nav .wh-box .playlist svg,
+.top-nav .wh-box .nav-dropdown i,
+.top-nav .wh-box .nav-dropdown svg {
+  vertical-align: middle;
+}
+
+.top-nav .wh-box .playlist i,
+.top-nav .wh-box .nav-dropdown i {
+  color: #f1eddc;
+  font-size: 1.1rem;
+}
+
+.top-nav .wh-box .playlist path,
+.top-nav .wh-box .nav-dropdown path {
+  fill: #f1eddc;
+}
+
+/* لتعديل الوقت والتاريخ */
+.hejry-time {
+  background-color: #10526a;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.hejry-time .calender-hejry {
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: auto;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+  /* لتعديل الوقت */
+  /* لتعديل التاريخ */
+}
+
+.hejry-time .calender-hejry span:first-child {
+  color: #f1eddc;
+  font-family: fontNumber;
+  font-size: 1.6rem;
+}
+
+.hejry-time .calender-hejry span:last-child {
+  color: #f1eddc;
+  font-size: 1rem;
+}
+
+/* لتعديل تطبيق الاذاعة */
+.app-radio {
+  position: relative;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(17, 89, 115, 0.85)), to(rgba(9, 48, 62, 0.85)));
+  background: linear-gradient(0deg, rgba(17, 89, 115, 0.85), rgba(9, 48, 62, 0.85));
+  /* تعديل الصندوق الاب للازرار */
+}
+
+.app-radio .controlls-radio {
+  position: -webkit-sticky;
+  position: sticky;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: #10526a;
+  /* تعديل المعلومات الخاصه بالصوت الذى يعمل */
+  /* تعديل ازار الخاصه بالصوت (تشغيل وايقاف والقادم و الخ) */
+  /* تعديل ازار الاعدادات الاضافيه لتشغيل الاذاعة */
+}
+
+.app-radio .controlls-radio .information-audio {
+  background-color: #115973;
+  border-radius: 5px;
+  padding: 0.1rem 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.app-radio .controlls-radio .information-audio h4 {
+  text-align: center;
+  color: #f1eddc;
+  font-weight: 600;
+}
+
+.app-radio .controlls-radio .players {
+  background-color: #115973;
+  padding: 0.5rem;
+  margin-bottom: 0.4rem;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* تعديل كل زرار  */
+}
+
+.app-radio .controlls-radio .players .pl-btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: none;
+  background: #10526a;
+  border-radius: 7px;
+  color: #f1eddc;
+  letter-spacing: 2px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.app-radio .controlls-radio .players .pl-btn:focus {
+  border: none;
+  outline: none;
+}
+
+.app-radio .controlls-radio .players .pl-btn:hover {
+  background-color: #0d4154;
+}
+
+.app-radio .controlls-radio .players .pl-btn.play-btn.active {
+  background-color: #0d4154;
+}
+
+.app-radio .controlls-radio .players .pl-btn:last-child {
+  margin-left: 0;
+}
+
+.app-radio .controlls-radio .players .pl-btn i {
+  font-size: 1.4rem;
+}
+
+.app-radio .controlls-radio .settings-additions {
+  background-color: #115973;
+  border-radius: 5px;
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.app-radio .controlls-radio .settings-additions .st-btn {
+  border-radius: 50% !important;
+  width: 35px !important;
+  height: 35px !important;
+  text-align: center !important;
+  background-color: #10526a !important;
+}
+
+.app-radio .controlls-radio .settings-additions .st-btn i {
+  vertical-align: middle;
+  color: #f1eddc;
+}
+
+.app-radio .controlls-radio .settings-additions button.reload-btn {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: none;
+  background: transparent;
+  border-radius: 7px;
+  color: #f1eddc;
+  letter-spacing: 2px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.app-radio .controlls-radio .settings-additions button.reload-btn:focus {
+  border: none;
+  outline: none;
+}
+
+.app-radio .controlls-radio .settings-additions button.reload-btn:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* لتعديل قائمه الاذاعات */
+.dropdown-playlist {
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0%;
+  z-index: 800;
+  background: linear-gradient(230deg, #115973, #187b9f);
+  text-align: center;
+  /* تعديل زرار الغلق */
+  /* تعديل القائمه نفسها */
+}
+
+.dropdown-playlist .playlist-close {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #f1eddc;
+  margin-top: 1rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.dropdown-playlist .playlist-close:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.dropdown-playlist .list-sounds {
+  padding: 0;
+  list-style: none;
+}
+
+.dropdown-playlist .list-sounds li.sound-item {
+  text-align: right;
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #f1eddc;
+  margin-bottom: 0.8rem;
+}
+
+.dropdown-playlist .list-sounds li.sound-item:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown-playlist .list-sounds li.sound-item.active .segment::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: #ceecf8;
+  z-index: 1;
+  -webkit-animation: height-anm 0.8s forwards alternate ease-in-out;
+          animation: height-anm 0.8s forwards alternate ease-in-out;
+}
+
+.dropdown-playlist .list-sounds li.sound-item img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.dropdown-playlist .list-sounds li.sound-item .segment {
+  position: relative;
+  padding: 0.2rem 0.4rem;
+  height: 100%;
+}
+
+.dropdown-playlist .list-sounds li.sound-item .segment .title h4,
+.dropdown-playlist .list-sounds li.sound-item .segment .discription {
+  position: relative;
+  z-index: 2;
+}
+
+.dropdown-playlist .list-sounds li.sound-item .segment .title {
+  color: #187b9f;
+}
+
+.dropdown-playlist .list-sounds li.sound-item .segment .discription {
+  color: #0f4b61;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* انيميشن للزرار */
+.add-animation-scale {
+  -webkit-animation: scale-anm 0.29s forwards;
+          animation: scale-anm 0.29s forwards;
+}
+
+@-webkit-keyframes scale-anm {
+  0% {
+    -webkit-transform: scale(30);
+            transform: scale(30);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scale-anm {
+  0% {
+    -webkit-transform: scale(30);
+            transform: scale(30);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes height-anm {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes height-anm {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}

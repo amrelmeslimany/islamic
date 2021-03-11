@@ -1,0 +1,286 @@
+@charset "UTF-8";
+/* تعديل الجسم الخاص بالموقع */
+body {
+  background-color: #1e2a2f !important;
+}
+
+/* الهيدر سيكون ثابت فى جميع الصفحات */
+/* تعديل الراس او بداية الصفحه (اللوجو واسم الصفحة) */
+.header {
+  background-color: #2a3b41;
+  /* تعديل مقاس اللوجو */
+  /* تعديل اسم الصفحة */
+}
+
+.header .logo-img-h {
+  -webkit-filter: drop-shadow(0px 0.2rem 0.8rem rgba(0, 0, 0, 0.27));
+          filter: drop-shadow(0px 0.2rem 0.8rem rgba(0, 0, 0, 0.27));
+}
+
+.header .page-name {
+  color: #f3ecec;
+}
+
+/* هذا الناف ايضا سيكون ثابت فى جميع الصفحات */
+/* الناف بار الاسفل */
+.bottom-nav {
+  /* Edit Whole Box */
+}
+
+.bottom-nav .n-links-box .link-nav {
+  color: #f3ecec;
+  background-color: #2a3b41;
+}
+
+.bottom-nav .n-links-box .link-nav.dark-point {
+  color: #6c6c6f;
+}
+
+.bottom-nav .n-links-box .link-nav.dark-point:hover {
+  background-color: #2c3e45;
+}
+
+.bottom-nav .n-links-box .link-nav:hover {
+  background-color: #202d32;
+}
+
+.bottom-nav .n-links-box .link-nav.note-listen {
+  position: relative;
+}
+
+.bottom-nav .n-links-box .link-nav.note-listen[title]:hover::after {
+  background-color: #223035;
+  color: #f3ecec;
+  -webkit-box-shadow: 0px 0.2rem 0.2rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.2rem rgba(0, 0, 0, 0.27);
+}
+
+.bottom-nav .n-links-box:hover {
+  background-color: #182225;
+}
+
+.bottom-nav .n-links-box button.link-nav {
+  background: #2a3b41;
+  color: #f3ecec;
+}
+
+.bottom-nav .n-links-box button.link-nav:hover {
+  background-color: #202d32;
+}
+
+/* هذه القائمه ايضا ستكون ثابتة فى جميع الصفحات */
+/* القائمة المنسدله */
+.dropdown-list-clalender {
+  background: linear-gradient(230deg, #2a3b41, #3e5760);
+  /* تعديل زر الاغلاق */
+}
+
+.dropdown-list-clalender .list-close {
+  color: #f3ecec;
+}
+
+.dropdown-list-clalender .list-ul .item:not(:last-child)::before {
+  background-color: #f3ecec;
+}
+
+.dropdown-list-clalender .list-ul .item a {
+  color: #f3ecec;
+}
+
+.dropdown-list-clalender .list-ul .item.times-salah #iframe2 {
+  -webkit-box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.27);
+}
+
+/* القادم سيكون فى الصفحة الرئيسيه فقط */
+/* تعديل الصندوق الذى يحتوى على زرار شارك وزار اتصل بنا */
+.main-btns {
+  background-color: #223035;
+  /* تعديل اللينكات */
+}
+
+.main-btns .link-main {
+  color: #f3ecec;
+}
+
+.main-btns .link-main:hover, .main-btns .link-main:active, .main-btns .link-main:active {
+  background-color: #f3ecec;
+  color: #223035;
+}
+
+/* السكشن الخاص بالازرار */
+.buttons-pages {
+  background: none;
+  /* تعديل الازرار  */
+}
+
+.buttons-pages .btn-whole-box {
+  background: #2a3b41;
+  color: #f3ecec;
+}
+
+.buttons-pages .btn-whole-box:hover {
+  background-color: #202d32;
+}
+
+.buttons-pages .btn-whole-box h4 a {
+  color: #f3ecec;
+}
+
+/* الفوتر الاول */
+.footer-one {
+  background-color: #223035;
+  /* تعديل الدوال (المشاهدات و اللايكات) */
+}
+
+.footer-one .footer-fn {
+  color: #f3ecec;
+}
+
+.footer-one .footer-fn.views h3 {
+  -webkit-box-shadow: 0px 0.2rem 0.8rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.8rem rgba(0, 0, 0, 0.27);
+}
+
+.footer-one .footer-fn.views h3 a {
+  color: #f3ecec !important;
+}
+
+.footer-one .footer-fn.likes .btn-like {
+  background: #2a3b41;
+  color: #f3ecec;
+}
+
+.footer-one .footer-fn.likes .btn-like:hover {
+  background-color: #202d32;
+}
+
+/* القادم سيكون فى صفحة الاذاعه فقط */
+/* لتعديل الناف بار الذى فى الاعلي */
+.top-nav {
+  background-color: #2a3b41;
+}
+
+.top-nav .wh-box {
+  /* تعديل ايقونات البلاى ليست والنافبار */
+}
+
+.top-nav .wh-box .playlist i,
+.top-nav .wh-box .nav-dropdown i {
+  color: #f3ecec;
+}
+
+.top-nav .wh-box .playlist path,
+.top-nav .wh-box .nav-dropdown path {
+  fill: #f3ecec;
+}
+
+/* لتعديل الوقت والتاريخ */
+.hejry-time {
+  background-color: #223035;
+}
+
+.hejry-time .calender-hejry {
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+  /* لتعديل الوقت */
+  /* لتعديل التاريخ */
+}
+
+.hejry-time .calender-hejry span:first-child {
+  color: #f3ecec;
+}
+
+.hejry-time .calender-hejry span:last-child {
+  color: #f3ecec;
+}
+
+/* لتعديل تطبيق الاذاعة */
+.app-radio {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(42, 59, 65, 0.85)), to(rgba(14, 20, 22, 0.85)));
+  background: linear-gradient(0deg, rgba(42, 59, 65, 0.85), rgba(14, 20, 22, 0.85));
+  /* تعديل الصندوق الاب للازرار */
+}
+
+.app-radio .controlls-radio {
+  background-color: #223035;
+  /* تعديل المعلومات الخاصه بالصوت الذى يعمل */
+  /* تعديل ازار الخاصه بالصوت (تشغيل وايقاف والقادم و الخ) */
+  /* تعديل ازار الاعدادات الاضافيه لتشغيل الاذاعة */
+}
+
+.app-radio .controlls-radio .information-audio {
+  background-color: #2a3b41;
+}
+
+.app-radio .controlls-radio .information-audio h4 {
+  color: #f3ecec;
+}
+
+.app-radio .controlls-radio .players {
+  background-color: #2a3b41;
+  /* تعديل كل زرار  */
+}
+
+.app-radio .controlls-radio .players .pl-btn {
+  background: #223035;
+  color: #f3ecec;
+}
+
+.app-radio .controlls-radio .players .pl-btn:hover {
+  background-color: #182225;
+}
+
+.app-radio .controlls-radio .players .pl-btn.play-btn.active {
+  background-color: #182225;
+}
+
+.app-radio .controlls-radio .settings-additions {
+  background-color: #2a3b41;
+}
+
+.app-radio .controlls-radio .settings-additions .st-btn {
+  background-color: #223035 !important;
+}
+
+.app-radio .controlls-radio .settings-additions .st-btn i {
+  color: #f3ecec;
+}
+
+.app-radio .controlls-radio .settings-additions button.reload-btn {
+  background: transparent;
+  color: #f3ecec;
+}
+
+.app-radio .controlls-radio .settings-additions button.reload-btn:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* لتعديل قائمه الاذاعات */
+.dropdown-playlist {
+  background: linear-gradient(230deg, #2a3b41, #3e5760);
+  /* تعديل زرار الغلق */
+  /* تعديل القائمه نفسها */
+}
+
+.dropdown-playlist .playlist-close {
+  color: #f3ecec;
+}
+
+.dropdown-playlist .list-sounds li.sound-item {
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+  background-color: #f3ecec;
+}
+
+.dropdown-playlist .list-sounds li.sound-item.active .segment::before {
+  background-color: #c7d6db;
+}
+
+.dropdown-playlist .list-sounds li.sound-item .segment .title {
+  color: #3e5760;
+}
+
+.dropdown-playlist .list-sounds li.sound-item .segment .discription {
+  color: #1e2a2f;
+}

@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <!-- Bootstrap Grid System -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-4-grid@3.4.0/css/grid.min.css">
-    <link rel="stylesheet" href="light-style.css">
+    <link rel="stylesheet" href="css/light-style.css">
 </head>
 
 <body>
@@ -31,7 +31,7 @@
     <header class="header">
         <div class="container-fluid">
             <!-- Logo -->
-            <img src="logo.png" alt="logo" class="logo-img-h">
+            <img src="img/logo.png" alt="logo" class="logo-img-h">
             <!-- Page Name -->
             <p class="page-name">تطبيق ميراث الأنبياء</p>
         </div>
@@ -52,7 +52,9 @@
                             <path fill="#f1eddc" d="M8.95 13.4H6.58A5.5 5.5 0 0 1 6.58 10.6H8.95A11.56 11.56 0 0 0 8.85 12A11.56 11.56 0 0 0 8.95 13.4M7.16 9.2H9.2A12.06 12.06 0 0 1 10.18 6.71A5.55 5.55 0 0 0 7.16 9.2M16.84 9.2A5.59 5.59 0 0 0 13.81 6.71A10.95 10.95 0 0 1 14.78 9.2M12 17.57A9.5 9.5 0 0 0 13.34 14.8H10.66A9.5 9.5 0 0 0 12 17.57M12 6.42A9.53 9.53 0 0 0 10.66 9.2H13.34A9.53 9.53 0 0 0 12 6.42M7.16 14.8A5.61 5.61 0 0 0 10.18 17.29A12.06 12.06 0 0 1 9.2 14.8M21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19A2 2 0 0 1 21 5M19 12A7 7 0 1 0 12 19A7 7 0 0 0 19 12M15.15 12A11.56 11.56 0 0 1 15.05 13.4H17.42A5.5 5.5 0 0 0 17.42 10.6H15.05A11.56 11.56 0 0 1 15.15 12M13.81 17.29A5.62 5.62 0 0 0 16.84 14.8H14.78A10.95 10.95 0 0 1 13.81 17.29M10.36 10.6A8.81 8.81 0 0 0 10.36 13.4H13.64A10.3 10.3 0 0 0 13.75 12A10.21 10.21 0 0 0 13.64 10.6Z" />
                         </svg>
                         <!-- وصف الايقونه والزر -->
-                        <h4 class="title-btn">الموقع</h4>
+                        <h4 class="title-btn">
+                            <a href="#">الموقع</a>
+                        </h4>
                     </button>
                 </div>
                 <div class="col-6">
@@ -62,7 +64,9 @@
                             <path fill="#f1eddc" d="M9,3A4,4 0 0,1 13,7H5A4,4 0 0,1 9,3M11.84,9.82L11,18H10V19A2,2 0 0,0 12,21A2,2 0 0,0 14,19V14A4,4 0 0,1 18,10H20L19,11L20,12H18A2,2 0 0,0 16,14V19A4,4 0 0,1 12,23A4,4 0 0,1 8,19V18H7L6.16,9.82C5.67,9.32 5.31,8.7 5.13,8H12.87C12.69,8.7 12.33,9.32 11.84,9.82M9,11A1,1 0 0,0 8,12A1,1 0 0,0 9,13A1,1 0 0,0 10,12A1,1 0 0,0 9,11Z" />
                         </svg>
                         <!-- وصف الايقونه والزر -->
-                        <h4 class="title-btn">الإذاعات</h4>
+                        <h4 class="title-btn">
+                            <a href="radio.html" >الإذاعات</a>
+                        </h4>
                     </button>
                 </div>
                 <div class="col-6">
@@ -172,8 +176,17 @@
     <section class="footer-one">
         <!-- الزوار -->
         <div class="footer-fn views">
-            <h3>20</h3>
-            <small>الزوار</small>
+            <!-- BEGIN: Powered by Supercounters.com -->
+            <h3>
+                <center>
+                    <script type="text/javascript" src="//widget.supercounters.com/ssl/texthit.js"></script>
+                    <script type="text/javascript">
+                        var sc_texthit_var = sc_texthit_var || [];
+                        sc_text_hit(1608398, "الزيارات", "");
+                    </script><br><noscript><a href="http://www.supercounters.com/" rel="nofollow" " target="_blank "></a></noscript>
+                </center>
+            </h3>
+            <!-- END: Powered by Supercounters.com -->
         </div>
         <!-- اللايكات -->
         <div class="footer-fn likes">
@@ -225,56 +238,10 @@
         </div>
     </section>
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous"></script>
-    <script>
-        /* عمل ارتفاع من اسفل الصفحه لاظهار الفوتر */
-        const bottom_nav = document.querySelector(".bottom-nav");
-        document.body.style.paddingBottom = bottom_nav.offsetHeight + "px";
-        /* تعديل الزر الخاص باللايك */
-        const btn_like = document.querySelector('.footer-fn.likes .btn-like');
-        btn_like.addEventListener("click", (e) => {
-            e.preventDefault();
-            btn_like.setAttribute("disabled", "true");
-            btn_like.innerHTML = `<span class="like-self">جزاك الله خيراً</span><i class="fas fa-heart mr-1 add-animation-scale"></i>`;
-        });
-        /* تعديل القائمه المنسدله */
-        const list_btn = document.querySelector(".bottom-nav .list-nav"),
-            close_btn_list = document.querySelector(".dropdown-list-clalender .list-close"),
-            gsap_anm = gsap.to(".dropdown-list-clalender", {
-                duration: 1,
-                height: "100%",
-                paused: true,
-                ease: "slow(0.7,0.7,false)"
-            });
-        list_btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            gsap_anm.play();
-        });
-
-        close_btn_list.addEventListener("click", (e) => {
-            e.preventDefault();
-            gsap_anm.reverse();
-        });
-        /* عمل الوضع الليلي */
-        const dark_btn = document.querySelector(".bottom-nav .dark-point"),
-            light_btn = document.querySelector(".bottom-nav .white-point");
-        dark_btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            light_btn.style.pointerEvents = "auto";
-            dark_btn.style.pointerEvents = "none";
-            document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="dark-style.css">`);
-        });
-        light_btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            dark_btn.style.pointerEvents = "auto";
-            light_btn.style.pointerEvents = "none";
-            if (document.querySelectorAll("[href='dark-style.css']")) {
-                document.querySelectorAll("[href='dark-style.css']").forEach((el) => {
-                    el.remove();
-                });
-            }
-        });
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="js/app.js"></script>
     </script>
+
 </body>
 
 </html>
