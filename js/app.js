@@ -4,7 +4,9 @@ window.onload = () => {
     let mode_name = localStorage.getItem("darkMode");
     if (mode_name != null) {
         if (mode_name == "true") {
+            /* تغيير لون البار الاعلى */
             dark_btn.click();
+
         } else {
             light_btn.click();
         }
@@ -14,14 +16,29 @@ window.onload = () => {
 
     /* عمل ارتفاع من اسفل الصفحه لاظهار الفوتر */
     document.body.style.paddingBottom = bottom_nav.offsetHeight + "px";
-    /* الفانكشن تجدها فى الاسفل */
-    makeBackGround();
+
 };
+/* الوان البار */
+function barColor(color) {
+    document.head.querySelector('[name="keywords"]').insertAdjacentHTML("afterend", `
+
+<meta name="theme-color" content=${color}>
+
+<meta name="msapplication-navbutton-color" content=${color}>
+
+<meta name="apple-mobile-web-app-status-bar-style" content=${color}>
+`);
+
+}
 /* عمل الوضع الليلي */
 const dark_btn = document.querySelector(".bottom-nav .dark-point"),
     light_btn = document.querySelector(".bottom-nav .white-point");
 dark_btn.addEventListener("click", (e) => {
     e.preventDefault();
+    document.querySelectorAll('meta[content="#115973"]').forEach(mt => {
+        mt.remove();
+    });
+    barColor("#2a3b41");
     light_btn.style.pointerEvents = "auto";
     dark_btn.style.pointerEvents = "none";
     document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" href="css/dark-style.css">`);
@@ -30,6 +47,10 @@ dark_btn.addEventListener("click", (e) => {
 });
 light_btn.addEventListener("click", (e) => {
     e.preventDefault();
+    document.querySelectorAll('meta[content="#2a3b41"]').forEach(mt => {
+        mt.remove();
+    });
+    barColor("#115973");
     dark_btn.style.pointerEvents = "auto";
     light_btn.style.pointerEvents = "none";
     if (document.querySelectorAll("[href='css/dark-style.css']")) {
@@ -71,6 +92,7 @@ close_btn_list.addEventListener("click", (e) => {
 });
 // 2- صفحة الاذاعة =============================================
 if (location.href.search("radio.html") > -1) {
+    makeBackGround();
     /* اضافة التاريخ والوقت */
     try {
         time_is_widget.init({

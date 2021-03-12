@@ -530,6 +530,7 @@ a {
 }
 
 .app-radio .controlls-radio .players .pl-btn {
+  text-align: center;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
