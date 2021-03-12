@@ -107,6 +107,8 @@ a {
   border-radius: 5px 5px 0 0px;
   -webkit-box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
           box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.6rem;
 }
 
 .bottom-nav .n-links-box .link-nav svg {
@@ -330,7 +332,7 @@ a {
   display: -ms-flexbox;
   display: flex;
   padding-top: 0.4rem;
-  padding-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
   /* تعديل الدوال (المشاهدات و اللايكات) */
 }
 
@@ -345,8 +347,8 @@ a {
           flex: 1;
 }
 
-.footer-one .footer-fn.views h3 {
-  padding: .08rem 0.4rem;
+.footer-one .footer-fn.views h5 {
+  padding: 0.2rem 0.4rem;
   -webkit-box-shadow: 0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27);
           box-shadow: 0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27);
   width: -webkit-fit-content;
@@ -354,11 +356,18 @@ a {
   width: fit-content;
   margin: auto;
   border-radius: 5px;
+  background-color: #115973;
 }
 
-.footer-one .footer-fn.views h3 a {
-  color: #115973 !important;
-  font-size: 0.8rem;
+.footer-one .footer-fn.views h5 p {
+  color: #f1eddc !important;
+  font-size: 0.78rem;
+}
+
+.footer-one .footer-fn.views h5 p a {
+  color: #f1eddc !important;
+  font-size: 0.75rem;
+  font-weight: 300;
 }
 
 .footer-one .footer-fn.likes .btn-like {
@@ -376,7 +385,7 @@ a {
   transition: 0.3s ease;
   cursor: pointer;
   overflow: hidden;
-  padding: 0.6rem 0.4rem;
+  padding: 0.3rem;
 }
 
 .footer-one .footer-fn.likes .btn-like:focus {
@@ -391,6 +400,10 @@ a {
 .footer-one .footer-fn.likes .btn-like:disabled {
   opacity: 0.8;
   cursor: not-allowed;
+}
+
+.footer-one .footer-fn.likes .btn-like .like-self {
+  font-family: "Cairo";
 }
 
 /* القادم سيكون فى صفحة الاذاعه فقط */
@@ -449,24 +462,21 @@ a {
 .hejry-time .calender-hejry {
   -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
           box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
+  max-width: 80%;
   margin: auto;
-  padding: 0.5rem;
+  padding: 0.6rem 0.4rem 0.3rem;
   border-radius: 5px;
   text-align: center;
   /* لتعديل الوقت */
-  /* لتعديل التاريخ */
 }
 
-.hejry-time .calender-hejry span:first-child {
+.hejry-time .calender-hejry .time-cl {
   color: #f1eddc;
   font-family: fontNumber;
-  font-size: 1.6rem;
+  font-size: 1rem;
 }
 
-.hejry-time .calender-hejry span:last-child {
+.hejry-time .calender-hejry .hjr-date {
   color: #f1eddc;
   font-size: 1rem;
 }
@@ -477,6 +487,12 @@ a {
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(17, 89, 115, 0.85)), to(rgba(9, 48, 62, 0.85)));
   background: linear-gradient(0deg, rgba(17, 89, 115, 0.85), rgba(9, 48, 62, 0.85));
   /* تعديل الصندوق الاب للازرار */
+}
+
+.app-radio .rd-logo {
+  max-width: 70%;
+  display: block;
+  margin: auto;
 }
 
 .app-radio .controlls-radio {
@@ -554,7 +570,7 @@ a {
 }
 
 .app-radio .controlls-radio .players .pl-btn i {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
 .app-radio .controlls-radio .settings-additions {
@@ -697,6 +713,82 @@ a {
   color: #0f4b61;
   font-size: 0.9rem;
   font-weight: 600;
+}
+
+/* كتابة ملاحظه اثناء الاستماع */
+.write-note {
+  position: fixed;
+  right: 0;
+  top: 42px;
+  width: 100%;
+  background: #10526a;
+  z-index: 400;
+  padding-top: 0.8rem;
+  border-radius: 0 0 15px 15px;
+  -webkit-box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
+  overflow: none;
+  display: none;
+}
+
+.write-note textarea {
+  padding: 0.4rem;
+  border: none;
+  outline: none;
+  color: #f1eddc;
+  width: 100%;
+  height: 150px;
+  resize: none;
+  background-color: #2a647c;
+}
+
+.write-note textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.write-note textarea::-webkit-input-placeholder {
+  color: rgba(241, 237, 220, 0.5);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-family: 'Cairo', sans-serif;
+}
+
+.write-note textarea:-ms-input-placeholder {
+  color: rgba(241, 237, 220, 0.5);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-family: 'Cairo', sans-serif;
+}
+
+.write-note textarea::-ms-input-placeholder {
+  color: rgba(241, 237, 220, 0.5);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-family: 'Cairo', sans-serif;
+}
+
+.write-note textarea::placeholder {
+  color: rgba(241, 237, 220, 0.5);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-family: 'Cairo', sans-serif;
+}
+
+.write-note textarea:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.write-note textarea:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.write-note textarea:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+
+.write-note textarea:focus::placeholder {
+  opacity: 0;
 }
 
 /* انيميشن للزرار */

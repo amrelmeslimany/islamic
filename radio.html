@@ -32,9 +32,7 @@
         <div class="container-fluid">
             <div class="wh-box">
                 <div class="playlist">
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path d="M15,6V8H3V6H15M15,10V12H3V10H15M3,16V14H11V16H3M17,6H22V8H19V17A3,3 0 0,1 16,20A3,3 0 0,1 13,17A3,3 0 0,1 16,14C16.35,14 16.69,14.07 17,14.18V6M16,16A1,1 0 0,0 15,17A1,1 0 0,0 16,18A1,1 0 0,0 17,17A1,1 0 0,0 16,16Z" />
-                    </svg>
+                    <i class="fas fa-list-ol"></i>
                 </div>
                 <div class="nav-dropdown list-nav text-left"><i class="fas fa-bars"></i></div>
             </div>
@@ -54,13 +52,16 @@
         <div class="container-fluid">
             <!-- Calender -->
             <a href="https://time.is/Mecca" id="time_is_link" rel="nofollow"></a>
-            <div id="Mecca_z439" class="calender-hejry"></div>
+            <div class="calender-hejry">
+                <div id="Mecca_z439" class="time-cl">
+                </div>
+            </div>
         </div>
     </main>
     <!-- لوجو الاذاعة -->
     <section class="app-radio">
 
-        <img src="img/logo_radio.png" alt="الاذاعة" class="rd-logo" width="100%">
+        <img src="img/logo_radio.png" alt="الاذاعة" class="rd-logo">
         <div class="controlls-radio">
             <div class="container-fluid">
                 <div class="information-audio">
@@ -70,7 +71,7 @@
                 </div>
                 <div class="players">
                     <button class="pl-btn next-btn"><i class="fas fa-arrow-right"></i></button>
-                    <button class="pl-btn play-btn active"><i class="fas fa-play"></i></button>
+                    <button class="pl-btn play-btn"><i class="fas fa-play"></i></button>
                     <button class="pl-btn previous-btn"><i class="fas fa-arrow-left"></i></button>
                 </div>
                 <div class="settings-additions">
@@ -87,7 +88,7 @@
         <!-- الزوار -->
         <div class="footer-fn views">
             <!-- BEGIN: Powered by Supercounters.com -->
-            <h3>
+            <h5>
                 <center>
                     <script type="text/javascript" src="//widget.supercounters.com/ssl/texthit.js"></script>
                     <script type="text/javascript">
@@ -95,13 +96,13 @@
                         sc_text_hit(1608398, "المستمعين", "");
                     </script><br><noscript><a href="http://www.supercounters.com/" rel="nofollow" " target="_blank "></a></noscript>
                 </center>
-            </h3>
+            </h5>
             <!-- END: Powered by Supercounters.com -->
+            <!-- اللايكات -->
         </div>
-        <!-- اللايكات -->
         <div class="footer-fn likes ">
             <button class="btn-like ">
-                <span class="like-self ">اعجاب <strong>42</strong></span>
+                <span class="like-self "><strong>42</strong> اعجاب</span>
                 <i class="fas fa-heart mr-1 "></i>
             </button>
         </div>
@@ -155,11 +156,17 @@
                     <a href="# "><i class="fab fa-telegram "></i></a>
                 </li>
                 <li class="item times-salah ">
-                    <iframe id="iframe2 " style="border: 0px solid rgb(238, 238, 238); width: 100%; overflow: hidden; height: 442px; " src="https://timesprayer.today/widget_frame.php?frame=2&amp;sound=true&amp;id=1843&amp;theme=w3-pale-yellow "></iframe>
+                    <iframe id="iframe2" style="border: 0px solid rgb(238, 238, 238); width: 100%; overflow: hidden; height: 442px; " src="https://timesprayer.today/widget_frame.php?frame=2&amp;sound=true&amp;id=1843&amp;theme=w3-light-gray"></iframe>
                 </li>
             </ul>
         </div>
     </section>
+    <!-- النوته للكتابه فيها اثناء الاستماع -->
+    <div class="write-note">
+        <div class="container-fluid">
+            <textarea name="note" class="write-n" placeholder="اكتب ملاحظة اثناء الاستماع"></textarea>
+        </div>
+    </div>
     <!-- القائمة المنسدله للاذاعات -->
     <section class="dropdown-playlist">
         <div class="container-fluid">
