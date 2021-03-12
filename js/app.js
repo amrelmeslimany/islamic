@@ -1,4 +1,5 @@
 // ? اشياء مشتركه فى جميع الصفحات =============================
+const bottom_nav = document.querySelector(".bottom-nav");
 window.onload = () => {
     let mode_name = localStorage.getItem("darkMode");
     if (mode_name != null) {
@@ -10,6 +11,11 @@ window.onload = () => {
     } else {
         localStorage.setItem("darkMode", "false");
     }
+
+    /* عمل ارتفاع من اسفل الصفحه لاظهار الفوتر */
+    document.body.style.paddingBottom = bottom_nav.offsetHeight + "px";
+    /* الفانكشن تجدها فى الاسفل */
+    makeBackGround();
 };
 /* عمل الوضع الليلي */
 const dark_btn = document.querySelector(".bottom-nav .dark-point"),
@@ -35,9 +41,7 @@ light_btn.addEventListener("click", (e) => {
     localStorage.setItem("darkMode", "false");
 });
 // 1- خاصة بالصفحة الريسيه =====================================
-/* عمل ارتفاع من اسفل الصفحه لاظهار الفوتر */
-const bottom_nav = document.querySelector(".bottom-nav");
-document.body.style.paddingBottom = bottom_nav.offsetHeight + "px";
+
 /* تعديل الزر الخاص باللايك */
 const btn_like = document.querySelector('.footer-fn.likes .btn-like');
 btn_like.addEventListener("click", (e) => {
@@ -158,17 +162,17 @@ if (location.href.search("radio.html") > -1) {
     }
 
     /* اظهار التاريخ الهجرى */
-    var fixd;
+    let fixd;
 
     function isGregLeapYear(year) {
         return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
     }
 
     function gregToFixed(year, month, day) {
-        var a = Math.floor((year - 1) / 4);
-        var b = Math.floor((year - 1) / 100);
-        var c = Math.floor((year - 1) / 400);
-        var d = Math.floor((367 * month - 362) / 12);
+        let a = Math.floor((year - 1) / 4);
+        let b = Math.floor((year - 1) / 100);
+        let c = Math.floor((year - 1) / 400);
+        let d = Math.floor((367 * month - 362) / 12);
         if (month <= 2)
             e = 0;
         else if (month > 2 && isGregLeapYear(year))
@@ -191,15 +195,15 @@ if (location.href.search("radio.html") > -1) {
     }
 
     function hijriToString() {
-        var months = new Array("محرم", "صفر", "ربيع أول", "ربيع ثانى", "جمادى أول", "جمادى ثانى", "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة");
+        let months = new Array("محرم", "صفر", "ربيع أول", "ربيع ثانى", "جمادى أول", "جمادى ثانى", "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة");
         return this.day + " " + months[this.month - 1] + " " + this.year;
     }
 
     function fixedToHijri(f) {
-        var i = new Hijri(1100, 1, 1);
+        let i = new Hijri(1100, 1, 1);
         i.year = Math.floor((30 * (f - 227015) + 10646) / 10631);
-        var i2 = new Hijri(i.year, 1, 1);
-        var m = Math.ceil((f - 29 - i2.toFixed()) / 29.5) + 1;
+        let i2 = new Hijri(i.year, 1, 1);
+        let m = Math.ceil((f - 29 - i2.toFixed()) / 29.5) + 1;
         i.month = Math.min(m, 12);
         i2.year = i.year;
         i2.month = i.month;
@@ -207,14 +211,33 @@ if (location.href.search("radio.html") > -1) {
         i.day = f - i2.toFixed() + 1;
         return i;
     }
-    var tod = new Date();
-    var y = tod.getFullYear();
-    var m = tod.getMonth();
-    var d = tod.getDate();
-    var dow = tod.getDay();
+    let tod = new Date();
+    let y = tod.getFullYear();
+    let m = tod.getMonth();
+    let d = tod.getDate();
+    let dow = tod.getDay();
     m++;
     fixd = gregToFixed(y, m, d);
-    var h = new Hijri(1421, 11, 28);
+    let h = new Hijri(1421, 11, 28);
     h = fixedToHijri(fixd);
     document.querySelector(".calender-hejry").insertAdjacentHTML("beforeend", `<span class="hjr-date">${h.toString()}</span>`);
+    /* عمل لون لخلفية الناف الاعلى على حسب ال سكرول */
+    window.onscroll = function() {
+        makeBackGround();
+    };
+
+    function makeBackGround() {
+        let top_nav = document.querySelector(".top-nav");
+        if (window.scrollY >= 80) {
+            if (localStorage.getItem("darkMode") == "true") {
+                /* الوان الوضع الليلي */
+                top_nav.style.backgroundColor = "#2a3b41";
+            } else {
+                /* الوان الوضع العادى */
+                top_nav.style.backgroundColor = "#115973";
+            }
+        } else {
+            top_nav.style.backgroundColor = "transparent";
+        }
+    }
 }
