@@ -332,6 +332,10 @@ body {
   /* لتعديل وصف الكتب */
 }
 
+.books-libs .book-self .link-book.active img.img-book {
+  background-color: #2e4148;
+}
+
 .books-libs .book-self .down-info-box .btn-di {
   background-color: #f3ecec;
   color: #2a3b41;

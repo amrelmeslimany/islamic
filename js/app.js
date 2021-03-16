@@ -250,7 +250,7 @@ if (location.href.search("books.html") > -1) {
     books.forEach(book => {
         book.addEventListener("click", function(e) {
             e.preventDefault();
-
+            let link_mark = book.parentElement.parentElement.querySelector(".link-book");
             let selector = document.querySelector(`.books-libs .book-discrption.${this.dataset.bkinfo}`),
                 gs_anm_3_st = gsap.to(`.books-libs .book-discrption.${this.dataset.bkinfo}`, {
                     duration: 1,
@@ -268,10 +268,17 @@ if (location.href.search("books.html") > -1) {
                 ease: "slow(0.7,0.7,false)",
                 display: "none"
             });
+            books.forEach(ele_bk => {
+                ele_bk.parentElement.parentElement.querySelectorAll(".link-book").forEach(ln_bk => {
+                    ln_bk.classList.remove("active");
+                });
+            });
+
+            link_mark.classList.toggle("active");
+
             book_dsc_info.forEach(ds => {
                 ds.classList.remove("active");
                 ds.removeAttribute("style");
-
             });
             if (selector.classList.contains("active")) {
                 selector.classList.remove("active");
@@ -366,6 +373,7 @@ if (location.href.search("books.html") > -1) {
             most_reading_list.classList.add("active");
         }
     });
+
 }
 
 

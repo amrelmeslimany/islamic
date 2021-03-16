@@ -846,6 +846,12 @@ a {
   height: 100px;
 }
 
+.books-libs .book-self .link-book.active img.img-book {
+  background-color: #10526a;
+  -webkit-transition: 0.5s cubic-bezier(0, 1.95, 0.66, 0.16);
+  transition: 0.5s cubic-bezier(0, 1.95, 0.66, 0.16);
+}
+
 .books-libs .book-self .down-info-box {
   height: 20%;
   position: relative;
@@ -1031,7 +1037,7 @@ a {
   width: 100%;
   position: -webkit-sticky;
   position: sticky;
-  bottom: 43px;
+  bottom: 42px;
   left: 0;
 }
 
