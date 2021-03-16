@@ -45,18 +45,23 @@ a {
 
 /* الهيدر سيكون ثابت فى جميع الصفحات */
 /* تعديل الراس او بداية الصفحه (اللوجو واسم الصفحة) */
+/* تعديل مقاس اللوجو */
+.logo-img-h {
+  max-width: 100px;
+  -webkit-filter: drop-shadow(0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27));
+          filter: drop-shadow(0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27));
+}
+
+.dropdown-playlist .logo-img-h {
+  margin-top: 3rem;
+}
+
+/* هيدر */
 .header {
   background-color: #115973;
   padding: 1rem 0;
   text-align: center;
-  /* تعديل مقاس اللوجو */
   /* تعديل اسم الصفحة */
-}
-
-.header .logo-img-h {
-  max-width: 100px;
-  -webkit-filter: drop-shadow(0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27));
-          filter: drop-shadow(0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27));
 }
 
 .header .page-name {
@@ -821,7 +826,7 @@ a {
   position: relative;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 0.1rem;
+  margin-bottom: -0.3rem;
   width: 70%;
   border-radius: 5px;
   overflow: hidden;
@@ -838,17 +843,14 @@ a {
   /* اذا تحتاج الصورة بالحجم الكامل ولكن ليست بالمقاسات الطبيعيه احذف هذة الخاصية */
   -o-object-fit: cover;
      object-fit: cover;
-  height: 80px;
+  height: 100px;
 }
 
 .books-libs .book-self .down-info-box {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  height: 40%;
-  background-color: #115973;
+  height: 20%;
+  position: relative;
+  bottom: 45px;
+  padding: 0.4rem 0.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -857,43 +859,23 @@ a {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-transform: translateY(120%);
-          transform: translateY(120%);
-  -webkit-transition: 0.5s cubic-bezier(0.8, -0.5, 0.2, 1.4);
-  transition: 0.5s cubic-bezier(0.8, -0.5, 0.2, 1.4);
 }
 
 .books-libs .book-self .down-info-box .btn-di {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
   text-align: center;
   background-color: #f1eddc;
   border-radius: 5px;
   color: #115973;
-  font-size: 0.7rem;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition: 0.5s cubic-bezier(0, 1.16, 0.72, 0.95);
-  transition: 0.5s cubic-bezier(0, 1.16, 0.72, 0.95);
-  -webkit-transition-delay: 0.6s;
-          transition-delay: 0.6s;
-}
-
-.books-libs .book-self:hover .down-info-box {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-.books-libs .book-self:hover .btn-di {
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  font-size: 0.6rem;
 }
 
 .books-libs .book-stand {
   display: block;
   width: 90%;
   height: 0.7rem;
-  margin: 0 auto 1.2rem;
+  margin: -2.4rem auto 1.2rem;
   background-color: #115973;
   border-radius: 5px;
   -webkit-box-shadow: 0px 10px 10px rgba(16, 82, 106, 0.33);
@@ -912,6 +894,7 @@ a {
           transform: scaleY(0);
   height: 0;
   display: none;
+  overflow: hidden;
 }
 
 .books-libs .book-discrption .close-btn-inf {

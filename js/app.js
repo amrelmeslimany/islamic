@@ -237,8 +237,9 @@ if (location.href.search("radio.html") > -1) {
 // 3- صفحة المجلات ============================================
 if (location.href.search("books.html") > -1) {
     /* Color The Navbar */
+    makeBackGround();
     window.onscroll = () => {
-        makeBackGround()
+        makeBackGround();
     };
     /* Right Nav FN */
     rightNavFN();
@@ -290,12 +291,14 @@ if (location.href.search("books.html") > -1) {
             height: 0,
             paused: true,
             ease: "slow(0.7,0.7,false)",
-            display: "none"
+            display: "none",
+
         });
 
         close.addEventListener("click", () => {
             gs_anm_3_end.play();
             close.parentElement.classList.remove("active");
+            close.parentElement.removeAttribute("style");
         });
     });
     /* Lazing Loaiding Img */
@@ -363,9 +366,6 @@ if (location.href.search("books.html") > -1) {
             most_reading_list.classList.add("active");
         }
     });
-
-
-
 }
 
 
