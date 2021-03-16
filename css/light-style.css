@@ -6,6 +6,10 @@
 }
 
 /* تعديل الجسم الخاص بالموقع */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -27,6 +31,11 @@ h4,
 h3 {
   margin-top: 0rem;
   margin-bottom: 0rem;
+}
+
+ul {
+  list-style: none;
+  padding-right: 0;
 }
 
 /* تعديل اللينكات فى كل الصفحات */
@@ -242,7 +251,7 @@ a {
   margin-bottom: 0;
 }
 
-/* القادم سيكون فى الصفحة الرئيسيه فقط */
+/* 1) =====================  القادم سيكون فى الصفحة الرئيسيه فقط */
 /* تعديل الصندوق الذى يحتوى على زرار شارك وزار اتصل بنا */
 .main-btns {
   background-color: #f1eddc;
@@ -406,7 +415,7 @@ a {
   font-family: "Cairo";
 }
 
-/* القادم سيكون فى صفحة الاذاعه فقط */
+/* 2) ========================== القادم سيكون فى صفحة الاذاعه فقط */
 /* لتعديل الناف بار الذى فى الاعلي */
 .top-nav {
   position: fixed;
@@ -571,6 +580,8 @@ a {
 
 .app-radio .controlls-radio .players .pl-btn i {
   font-size: 1.1rem;
+  text-align: center;
+  display: block;
 }
 
 .app-radio .controlls-radio .settings-additions {
@@ -789,6 +800,274 @@ a {
 
 .write-note textarea:focus::placeholder {
   opacity: 0;
+}
+
+/* 3 ) ============================== لتعديل صفحة المجلات او الكتب */
+/* تعديل الكتب */
+.books-libs {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  /*  تعديل الخلفيه الخاصة بالصفحة */
+  background-image: url("../img/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* تعديلات الكتاب والصصورة واللينك */
+  /* تعديل المسند للكتاب */
+  /* لتعديل وصف الكتب */
+}
+
+.books-libs .book-self {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0.1rem;
+  width: 70%;
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.books-libs .book-self .link-book {
+  overflow: hidden;
+}
+
+.books-libs .book-self .link-book img.img-book {
+  width: 100%;
+  /* اذا تحتاج الصورة بالحجم الكامل ولكن ليست بالمقاسات الطبيعيه احذف هذة الخاصية */
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 80px;
+}
+
+.books-libs .book-self .down-info-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  height: 40%;
+  background-color: #115973;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-transform: translateY(120%);
+          transform: translateY(120%);
+  -webkit-transition: 0.5s cubic-bezier(0.8, -0.5, 0.2, 1.4);
+  transition: 0.5s cubic-bezier(0.8, -0.5, 0.2, 1.4);
+}
+
+.books-libs .book-self .down-info-box .btn-di {
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  background-color: #f1eddc;
+  border-radius: 5px;
+  color: #115973;
+  font-size: 0.7rem;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 0.5s cubic-bezier(0, 1.16, 0.72, 0.95);
+  transition: 0.5s cubic-bezier(0, 1.16, 0.72, 0.95);
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+.books-libs .book-self:hover .down-info-box {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.books-libs .book-self:hover .btn-di {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.books-libs .book-stand {
+  display: block;
+  width: 90%;
+  height: 0.7rem;
+  margin: 0 auto 1.2rem;
+  background-color: #115973;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 10px 10px rgba(16, 82, 106, 0.33);
+          box-shadow: 0px 10px 10px rgba(16, 82, 106, 0.33);
+}
+
+.books-libs .book-discrption {
+  background-color: #115973;
+  -webkit-box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
+  padding: 0.4rem;
+  border-radius: 0.2rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  height: 0;
+  display: none;
+}
+
+.books-libs .book-discrption .close-btn-inf {
+  text-align: center;
+}
+
+.books-libs .book-discrption .close-btn-inf i {
+  color: #f1eddc;
+  font-size: 1.2rem;
+}
+
+.books-libs .book-discrption .book-name,
+.books-libs .book-discrption span,
+.books-libs .book-discrption p,
+.books-libs .book-discrption a {
+  color: #f1eddc;
+}
+
+.books-libs .book-discrption .book-name strong,
+.books-libs .book-discrption span strong,
+.books-libs .book-discrption p strong,
+.books-libs .book-discrption a strong {
+  font-size: 0.8rem;
+}
+
+.books-libs .book-discrption .book-name {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.books-libs .book-discrption span {
+  display: block;
+}
+
+.books-libs .book-discrption a {
+  text-decoration: underline;
+}
+
+.books-libs .book-discrption .links-bk {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.books-libs .book-discrption .links-bk .d-book {
+  float: left;
+}
+
+/*  تعديل قائمه الفهرس */
+.alfahrs-list {
+  background-color: #10526a;
+  position: fixed;
+  bottom: 43px;
+  left: 0;
+  height: 0px;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: 10px 10px 0 0;
+  overflow-y: auto;
+}
+
+.alfahrs-list .title {
+  color: #f1eddc;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.alfahrs-list .fhrs-item {
+  display: block;
+  background-color: #f1eddc;
+  color: #10526a;
+  border-radius: 0.2rem;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.alfahrs-list .fhrs-item:last-child {
+  margin-bottom: 0;
+}
+
+/* تعديل الكتب الاكثر قراءة */
+.most-reading-list {
+  background-color: #10526a;
+  position: fixed;
+  bottom: 43px;
+  left: 0;
+  height: 0px;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: 10px 10px 0 0;
+  overflow-y: auto;
+}
+
+.most-reading-list .title {
+  color: #f1eddc;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.most-reading-list .most-item {
+  background-color: #f1eddc;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 0.4rem;
+}
+
+.most-reading-list .most-item img {
+  height: 100%;
+  width: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.most-reading-list .most-item .segment {
+  padding: 0.2rem 0.4rem;
+}
+
+.most-reading-list .most-item .segment .bk-name {
+  color: #10526a;
+  overflow: hidden;
+}
+
+.most-reading-list .most-item .segment .bk-name .read-v {
+  float: left;
+  border-right: 1px solid rgba(16, 82, 106, 0.2);
+  padding-right: 5px;
+}
+
+/* تعديل اخترنا هذا الاسبوع واطلب عنوان */
+.footer-two {
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 43px;
+  left: 0;
+}
+
+.footer-two .catch-them {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer-two .catch-them a {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #f1eddc;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  background-color: #115973;
+  text-align: center;
+  font-size: 0.8rem;
 }
 
 /* انيميشن للزرار */

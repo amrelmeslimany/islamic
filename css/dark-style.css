@@ -321,3 +321,86 @@ body {
 .write-note textarea::placeholder {
   color: rgba(243, 236, 236, 0.5);
 }
+
+/* 3 ) ============================== لتعديل صفحة المجلات او الكتب */
+/* تعديل الكتب */
+.books-libs {
+  background: none;
+  background-color: #223035;
+  /* تعديلات الكتاب والصصورة واللينك */
+  /* تعديل المسند للكتاب */
+  /* لتعديل وصف الكتب */
+}
+
+.books-libs .book-self .down-info-box {
+  background-color: #2a3b41;
+}
+
+.books-libs .book-self .down-info-box .btn-di {
+  background-color: #f3ecec;
+  color: #2a3b41;
+}
+
+.books-libs .book-stand {
+  background-color: #2a3b41;
+  -webkit-box-shadow: 0px 10px 10px rgba(34, 48, 53, 0.33);
+          box-shadow: 0px 10px 10px rgba(34, 48, 53, 0.33);
+}
+
+.books-libs .book-discrption {
+  background-color: #2a3b41;
+  -webkit-box-shadow: 0px 0.2rem 0.2rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.2rem rgba(0, 0, 0, 0.27);
+}
+
+.books-libs .book-discrption .close-btn-inf i {
+  color: #f3ecec;
+}
+
+.books-libs .book-discrption .book-name,
+.books-libs .book-discrption span,
+.books-libs .book-discrption p,
+.books-libs .book-discrption a {
+  color: #f3ecec;
+}
+
+/*  تعديل قائمه الفهرس */
+.alfahrs-list {
+  background-color: #1e2a2f;
+}
+
+.alfahrs-list .title {
+  color: #f3ecec;
+}
+
+.alfahrs-list .fhrs-item {
+  background-color: #f3ecec;
+  color: #223035;
+}
+
+/* تعديل الكتب الاكثر قراءة */
+.most-reading-list {
+  background-color: #1e2a2f;
+}
+
+.most-reading-list .title {
+  color: #f3ecec;
+}
+
+.most-reading-list .most-item {
+  background-color: #f3ecec;
+}
+
+.most-reading-list .most-item .segment .bk-name {
+  color: #223035;
+}
+
+.most-reading-list .most-item .segment .bk-name .read-v {
+  border-right: 1px solid rgba(34, 48, 53, 0.2);
+}
+
+/* تعديل اخترنا هذا الاسبوع واطلب عنوان */
+.footer-two .catch-them a {
+  color: #f3ecec;
+  background-color: #2a3b41;
+}

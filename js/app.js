@@ -109,24 +109,8 @@ if (location.href.search("radio.html") > -1) {
         `);
     }
     /* اظهار قائمة الاذاعات */
-    const btn_playlist = document.querySelector(".top-nav .playlist i"),
-        playlist_close_btn = document.querySelector(".dropdown-playlist .playlist-close"),
-        gsap_anm_2 = gsap.to(".dropdown-playlist", {
-            duration: 1,
-            height: "100%",
-            paused: true,
-            ease: "slow(0.7,0.7,false)"
-        });
-    if (btn_playlist && playlist_close_btn) {
-        btn_playlist.addEventListener("click", (e) => {
-            e.preventDefault();
-            gsap_anm_2.play();
-        });
-        playlist_close_btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            gsap_anm_2.reverse();
-        });
-    }
+    /* Right Nav FN */
+    rightNavFN();
     /* اضافة تنشيط الى الاذاعة الذى تعمل */
     const all_sounds = document.querySelectorAll(".dropdown-playlist .list-sounds .sound-item");
     if (all_sounds) {
@@ -248,18 +232,180 @@ if (location.href.search("radio.html") > -1) {
         makeBackGround();
     };
 
-    function makeBackGround() {
-        let top_nav = document.querySelector(".top-nav");
-        if (window.scrollY >= 80) {
-            if (localStorage.getItem("darkMode") == "true") {
-                /* الوان الوضع الليلي */
-                top_nav.style.backgroundColor = "#2a3b41";
+}
+
+// 3- صفحة المجلات ============================================
+if (location.href.search("books.html") > -1) {
+    /* Color The Navbar */
+    window.onscroll = () => {
+        makeBackGround()
+    };
+    /* Right Nav FN */
+    rightNavFN();
+    /* Displaying Discription For Book */
+    const books = document.querySelectorAll(".books-libs .book-self .btn-di.info"),
+        book_dsc_info = document.querySelectorAll(".books-libs .book-discrption");
+
+    books.forEach(book => {
+        book.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            let selector = document.querySelector(`.books-libs .book-discrption.${this.dataset.bkinfo}`),
+                gs_anm_3_st = gsap.to(`.books-libs .book-discrption.${this.dataset.bkinfo}`, {
+                    duration: 1,
+                    scaleY: 1,
+                    height: "auto",
+                    paused: true,
+                    ease: "slow(0.7,0.7,false)",
+                    display: "block"
+                });
+            gs_anm_3_end = gsap.to(`.books-libs .book-discrption.${this.dataset.bkinfo}`, {
+                duration: 1,
+                scaleY: 0,
+                height: 0,
+                paused: true,
+                ease: "slow(0.7,0.7,false)",
+                display: "none"
+            });
+            book_dsc_info.forEach(ds => {
+                ds.classList.remove("active");
+                ds.removeAttribute("style");
+
+            });
+            if (selector.classList.contains("active")) {
+                selector.classList.remove("active");
+                gs_anm_3_end.play();
             } else {
-                /* الوان الوضع العادى */
-                top_nav.style.backgroundColor = "#115973";
+                selector.classList.add("active");
+                window.scrollTo(0, 120);
+                gs_anm_3_st.play();
             }
-        } else {
-            top_nav.style.backgroundColor = "transparent";
+        });
+    });
+    document.querySelectorAll(".book-discrption .close-btn-inf").forEach(close => {
+
+        let gs_anm_3_end = gsap.to(`.books-libs .book-discrption`, {
+            duration: 1,
+            scaleY: 0,
+            height: 0,
+            paused: true,
+            ease: "slow(0.7,0.7,false)",
+            display: "none"
+        });
+
+        close.addEventListener("click", () => {
+            gs_anm_3_end.play();
+            close.parentElement.classList.remove("active");
+        });
+    });
+    /* Lazing Loaiding Img */
+    echo.init({
+        offset: -80,
+        throttle: 500
+    });
+    /* Animtion Img When Loading OF Book */
+    document.querySelectorAll(".book-self").forEach(bk => {
+        gsap.to(`.${bk.classList.value}`, {
+            duration: 1,
+            scale: 1,
+            stagger: 0.3,
+            delay: 1
+        });
+    });
+    /* Open Fahrs Function */
+    const fahrs_btn = document.querySelector(".bottom-nav .link-nav.fahrs-links"),
+        most_reading_btn = document.querySelector(".bottom-nav .link-nav.most-reading"),
+        fahrs_list = document.querySelector(".alfahrs-list"),
+        most_reading_list = document.querySelector(".most-reading-list");
+    let gs_anm_4 = gsap.to(`.alfahrs-list`, {
+            duration: 1,
+            height: 200,
+            paddingTop: "0.4rem",
+            paddingBottom: "0.4rem",
+            paused: true,
+            ease: "slow(0.7,0.7,false)"
+        }),
+        gs_anm_5 = gsap.to(`.most-reading-list`, {
+            duration: 1,
+            height: 200,
+            paddingTop: "0.4rem",
+            paddingBottom: "0.4rem",
+            paused: true,
+            ease: "slow(0.7,0.7,false)"
+        });
+    fahrs_btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (most_reading_list.classList.contains("active")) {
+            gs_anm_5.reverse();
+            most_reading_list.classList.remove("active");
         }
+        if (fahrs_list.classList.contains("active")) {
+            gs_anm_4.reverse();
+            fahrs_list.classList.remove("active");
+
+        } else {
+            gs_anm_4.play();
+            fahrs_list.classList.add("active");
+        }
+    });
+    most_reading_btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (fahrs_list.classList.contains("active")) {
+            gs_anm_4.reverse();
+            fahrs_list.classList.remove("active");
+        }
+        if (most_reading_list.classList.contains("active")) {
+            gs_anm_5.reverse();
+            most_reading_list.classList.remove("active");
+
+        } else {
+            gs_anm_5.play();
+            most_reading_list.classList.add("active");
+        }
+    });
+
+
+
+}
+
+
+
+// Basics
+/* Coloring The top Navbar */
+function makeBackGround() {
+    let top_nav = document.querySelector(".top-nav");
+    if (window.scrollY >= 80) {
+        if (localStorage.getItem("darkMode") == "true") {
+            /* الوان الوضع الليلي */
+            top_nav.style.backgroundColor = "#2a3b41";
+        } else {
+            /* الوان الوضع العادى */
+            top_nav.style.backgroundColor = "#115973";
+        }
+    } else {
+        top_nav.style.backgroundColor = "transparent";
+    }
+}
+
+/* Right Nav Function */
+function rightNavFN() {
+    /* اظهار قائمة الاذاعات */
+    const btn_playlist = document.querySelector(".top-nav .playlist i"),
+        playlist_close_btn = document.querySelector(".dropdown-playlist .playlist-close"),
+        gsap_anm_2 = gsap.to(".dropdown-playlist", {
+            duration: 1,
+            height: "100%",
+            paused: true,
+            ease: "slow(0.7,0.7,false)"
+        });
+    if (btn_playlist && playlist_close_btn) {
+        btn_playlist.addEventListener("click", (e) => {
+            e.preventDefault();
+            gsap_anm_2.play();
+        });
+        playlist_close_btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            gsap_anm_2.reverse();
+        });
     }
 }
