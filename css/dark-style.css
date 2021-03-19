@@ -15,10 +15,19 @@ body {
 .header {
   background-color: #2a3b41;
   /* تعديل اسم الصفحة */
+  /* السيرش الموجود فى صفحة المقالات فقط */
 }
 
 .header .page-name {
   color: #f3ecec;
+}
+
+.header .search-bx input:focus {
+  border-color: #2c3e45 !important;
+}
+
+.header .search-bx i.circular.icon {
+  color: #2a3b41;
 }
 
 /* هذا الناف ايضا سيكون ثابت فى جميع الصفحات */
@@ -360,9 +369,40 @@ body {
   color: #f3ecec;
 }
 
+/* 6) صفحة المقالات */
+.articles-section {
+  background: none;
+  background-color: #223035;
+  /* صندوق المقاله */
+}
+
+.articles-section .article-bx {
+  background-color: #223035;
+  -webkit-box-shadow: 0px 0.2rem 0.2rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.2rem rgba(0, 0, 0, 0.27);
+}
+
+.articles-section .article-bx .star-rating span {
+  color: rgba(243, 236, 236, 0.3);
+}
+
+.articles-section .article-bx .star-rating span.active,
+.articles-section .article-bx .star-rating span.active ~ span {
+  color: #f3ecec;
+}
+
+.articles-section .article-bx .article-title a {
+  color: #f3ecec;
+}
+
+.articles-section .article-bx .share-i i {
+  color: #f3ecec;
+}
+
 /*  تعديل قائمه الفهرس */
 .alfahrs-list {
   background-color: #1e2a2f;
+  /* صفحة المقالات */
 }
 
 .alfahrs-list .title {
@@ -372,6 +412,22 @@ body {
 .alfahrs-list .fhrs-item {
   background-color: #f3ecec;
   color: #223035;
+}
+
+.alfahrs-list .ol-main-pr .main-li {
+  background-color: #f3ecec;
+}
+
+.alfahrs-list .ol-main-pr .main-li .main-header {
+  color: #223035;
+}
+
+.alfahrs-list .ol-main-pr .main-li .branchs .br-ln {
+  color: #223035;
+}
+
+.alfahrs-list .ol-main-pr .main-li .branchs .br-ln::before {
+  background-color: #223035;
 }
 
 /* تعديل الكتب الاكثر قراءة */

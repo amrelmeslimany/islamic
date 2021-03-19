@@ -324,7 +324,6 @@ if (location.href.search("books.html") > -1) {
     });
     /* Open Fahrs Function And Most Reading */
     fahrsAndBest();
-
 }
 // 4- صفحة المقالات ============================================
 if (location.href.search("articles.html") > -1) {
@@ -337,22 +336,88 @@ if (location.href.search("articles.html") > -1) {
     rightNavFN();
     /* Make Rating FN */
     const all_ratings = document.querySelectorAll(".articles-section .star-rating");
-    all_ratings.forEach(function(rating) {
+    let rating_array = [];
+    all_ratings.forEach(function(rating, pr_id) {
         rating.querySelectorAll("span").forEach(function(star) {
             star.addEventListener("click", function() {
-                [...rating.children].forEach(r_s => {
-                    if (r_s.classList.contains("active")) {
-                        r_s.classList.remove("active");
-                        r_s.removeAttribute("class");
+                if (confirm(`Sure ? (Stars = ${this.dataset.rating})`)) {
+                    [...rating.children].forEach(r_s => {
+                        if (r_s.classList.contains("active")) {
+                            r_s.classList.remove("active");
+                            r_s.removeAttribute("class");
+                        }
+                    });
+                    rating_array.push({
+                        id: pr_id,
+                        stN: this.dataset.rating
+                    });
+                    this.classList.add("active");
+                    rating.style.pointerEvents = "none";
+                    // Get the existing data
+                    let get_rating_local = localStorage.getItem("rating");
+                    if (get_rating_local == null) {
+                        localStorage.setItem("rating", JSON.stringify(rating_array));
+                    } else {
+                        let strg_data = JSON.parse(localStorage.getItem("rating"));
+                        strg_data.push({
+                            id: pr_id,
+                            stN: this.dataset.rating
+                        });
+                        localStorage.setItem("rating", JSON.stringify(strg_data));
                     }
-                });
-                this.classList.add("active");
-                console.log(this.dataset.rating);
+                }
+                // Save Rating In Browser
             });
         });
     });
+    /* localStorage.setItem("rating", JSON.stringify(rating_array)); */
+    /*  if rating localstorage exists */
+    if (localStorage.getItem("rating") != null) {
+        let strg_data = JSON.parse(localStorage.getItem("rating"));
+        all_ratings.forEach(function(rt_element, pr_id) {
+            strg_data.forEach(sr_d => {
+                if (sr_d.id == pr_id) {
+                    rt_element.querySelectorAll("span").forEach(star_s => {
+                        if (star_s.dataset.rating == sr_d.stN) {
+                            star_s.classList.add("active");
+                            rt_element.style.pointerEvents = "none";
+                        }
+                    });
+                }
+            });
+        });
+    }
     /* Open Most Reading Function And Tree */
     fahrsAndBest();
+    /* Slice The Header of Articles */
+    const all_headers = document.querySelectorAll(".articles-section .article-title a");
+    all_headers.forEach(head_element => {
+        // ------
+        let header_array = head_element.innerText.split(" ");
+        if (header_array.length > 3) {
+            head_element.innerText = header_array.slice(0, 2).join(" ") + "...";
+
+        } else if (head_element.innerText.length > 14) {
+            head_element.innerText = head_element.innerText.slice(0, 14) + "...";
+        }
+    });
+    /* Make Searching In Articles */
+    const ancient_articles = document.querySelectorAll(".articles-section .article-bx");
+    let search_bx = document.querySelector(".header .search-bx"),
+        sr_input = search_bx.querySelector("input");
+    search_bx.querySelector(".search").addEventListener("click", function(e) {
+        e.preventDefault();
+        // ----
+
+        ancient_articles.forEach(anc_artcle => {
+            let anc_titles = anc_artcle.querySelector(".article-title a").innerText;
+            if (anc_titles.indexOf(sr_input.value) > -1) {
+                anc_artcle.parentElement.style.display = "";
+            } else {
+                anc_artcle.parentElement.style.display = "none";
+            }
+        });
+    });
 }
 
 

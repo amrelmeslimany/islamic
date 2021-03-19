@@ -82,11 +82,11 @@ a {
   font-size: 1.1rem;
 }
 
-.header .search input:focus {
+.header .search-bx input:focus {
   border-color: #136380 !important;
 }
 
-.header .search i.circular.icon {
+.header .search-bx i.circular.icon {
   color: #10526a;
   top: 0.12em !important;
   right: .1em !important;
