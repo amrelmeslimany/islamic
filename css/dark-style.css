@@ -332,10 +332,6 @@ body {
   /* لتعديل وصف الكتب */
 }
 
-.books-libs .book-self .link-book.active img.img-book {
-  background-color: #2e4148;
-}
-
 .books-libs .book-self .down-info-box .btn-di {
   background-color: #f3ecec;
   color: #2a3b41;
@@ -343,8 +339,8 @@ body {
 
 .books-libs .book-stand {
   background-color: #2a3b41;
-  -webkit-box-shadow: 0px 10px 10px rgba(34, 48, 53, 0.33);
-          box-shadow: 0px 10px 10px rgba(34, 48, 53, 0.33);
+  -webkit-box-shadow: 0px 10px 10px rgba(28, 28, 28, 0.33);
+          box-shadow: 0px 10px 10px rgba(28, 28, 28, 0.33);
 }
 
 .books-libs .book-discrption {

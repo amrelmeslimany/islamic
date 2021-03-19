@@ -1,11 +1,21 @@
 @charset "UTF-8";
-/* استدعاء خط للارقام لوضعها فى الوقت */
+/**
+ * خريطه هذا الملف
+ * 1) (Body , HTML , p , h1.....) اساسيات للموقع  
+ * 2) (قائمة التوقيت واللينكات وهكذا) تعديل اشياء ستكون ثابته فى جميع الصفحات 
+ * 3) الصفحة الرئيسية
+ * 4) صفحة الاذاعه
+ * 5) صفحة المجلاات
+ * 6) صفحة المقالات
+ * 7) انيميشن لجميع الصفحات
+ */
+/* 1) استدعاء خط للارقام لوضعها فى الوقت */
 @font-face {
   font-family: fontNumber;
   src: url(font-number.ttf);
 }
 
-/* تعديل الجسم الخاص بالموقع */
+/* -- 1) تعديل الجسم الخاص بالموقع */
 html {
   scroll-behavior: smooth;
 }
@@ -20,12 +30,13 @@ body {
   font-family: 'Cairo', sans-serif;
 }
 
-/* تعديل البارجرافات والعناوين فى اى صفحة */
+/* -- 1) تعديل البارجرافات والعناوين فى اى صفحة */
 p {
   line-height: 1.3;
 }
 
 p,
+h6,
 h5,
 h4,
 h3 {
@@ -38,30 +49,32 @@ ul {
   padding-right: 0;
 }
 
-/* تعديل اللينكات فى كل الصفحات */
+/* -- 1) تعديل اللينكات فى كل الصفحات */
 a {
   text-decoration: none;
 }
 
-/* الهيدر سيكون ثابت فى جميع الصفحات */
-/* تعديل الراس او بداية الصفحه (اللوجو واسم الصفحة) */
-/* تعديل مقاس اللوجو */
+/* 2) الهيدر سيكون ثابت فى جميع الصفحات */
+/* -- 2) تعديل الراس او بداية الصفحه (اللوجو واسم الصفحة) */
+/* -- 2) تعديل مقاس اللوجو */
 .logo-img-h {
   max-width: 100px;
   -webkit-filter: drop-shadow(0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27));
           filter: drop-shadow(0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27));
 }
 
+/* -- 2) القائمة المنسدله */
 .dropdown-playlist .logo-img-h {
   margin-top: 3rem;
 }
 
-/* هيدر */
+/* -- 2) هيدر */
 .header {
   background-color: #115973;
   padding: 1rem 0;
   text-align: center;
   /* تعديل اسم الصفحة */
+  /* السيرش الموجود فى صفحة المقالات فقط */
 }
 
 .header .page-name {
@@ -69,8 +82,18 @@ a {
   font-size: 1.1rem;
 }
 
-/* هذا الناف ايضا سيكون ثابت فى جميع الصفحات */
-/* الناف بار الاسفل */
+.header .search input:focus {
+  border-color: #136380 !important;
+}
+
+.header .search i.circular.icon {
+  color: #10526a;
+  top: 0.12em !important;
+  right: .1em !important;
+}
+
+/* -- 2) هذا الناف ايضا سيكون ثابت فى جميع الصفحات */
+/* -- 2) الناف بار الاسفل */
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -160,8 +183,8 @@ a {
   background-color: #0d4154;
 }
 
-/* هذه القائمه ايضا ستكون ثابتة فى جميع الصفحات */
-/* القائمة المنسدله */
+/* -- 2) هذه القائمه ايضا ستكون ثابتة فى جميع الصفحات */
+/* -- 2)  القائمة المنسدله  التى تحتوى على التوقيت*/
 .dropdown-list-clalender {
   overflow-x: hidden;
   overflow-y: auto;
@@ -256,8 +279,8 @@ a {
   margin-bottom: 0;
 }
 
-/* 1) =====================  القادم سيكون فى الصفحة الرئيسيه فقط */
-/* تعديل الصندوق الذى يحتوى على زرار شارك وزار اتصل بنا */
+/* 3) =====================  القادم سيكون فى الصفحة الرئيسيه فقط */
+/* ----3 تعديل الصندوق الذى يحتوى على زرار شارك وزار اتصل بنا */
 .main-btns {
   background-color: #f1eddc;
   display: -webkit-box;
@@ -420,7 +443,7 @@ a {
   font-family: "Cairo";
 }
 
-/* 2) ========================== القادم سيكون فى صفحة الاذاعه فقط */
+/* 4) ========================== القادم سيكون فى صفحة الاذاعه فقط */
 /* لتعديل الناف بار الذى فى الاعلي */
 .top-nav {
   position: fixed;
@@ -807,7 +830,7 @@ a {
   opacity: 0;
 }
 
-/* 3 ) ============================== لتعديل صفحة المجلات او الكتب */
+/* 5) ============================== لتعديل صفحة المجلات او الكتب */
 /* تعديل الكتب */
 .books-libs {
   padding-top: 0.8rem;
@@ -827,7 +850,7 @@ a {
   margin-right: auto;
   margin-left: auto;
   margin-bottom: -0.3rem;
-  width: 70%;
+  width: 52%;
   border-radius: 5px;
   overflow: hidden;
   -webkit-transform: scale(0);
@@ -844,12 +867,29 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100px;
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
-.books-libs .book-self .link-book.active img.img-book {
-  background-color: #10526a;
-  -webkit-transition: 0.5s cubic-bezier(0, 1.95, 0.66, 0.16);
-  transition: 0.5s cubic-bezier(0, 1.95, 0.66, 0.16);
+.books-libs .book-self .link-book.active::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background-color: #f1eddc;
+  color: #10526a;
+  padding: 0.2rem;
+}
+
+.books-libs .book-self .link-book.active .img-book {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
 }
 
 .books-libs .book-self .down-info-box {
@@ -879,7 +919,7 @@ a {
 
 .books-libs .book-stand {
   display: block;
-  width: 90%;
+  width: 85%;
   height: 0.7rem;
   margin: -2.4rem auto 1.2rem;
   background-color: #115973;
@@ -949,7 +989,63 @@ a {
   float: left;
 }
 
-/*  تعديل قائمه الفهرس */
+/* 6) صفحة المقالات */
+.articles-section {
+  background-image: url("../img/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* صندوق المقاله */
+}
+
+.articles-section .article-bx {
+  width: 96%;
+  border-radius: 5px;
+  background-color: #10526a;
+  -webkit-box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
+  padding: 0.6rem 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.articles-section .article-bx .star-rating {
+  overflow: hidden;
+  position: relative;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.articles-section .article-bx .star-rating span {
+  color: rgba(241, 237, 220, 0.3);
+  font-size: 1.1rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.articles-section .article-bx .star-rating span.active,
+.articles-section .article-bx .star-rating span.active ~ span {
+  color: #f1eddc;
+}
+
+.articles-section .article-bx .article-title {
+  margin: 0.5rem 0;
+}
+
+.articles-section .article-bx .article-title a {
+  color: #f1eddc;
+}
+
+.articles-section .article-bx .share-i {
+  line-height: 1;
+}
+
+.articles-section .article-bx .share-i i {
+  font-size: 0.9rem;
+  color: #f1eddc;
+}
+
+/* اشياء ثابته ======================== */
+/* ثابته فى بعض الصفحات | تعديل قائمه الفهرس  */
 .alfahrs-list {
   background-color: #10526a;
   position: fixed;
@@ -961,6 +1057,8 @@ a {
   padding-bottom: 0;
   border-radius: 10px 10px 0 0;
   overflow-y: auto;
+  /* صفحة المجلات */
+  /* صفحة المقالات */
 }
 
 .alfahrs-list .title {
@@ -983,7 +1081,41 @@ a {
   margin-bottom: 0;
 }
 
-/* تعديل الكتب الاكثر قراءة */
+.alfahrs-list .ol-main-pr .main-li {
+  background-color: #f1eddc;
+  padding: 0 0.5rem 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.alfahrs-list .ol-main-pr .main-li:last-child {
+  margin-bottom: 0;
+}
+
+.alfahrs-list .ol-main-pr .main-li .main-header {
+  color: #10526a;
+  font-weight: 800;
+}
+
+.alfahrs-list .ol-main-pr .main-li .branchs {
+  margin-right: 1rem;
+}
+
+.alfahrs-list .ol-main-pr .main-li .branchs .br-ln {
+  color: #10526a;
+  font-weight: 600;
+}
+
+.alfahrs-list .ol-main-pr .main-li .branchs .br-ln::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: #10526a;
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+/* تعديل الكتب الاكثر قراءة | ثابتة فى بعض الصفحات*/
 .most-reading-list {
   background-color: #10526a;
   position: fixed;
@@ -1024,6 +1156,14 @@ a {
 .most-reading-list .most-item .segment .bk-name {
   color: #10526a;
   overflow: hidden;
+  /* صفحة المقالات فقط */
+}
+
+.most-reading-list .most-item .segment .bk-name .rating-numbers {
+  display: inline-block;
+  border-left: 1px solid rgba(16, 82, 106, 0.2);
+  padding-left: 5px;
+  margin-left: 2px;
 }
 
 .most-reading-list .most-item .segment .bk-name .read-v {
@@ -1032,7 +1172,7 @@ a {
   padding-right: 5px;
 }
 
-/* تعديل اخترنا هذا الاسبوع واطلب عنوان */
+/*  تعديل اخترنا هذا الاسبوع واطلب عنوان  | ثابته فى بعض الصفحات*/
 .footer-two {
   width: 100%;
   position: -webkit-sticky;
@@ -1059,7 +1199,7 @@ a {
   font-size: 0.8rem;
 }
 
-/* انيميشن للزرار */
+/* 7) انيميشن للزرار */
 .add-animation-scale {
   -webkit-animation: scale-anm 0.29s forwards;
           animation: scale-anm 0.29s forwards;

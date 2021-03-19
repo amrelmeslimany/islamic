@@ -322,7 +322,83 @@ if (location.href.search("books.html") > -1) {
             delay: 1
         });
     });
-    /* Open Fahrs Function */
+    /* Open Fahrs Function And Most Reading */
+    fahrsAndBest();
+
+}
+// 4- صفحة المقالات ============================================
+if (location.href.search("articles.html") > -1) {
+    /* Color The Navbar */
+    makeBackGround();
+    window.onscroll = () => {
+        makeBackGround();
+    };
+    /* Right Nav FN */
+    rightNavFN();
+    /* Make Rating FN */
+    const all_ratings = document.querySelectorAll(".articles-section .star-rating");
+    all_ratings.forEach(function(rating) {
+        rating.querySelectorAll("span").forEach(function(star) {
+            star.addEventListener("click", function() {
+                [...rating.children].forEach(r_s => {
+                    if (r_s.classList.contains("active")) {
+                        r_s.classList.remove("active");
+                        r_s.removeAttribute("class");
+                    }
+                });
+                this.classList.add("active");
+                console.log(this.dataset.rating);
+            });
+        });
+    });
+    /* Open Most Reading Function And Tree */
+    fahrsAndBest();
+}
+
+
+
+// Basics
+/* Coloring The top Navbar */
+function makeBackGround() {
+    let top_nav = document.querySelector(".top-nav");
+    if (window.scrollY >= 80) {
+        if (localStorage.getItem("darkMode") == "true") {
+            /* الوان الوضع الليلي */
+            top_nav.style.backgroundColor = "#2a3b41";
+        } else {
+            /* الوان الوضع العادى */
+            top_nav.style.backgroundColor = "#115973";
+        }
+    } else {
+        top_nav.style.backgroundColor = "transparent";
+    }
+}
+
+/* Right Nav Function */
+function rightNavFN() {
+    /* اظهار قائمة الاذاعات */
+    const btn_playlist = document.querySelector(".top-nav .playlist i"),
+        playlist_close_btn = document.querySelector(".dropdown-playlist .playlist-close"),
+        gsap_anm_2 = gsap.to(".dropdown-playlist", {
+            duration: 1,
+            height: "100%",
+            paused: true,
+            ease: "slow(0.7,0.7,false)"
+        });
+    if (btn_playlist && playlist_close_btn) {
+        btn_playlist.addEventListener("click", (e) => {
+            e.preventDefault();
+            gsap_anm_2.play();
+        });
+        playlist_close_btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            gsap_anm_2.reverse();
+        });
+    }
+}
+
+/* Function Two List In Bottom */
+function fahrsAndBest() {
     const fahrs_btn = document.querySelector(".bottom-nav .link-nav.fahrs-links"),
         most_reading_btn = document.querySelector(".bottom-nav .link-nav.most-reading"),
         fahrs_list = document.querySelector(".alfahrs-list"),
@@ -373,47 +449,4 @@ if (location.href.search("books.html") > -1) {
             most_reading_list.classList.add("active");
         }
     });
-
-}
-
-
-
-// Basics
-/* Coloring The top Navbar */
-function makeBackGround() {
-    let top_nav = document.querySelector(".top-nav");
-    if (window.scrollY >= 80) {
-        if (localStorage.getItem("darkMode") == "true") {
-            /* الوان الوضع الليلي */
-            top_nav.style.backgroundColor = "#2a3b41";
-        } else {
-            /* الوان الوضع العادى */
-            top_nav.style.backgroundColor = "#115973";
-        }
-    } else {
-        top_nav.style.backgroundColor = "transparent";
-    }
-}
-
-/* Right Nav Function */
-function rightNavFN() {
-    /* اظهار قائمة الاذاعات */
-    const btn_playlist = document.querySelector(".top-nav .playlist i"),
-        playlist_close_btn = document.querySelector(".dropdown-playlist .playlist-close"),
-        gsap_anm_2 = gsap.to(".dropdown-playlist", {
-            duration: 1,
-            height: "100%",
-            paused: true,
-            ease: "slow(0.7,0.7,false)"
-        });
-    if (btn_playlist && playlist_close_btn) {
-        btn_playlist.addEventListener("click", (e) => {
-            e.preventDefault();
-            gsap_anm_2.play();
-        });
-        playlist_close_btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            gsap_anm_2.reverse();
-        });
-    }
 }
