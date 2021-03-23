@@ -544,13 +544,15 @@ if (location.href.search("azkar.html") > -1) {
 
     /* Increas Size Of Font */
     let font_size = 16;
-    plus_font.addEventListener("click", () => {
+    plus_font.addEventListener("click", (c) => {
+        c.preventDefault();
         font_size += 1;
         fontSize("+");
         data_font_color_bg.fontSize = font_size;
         getAndPutLocal("fs", data_font_color_bg.fontSize);
     });
-    minus_font.addEventListener("click", () => {
+    minus_font.addEventListener("click", (c) => {
+        c.preventDefault();
         font_size -= 1;
         fontSize("-");
         data_font_color_bg.fontSize = font_size;

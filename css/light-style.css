@@ -1080,8 +1080,8 @@ a {
 }
 
 .azkars-section .az-bx {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
   overflow-y: hidden;
   -webkit-transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
   transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
@@ -1092,8 +1092,8 @@ a {
 .azkars-section .az-bx.active {
   max-height: 10000px;
   height: auto;
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
   overflow-y: hidden;
 }
 
@@ -1111,15 +1111,13 @@ a {
 }
 
 .azkars-section .az-bx .az-self {
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
   position: relative;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
   /* علامه الوقف ================= */
   /* تعديل الجزى النصي =========== */
   /* تعديل الخيارات ============= */
-}
-
-.azkars-section .az-bx .az-self:last-child {
-  margin-bottom: 0;
 }
 
 .azkars-section .az-bx .az-self .stopping-mark {
