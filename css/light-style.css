@@ -9,13 +9,13 @@
  * 6) صفحة المقالات
  * 7) انيميشن لجميع الصفحات
  */
-/* 1) استدعاء خط للارقام لوضعها فى الوقت */
+/* 1) استدعاء خط للارقام لوضعها فى الوقت  ==================*/
 @font-face {
   font-family: fontNumber;
   src: url(font-number.ttf);
 }
 
-/* -- 1) تعديل الجسم الخاص بالموقع */
+/* -- 1) تعديل الجسم الخاص بالموقع ======================= */
 html {
   scroll-behavior: smooth;
 }
@@ -26,11 +26,11 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   direction: rtl;
-  /* الخطط الخاص بالصفحة */
+  /* الخطط الخاص بالصفحة ========================*/
   font-family: 'Cairo', sans-serif;
 }
 
-/* -- 1) تعديل البارجرافات والعناوين فى اى صفحة */
+/* -- 1) تعديل البارجرافات والعناوين فى اى صفحة ============================== */
 p {
   line-height: 1.3;
 }
@@ -49,26 +49,26 @@ ul {
   padding-right: 0;
 }
 
-/* -- 1) تعديل اللينكات فى كل الصفحات */
+/* -- 1) تعديل اللينكات فى كل الصفحات ============================= */
 a {
   text-decoration: none;
 }
 
-/* 2) الهيدر سيكون ثابت فى جميع الصفحات */
-/* -- 2) تعديل الراس او بداية الصفحه (اللوجو واسم الصفحة) */
-/* -- 2) تعديل مقاس اللوجو */
+/* 2) الهيدر سيكون ثابت فى جميع الصفحات ==================== */
+/* -- 2) تعديل الراس او بداية الصفحه (اللوجو واسم الصفحة) ====================== */
+/* -- 2) تعديل مقاس اللوجو  ============================ */
 .logo-img-h {
   max-width: 100px;
   -webkit-filter: drop-shadow(0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27));
           filter: drop-shadow(0px 0.2rem 0.8rem rgba(3, 13, 17, 0.27));
 }
 
-/* -- 2) القائمة المنسدله */
+/* -- 2) القائمة المنسدله ============================= */
 .dropdown-playlist .logo-img-h {
   margin-top: 3rem;
 }
 
-/* -- 2) هيدر */
+/* ==================== -- 2) هيدر ===================== */
 .header {
   background-color: #115973;
   padding: 1rem 0;
@@ -92,8 +92,8 @@ a {
   right: .1em !important;
 }
 
-/* -- 2) هذا الناف ايضا سيكون ثابت فى جميع الصفحات */
-/* -- 2) الناف بار الاسفل */
+/* ================== -- 2) هذا الناف ايضا سيكون ثابت فى جميع الصفحات ============ */
+/* ================= -- 2) الناف بار الاسفل ===================== */
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -183,8 +183,8 @@ a {
   background-color: #0d4154;
 }
 
-/* -- 2) هذه القائمه ايضا ستكون ثابتة فى جميع الصفحات */
-/* -- 2)  القائمة المنسدله  التى تحتوى على التوقيت*/
+/* ================== -- 2) هذه القائمه ايضا ستكون ثابتة فى جميع الصفحات =================*/
+/* ================== -- 2)  القائمة المنسدله  التى تحتوى على التوقيت ==================== */
 .dropdown-list-clalender {
   overflow-x: hidden;
   overflow-y: auto;
@@ -279,8 +279,8 @@ a {
   margin-bottom: 0;
 }
 
-/* 3) =====================  القادم سيكون فى الصفحة الرئيسيه فقط */
-/* ----3 تعديل الصندوق الذى يحتوى على زرار شارك وزار اتصل بنا */
+/* 3) =====================  القادم سيكون فى الصفحة الرئيسيه فقط ================*/
+/* ============ ---- 3 تعديل الصندوق الذى يحتوى على زرار شارك وزار اتصل بنا ============ */
 .main-btns {
   background-color: #f1eddc;
   display: -webkit-box;
@@ -308,7 +308,7 @@ a {
   color: #f1eddc;
 }
 
-/* السكشن الخاص بالازرار */
+/* ====================== السكشن الخاص بالازرار ==================*/
 .buttons-pages {
   padding-top: 1rem;
   /*  تعديل الخلفيه الخاصة بالصفحة */
@@ -317,7 +317,7 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   /* لا تعدل هنا (هذا يعدل المسافات الجانبيه بين الازرار) */
-  /* تعديل الازرار  */
+  /* =========== تعديل الازرار  ============== */
 }
 
 .buttons-pages .col-6 {
@@ -362,7 +362,7 @@ a {
   color: #f1eddc;
 }
 
-/* الفوتر الاول */
+/* =============== الفوتر الاول  =============== */
 .footer-one {
   background-color: #f1eddc;
   display: -webkit-box;
@@ -370,7 +370,7 @@ a {
   display: flex;
   padding-top: 0.4rem;
   padding-bottom: 0.5rem;
-  /* تعديل الدوال (المشاهدات و اللايكات) */
+  /* =========== تعديل الدوال (المشاهدات و اللايكات) ==================== */
 }
 
 .footer-one .footer-fn {
@@ -443,8 +443,8 @@ a {
   font-family: "Cairo";
 }
 
-/* 4) ========================== القادم سيكون فى صفحة الاذاعه فقط */
-/* لتعديل الناف بار الذى فى الاعلي */
+/* 4) ========================== القادم سيكون فى صفحة الاذاعه فقط  ====================*/
+/* ================= لتعديل الناف بار الذى فى الاعلي  ============== */
 .top-nav {
   position: fixed;
   top: 0;
@@ -460,7 +460,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* تعديل ايقونات البلاى ليست والنافبار */
+  /* ========== تعديل ايقونات البلاى ليست والنافبار ========== */
 }
 
 .top-nav .wh-box .playlist,
@@ -488,7 +488,7 @@ a {
   fill: #f1eddc;
 }
 
-/* لتعديل الوقت والتاريخ */
+/* ================ لتعديل الوقت والتاريخ ================= */
 .hejry-time {
   background-color: #10526a;
   padding-top: 0.8rem;
@@ -503,7 +503,7 @@ a {
   padding: 0.6rem 0.4rem 0.3rem;
   border-radius: 5px;
   text-align: center;
-  /* لتعديل الوقت */
+  /* ==================== لتعديل الوقت  ============ */
 }
 
 .hejry-time .calender-hejry .time-cl {
@@ -517,12 +517,12 @@ a {
   font-size: 1rem;
 }
 
-/* لتعديل تطبيق الاذاعة */
+/* ============== لتعديل تطبيق الاذاعة ================= */
 .app-radio {
   position: relative;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(17, 89, 115, 0.85)), to(rgba(9, 48, 62, 0.85)));
   background: linear-gradient(0deg, rgba(17, 89, 115, 0.85), rgba(9, 48, 62, 0.85));
-  /* تعديل الصندوق الاب للازرار */
+  /* ===================== تعديل الصندوق الاب للازرار ================ */
 }
 
 .app-radio .rd-logo {
@@ -537,9 +537,9 @@ a {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background-color: #10526a;
-  /* تعديل المعلومات الخاصه بالصوت الذى يعمل */
-  /* تعديل ازار الخاصه بالصوت (تشغيل وايقاف والقادم و الخ) */
-  /* تعديل ازار الاعدادات الاضافيه لتشغيل الاذاعة */
+  /* ============= تعديل المعلومات الخاصه بالصوت الذى يعمل ================ */
+  /* ======== تعديل ازار الخاصه بالصوت (تشغيل وايقاف والقادم و الخ) ========== */
+  /* ============= تعديل ازار الاعدادات الاضافيه لتشغيل الاذاعة ========== */
 }
 
 .app-radio .controlls-radio .information-audio {
@@ -563,7 +563,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* تعديل كل زرار  */
+  /* ============== تعديل كل زرار =============== */
 }
 
 .app-radio .controlls-radio .players .pl-btn {
@@ -665,7 +665,9 @@ a {
   background-color: rgba(0, 0, 0, 0);
 }
 
-/* لتعديل قائمه الاذاعات */
+/* ===========  لتعديل قائمه الاذاعات  او اللينكات 
+
+                صفحة تغيير الالوان فى الاذكار هنا      ==================== */
 .dropdown-playlist {
   overflow-x: hidden;
   overflow-y: auto;
@@ -677,8 +679,8 @@ a {
   z-index: 800;
   background: linear-gradient(230deg, #115973, #187b9f);
   text-align: center;
-  /* تعديل زرار الغلق */
-  /* تعديل القائمه نفسها */
+  /* =============== تعديل زرار الغلق =========== */
+  /* =========== تعديل القائمه نفسها =========== */
 }
 
 .dropdown-playlist .playlist-close {
@@ -746,6 +748,30 @@ a {
 
 .dropdown-playlist .list-sounds li.sound-item .segment .title {
   color: #187b9f;
+  /* صفحة الاذكار =============================== */
+}
+
+.dropdown-playlist .list-sounds li.sound-item .segment .title .list-colors {
+  margin-top: 0.2rem;
+}
+
+.dropdown-playlist .list-sounds li.sound-item .segment .title .list-colors .color-item {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  opacity: 0.8;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.dropdown-playlist .list-sounds li.sound-item .segment .title .list-colors .color-item.active {
+  border: 2px solid #0b3747;
+  opacity: 1;
+}
+
+.dropdown-playlist .list-sounds li.sound-item .segment .title .list-colors .color-item[data-color="default"] {
+  background-color: #10526a;
 }
 
 .dropdown-playlist .list-sounds li.sound-item .segment .discription {
@@ -754,7 +780,7 @@ a {
   font-weight: 600;
 }
 
-/* كتابة ملاحظه اثناء الاستماع */
+/* ============= كتابة ملاحظه اثناء الاستماع ======================= */
 .write-note {
   position: fixed;
   right: 0;
@@ -830,8 +856,8 @@ a {
   opacity: 0;
 }
 
-/* 5) ============================== لتعديل صفحة المجلات او الكتب */
-/* تعديل الكتب */
+/* 5) ================= صفحة المجلات او الكتب ================== */
+/* =================== تعديل الكتب  ============================*/
 .books-libs {
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
@@ -989,7 +1015,7 @@ a {
   float: left;
 }
 
-/* 6) صفحة المقالات */
+/* 6) ====================== صفحة المقالات ==================== */
 .articles-section {
   background-image: url("../img/background.jpg");
   background-position: center;
@@ -1044,8 +1070,134 @@ a {
   color: #f1eddc;
 }
 
-/* اشياء ثابته ======================== */
-/* ثابته فى بعض الصفحات | تعديل قائمه الفهرس  */
+/* 7) ===================== صفحة الاذكار ====================== */
+.azkars-section {
+  background-image: url("../img/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* ======= صندوق اذكار */
+}
+
+.azkars-section .az-bx {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  overflow-y: hidden;
+  -webkit-transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  max-height: 0;
+  /* title =========== */
+}
+
+.azkars-section .az-bx.active {
+  max-height: 1000px;
+  height: auto;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  overflow-y: hidden;
+}
+
+.azkars-section .az-bx .title {
+  margin-bottom: 1rem;
+  background-color: #10526a;
+  color: #f1eddc;
+  padding: 0rem 0.6rem .6rem;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.azkars-section .az-bx .title p {
+  font-size: 0.8rem;
+}
+
+.azkars-section .az-bx .az-self {
+  position: relative;
+  margin-bottom: 0.6rem;
+  /* علامه الوقف ================= */
+  /* تعديل الجزى النصي =========== */
+  /* تعديل الخيارات ============= */
+}
+
+.azkars-section .az-bx .az-self:last-child {
+  margin-bottom: 0;
+}
+
+.azkars-section .az-bx .az-self .stopping-mark {
+  display: block;
+  width: 20px;
+  height: 10px;
+  -webkit-clip-path: polygon(100% 0, 65% 50%, 100% 100%, 0% 100%, 0 50%, 0% 0%);
+          clip-path: polygon(100% 0, 65% 50%, 100% 100%, 0% 100%, 0 50%, 0% 0%);
+  background-color: rgba(226, 99, 99, 0.741);
+  position: absolute;
+  bottom: 55px;
+  left: 0;
+}
+
+.azkars-section .az-bx .az-self .text-az {
+  border-radius: 2px 2px 0 0;
+  padding: 1rem 0.5rem;
+  background-color: #115973;
+  line-height: 1.8;
+  color: #f1eddc;
+}
+
+.azkars-section .az-bx .az-self .options {
+  background-color: #10526a;
+  padding: 0.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  border-radius: 0px 0px 2px 2px;
+}
+
+.azkars-section .az-bx .az-self .options span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: 2px solid #115973;
+  border-left: none;
+  color: #082935;
+  font-weight: 600;
+  border-radius: 5px;
+  /* تعديل ازرار العد ======= */
+  /* زرار النسخ ========== */
+}
+
+.azkars-section .az-bx .az-self .options span:last-child {
+  border-left: 2px solid #115973;
+}
+
+.azkars-section .az-bx .az-self .options span.static-number, .azkars-section .az-bx .az-self .options span.changable-counter {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.azkars-section .az-bx .az-self .options span.changable-counter {
+  position: relative;
+}
+
+.azkars-section .az-bx .az-self .options span.changable-counter .anm-number {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #082935;
+  color: #f1eddc;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  border-radius: 50%;
+  -webkit-animation: counter-anm 2s forwards linear;
+          animation: counter-anm 2s forwards linear;
+}
+
+.azkars-section .az-bx .az-self .options span.copy-content, .azkars-section .az-bx .az-self .options span.run-player {
+  overflow: hidden;
+}
+
+/* ======================= اشياء ثابته ======================== */
+/* =============== ثابته فى بعض الصفحات | تعديل قائمه الفهرس ================= */
 .alfahrs-list {
   background-color: #10526a;
   position: fixed;
@@ -1083,8 +1235,9 @@ a {
 
 .alfahrs-list .ol-main-pr .main-li {
   background-color: #f1eddc;
-  padding: 0 0.5rem 0.5rem;
-  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+  margin-bottom: 0.4rem;
+  border-radius: 5px;
 }
 
 .alfahrs-list .ol-main-pr .main-li:last-child {
@@ -1097,7 +1250,11 @@ a {
 }
 
 .alfahrs-list .ol-main-pr .main-li .branchs {
+  height: 0;
+  overflow: hidden;
   margin-right: 1rem;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .alfahrs-list .ol-main-pr .main-li .branchs .br-ln {
@@ -1115,7 +1272,15 @@ a {
   vertical-align: middle;
 }
 
-/* تعديل الكتب الاكثر قراءة | ثابتة فى بعض الصفحات*/
+.alfahrs-list .ol-main-pr .main-li.active {
+  padding-bottom: 0.5rem;
+}
+
+.alfahrs-list .ol-main-pr .main-li.active .branchs {
+  height: auto;
+}
+
+/* ============== تعديل الكتب الاكثر قراءة | ثابتة فى بعض الصفحات ============== */
 .most-reading-list {
   background-color: #10526a;
   position: fixed;
@@ -1172,7 +1337,7 @@ a {
   padding-right: 5px;
 }
 
-/*  تعديل اخترنا هذا الاسبوع واطلب عنوان  | ثابته فى بعض الصفحات*/
+/* ==============  تعديل اخترنا هذا الاسبوع واطلب عنوان  | ثابته فى بعض الصفحات ========== ========*/
 .footer-two {
   width: 100%;
   position: -webkit-sticky;
@@ -1199,7 +1364,7 @@ a {
   font-size: 0.8rem;
 }
 
-/* 7) انيميشن للزرار */
+/* 8) =================== انيميشن للزرار  ===================== */
 .add-animation-scale {
   -webkit-animation: scale-anm 0.29s forwards;
           animation: scale-anm 0.29s forwards;
@@ -1227,20 +1392,32 @@ a {
   }
 }
 
-@-webkit-keyframes height-anm {
+@-webkit-keyframes counter-anm {
   0% {
-    height: 0%;
+    opacity: 1;
+    top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    height: 100%;
+    top: -100px;
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }
 
-@keyframes height-anm {
+@keyframes counter-anm {
   0% {
-    height: 0%;
+    opacity: 1;
+    top: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
-    height: 100%;
+    top: -100px;
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }

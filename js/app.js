@@ -340,7 +340,7 @@ if (location.href.search("articles.html") > -1) {
     all_ratings.forEach(function(rating, pr_id) {
         rating.querySelectorAll("span").forEach(function(star) {
             star.addEventListener("click", function() {
-                if (confirm(`Sure ? (Stars = ${this.dataset.rating})`)) {
+                if (confirm(`متاكد (النجوم = ${this.dataset.rating}) ؟`)) {
                     [...rating.children].forEach(r_s => {
                         if (r_s.classList.contains("active")) {
                             r_s.classList.remove("active");
@@ -370,7 +370,7 @@ if (location.href.search("articles.html") > -1) {
             });
         });
     });
-    /* localStorage.setItem("rating", JSON.stringify(rating_array)); */
+
     /*  if rating localstorage exists */
     if (localStorage.getItem("rating") != null) {
         let strg_data = JSON.parse(localStorage.getItem("rating"));
@@ -411,17 +411,245 @@ if (location.href.search("articles.html") > -1) {
 
         ancient_articles.forEach(anc_artcle => {
             let anc_titles = anc_artcle.querySelector(".article-title a").innerText;
+
             if (anc_titles.indexOf(sr_input.value) > -1) {
                 anc_artcle.parentElement.style.display = "";
+
             } else {
+
                 anc_artcle.parentElement.style.display = "none";
             }
         });
     });
+    /* Make Tree Active When Click (Alfahrs) */
+    const alfahrs_list_articles = document.querySelectorAll(".alfahrs-list .ol-main-pr .main-li");
+    alfahrs_list_articles.forEach(li_pr => {
+
+        li_pr.addEventListener("click", function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            li_pr.classList.toggle("active");
+        });
+    });
 }
 
+// 4- صفحة الاذكار ============================================
+if (location.href.search("azkar.html") > -1) {
+    /* Color The Navbar */
+    makeBackGround();
+    window.onscroll = () => {
+        makeBackGround();
+    };
+    /* Right Nav FN */
+    rightNavFN();
+    /* Select Sort Of Azkar You ganna read */
+    const azkar_btn = document.querySelectorAll(".footer-two .link-ch-ad"),
+        azkar_box = document.querySelectorAll(".azkars-section .az-bx"),
+        azkar_copy_btns = document.querySelectorAll(".azkars-section .az-bx .az-self .options .copy-content"),
+        azkar_counter_btns = document.querySelectorAll(".azkars-section .az-bx .az-self .options .changable-counter"),
+        azkar_plps_btns = document.querySelectorAll(".azkars-section .az-bx .az-self .options .run-player"),
+        plus_font = document.querySelector(".bottom-nav .n-links-box .plus-up"),
+        minus_font = document.querySelector(".bottom-nav .n-links-box .minus-down"),
+        platte_font_colors = document.querySelectorAll(".dropdown-playlist .sound-item .list-colors .color-item");
+    /* Make The FN */
+    azkar_btn.forEach(function(az_bt) {
+        //-----
+        az_bt.addEventListener("click", function(c) {
+            //-----
+            c.preventDefault();
+            //-----
+            azkar_box.forEach(az_bx => {
+                az_bx.classList.remove("active");
+            });
+            //-----
+            document.querySelector(`.azkars-section ${this.dataset.azkar}`).classList.toggle("active");
+        });
+    });
+    /* Make Copy Function */
+    azkar_copy_btns.forEach(function(cp_az) {
+        //----
+        cp_az.addEventListener("click", function(c) {
+            c.preventDefault();
+            // -----
+            let the_azkar = this.parentElement.parentElement.querySelector(".text-az"),
+                textArea = document.createElement("textarea");
+            textArea.value = the_azkar.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            this.innerHTML = `<i class="fas fa-check add-animation-scale "></i>`;
+            setTimeout(_ => {
+                this.innerHTML = `<i class="fas fa-copy add-animation-scale "></i>`;
+            }, 2000);
+            textArea.remove();
+        });
+    });
+    /* Counter FN */
+    azkar_counter_btns.forEach(co_bt => {
+        //----
+        let counter = 0;
+        co_bt.addEventListener("click", function() {
+            let small_number = document.createElement("small");
+            small_number.className = "anm-number";
+            counter++;
+            small_number.innerText = counter;
+            this.innerText = counter;
+            this.appendChild(small_number);
+            //-----
+            this.parentElement.parentElement.parentElement.querySelectorAll(".az-self").forEach(az_s => {
+                let element = az_s.querySelector(".stopping-mark");
+                if (element) {
+                    element.remove();
+                }
+            });
+            //-----
+            let stop_mark = document.createElement("span");
+            stop_mark.className = "stopping-mark";
+            this.parentElement.parentElement.appendChild(stop_mark);
+        });
+        co_bt.addEventListener("dblclick", function() {
+            let small_number = document.createElement("small");
+            small_number.className = "anm-number";
+            counter = 0;
+            small_number.innerText = counter;
+            this.innerText = counter;
+            this.appendChild(small_number);
+        });
+    });
+    /* Play The Audio And The Pause */
+    azkar_plps_btns.forEach(pp_bt => {
+        pp_bt.addEventListener("click", function() {
+            //-----
+            let the_audio = this.parentElement.querySelector("audio");
+            if (the_audio.paused) {
+                the_audio.play();
+                this.innerHTML = `<i class="fas fa-pause add-animation-scale"></i>`;
+            } else {
+                the_audio.pause();
+                this.innerHTML = `<i class="fas fa-play add-animation-scale"></i>`;
+            }
 
+        });
+        /* If Ended */
+        pp_bt.parentElement.querySelector("audio").onended = () => {
+            pp_bt.innerHTML = `<i class="fas fa-play add-animation-scale"></i>`;
+        };
 
+    });
+
+    /* Increas Size Of Font */
+    let font_size = 16;
+    plus_font.addEventListener("click", () => {
+        font_size += 1;
+        azkar_box.forEach(az_bx => {
+            az_bx.querySelectorAll(".az-self .text-az").forEach(tx => {
+                if (font_size >= 55) {
+                    font_size = 55;
+                }
+                tx.style.fontSize = font_size + "px";
+            });
+        });
+    });
+    minus_font.addEventListener("click", () => {
+        font_size -= 1;
+        azkar_box.forEach(az_bx => {
+            az_bx.querySelectorAll(".az-self .text-az").forEach(tx => {
+
+                if (font_size <= 0) {
+                    font_size = 1;
+                    tx.style.fontSize = font_size + "px";
+                } else {
+                    tx.style.fontSize = font_size + "px";
+                }
+            });
+        });
+    });
+    /* Add Colors To Plattes And Active Class In Top Nav To Change Font */
+    platte_font_colors.forEach(plt => {
+        console.log(plt.dataset.color);
+        // ------
+        plt.style.backgroundColor = plt.dataset.color;
+        // ------
+        plt.addEventListener("click", function(e) {
+            e.preventDefault();
+            // ------
+            this.parentElement.querySelectorAll("li").forEach(co => {
+                co.classList.remove("active");
+            });
+            // ------
+            this.classList.add("active");
+            // ------
+
+            if (this.parentElement.classList.contains("font-plt")) {
+                let selected = this.dataset.color;
+                azkar_box.forEach(az_bx => {
+                    // ------
+                    // az_bx.querySelectorAll("p,h4").forEach(el => el.style.color = selected); 
+                    // ------
+                    /* az_bx.querySelectorAll("span").forEach(el => el.style.border = `2px solid ${selected}`); */
+                    // ------
+                    /* az_bx.querySelectorAll("header,span").forEach(head => {
+                        head.style.color = selected;
+                    }); */
+                    az_bx.querySelectorAll("header").forEach(head => {
+                        head.style.color = selected;
+                    });
+                    // ---
+                    if (selected == "default") {
+                        // ------
+                        /* az_bx.querySelectorAll("p,h4").forEach(el => el.removeAttribute("style")); */
+                        // ------
+                        /* az_bx.querySelectorAll("span").forEach(el => el.removeAttribute("style")); */
+                        // ------
+                        /* az_bx.querySelectorAll("header,span").forEach(head => {
+                            head.removeAttribute("style");
+                        }); */
+                        az_bx.querySelectorAll("header").forEach(head => {
+                            head.style.color = "";
+                        });
+                    }
+                });
+            } else {
+                let selected = this.dataset.color;
+                azkar_box.forEach(az_bx => {
+                    // ------
+                    // az_bx.querySelectorAll(".title").forEach(el => el.style.backgroundColor = selected);
+                    // ------
+                    /* az_bx.querySelectorAll("header,.options").forEach(head => {
+                        head.style.backgroundColor = selected;
+                    }); */
+                    az_bx.querySelectorAll("header").forEach(head => {
+                        head.style.backgroundColor = selected;
+                    });
+                    if (selected == "default") {
+                        // ------
+                        // az_bx.querySelectorAll(".title").forEach(el => el.removeAttribute("style"));
+                        // ------
+                        /* az_bx.querySelectorAll("header,.options").forEach(head => {
+                            head.removeAttribute("style");
+                        }); */
+                        az_bx.querySelectorAll("header").forEach(head => {
+                            head.style.backgroundColor = "";
+                        });
+                    }
+                });
+            }
+        });
+
+    });
+    /* Change Font Color */
+    const font_colors = document.querySelectorAll(".dropdown-playlist .sound-item .list-colors.font-plt .color-item");
+    // ----
+    font_colors.forEach(f_c => {
+        f_c.addEventListener("click", function(e) {
+            e.preventDefault();
+            // -----  
+            console.log(this.dataset.color);
+        });
+    });
+}
+
+/* document.createElement("audio").ended */
 // Basics
 /* Coloring The top Navbar */
 function makeBackGround() {

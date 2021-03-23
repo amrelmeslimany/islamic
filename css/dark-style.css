@@ -297,6 +297,15 @@ body {
 
 .dropdown-playlist .list-sounds li.sound-item .segment .title {
   color: #3e5760;
+  /* صفحة الاذكار =============================== */
+}
+
+.dropdown-playlist .list-sounds li.sound-item .segment .title .list-colors .color-item.active {
+  border: 2px solid #161f22;
+}
+
+.dropdown-playlist .list-sounds li.sound-item .segment .title .list-colors .color-item[data-color="default"] {
+  background-color: #223035;
 }
 
 .dropdown-playlist .list-sounds li.sound-item .segment .discription {
@@ -396,6 +405,55 @@ body {
 }
 
 .articles-section .article-bx .share-i i {
+  color: #f3ecec;
+}
+
+/* 7) ===================== صفحة الاذكار ====================== */
+.azkars-section {
+  background: none;
+  background-color: #223035;
+  /* ======= صندوق اذكار */
+}
+
+.azkars-section .az-bx {
+  /* title =========== */
+}
+
+.azkars-section .az-bx .title {
+  background-color: #26363b;
+  color: #f3ecec;
+}
+
+.azkars-section .az-bx .az-self {
+  /* علامه الوقف ================= */
+  /* تعديل الجزى النصي =========== */
+  /* تعديل الخيارات ============= */
+}
+
+.azkars-section .az-bx .az-self .stopping-mark {
+  background-color: rgba(226, 99, 99, 0.741);
+}
+
+.azkars-section .az-bx .az-self .text-az {
+  background-color: #2a3b41;
+  color: #f3ecec;
+}
+
+.azkars-section .az-bx .az-self .options {
+  background-color: #26363b;
+}
+
+.azkars-section .az-bx .az-self .options span {
+  border: 2px solid #2a3b41;
+  color: #0a0e10;
+}
+
+.azkars-section .az-bx .az-self .options span:last-child {
+  border-left: 2px solid #2a3b41;
+}
+
+.azkars-section .az-bx .az-self .options span.changable-counter .anm-number {
+  background-color: #0a0e10;
   color: #f3ecec;
 }
 
