@@ -434,6 +434,11 @@ if (location.href.search("articles.html") > -1) {
 }
 
 // 4- صفحة الاذكار ============================================
+let data_font_color_bg = {
+    fontSize: 16,
+    fontColor: "default",
+    bgColor: "default"
+};
 if (location.href.search("azkar.html") > -1) {
     /* Color The Navbar */
     makeBackGround();
@@ -541,32 +546,18 @@ if (location.href.search("azkar.html") > -1) {
     let font_size = 16;
     plus_font.addEventListener("click", () => {
         font_size += 1;
-        azkar_box.forEach(az_bx => {
-            az_bx.querySelectorAll(".az-self .text-az").forEach(tx => {
-                if (font_size >= 55) {
-                    font_size = 55;
-                }
-                tx.style.fontSize = font_size + "px";
-            });
-        });
+        fontSize("+");
+        data_font_color_bg.fontSize = font_size;
+        getAndPutLocal("fs", data_font_color_bg.fontSize);
     });
     minus_font.addEventListener("click", () => {
         font_size -= 1;
-        azkar_box.forEach(az_bx => {
-            az_bx.querySelectorAll(".az-self .text-az").forEach(tx => {
-
-                if (font_size <= 0) {
-                    font_size = 1;
-                    tx.style.fontSize = font_size + "px";
-                } else {
-                    tx.style.fontSize = font_size + "px";
-                }
-            });
-        });
+        fontSize("-");
+        data_font_color_bg.fontSize = font_size;
+        getAndPutLocal("fs", data_font_color_bg.fontSize);
     });
     /* Add Colors To Plattes And Active Class In Top Nav To Change Font */
     platte_font_colors.forEach(plt => {
-        console.log(plt.dataset.color);
         // ------
         plt.style.backgroundColor = plt.dataset.color;
         // ------
@@ -581,29 +572,21 @@ if (location.href.search("azkar.html") > -1) {
             // ------
 
             if (this.parentElement.classList.contains("font-plt")) {
+                // ------
                 let selected = this.dataset.color;
+                // ------
+                data_font_color_bg.fontColor = selected;
+                // ------
+                getAndPutLocal("fc", data_font_color_bg.fontColor);
+                // ------
                 azkar_box.forEach(az_bx => {
                     // ------
-                    // az_bx.querySelectorAll("p,h4").forEach(el => el.style.color = selected); 
-                    // ------
-                    /* az_bx.querySelectorAll("span").forEach(el => el.style.border = `2px solid ${selected}`); */
-                    // ------
-                    /* az_bx.querySelectorAll("header,span").forEach(head => {
-                        head.style.color = selected;
-                    }); */
                     az_bx.querySelectorAll("header").forEach(head => {
                         head.style.color = selected;
                     });
                     // ---
                     if (selected == "default") {
                         // ------
-                        /* az_bx.querySelectorAll("p,h4").forEach(el => el.removeAttribute("style")); */
-                        // ------
-                        /* az_bx.querySelectorAll("span").forEach(el => el.removeAttribute("style")); */
-                        // ------
-                        /* az_bx.querySelectorAll("header,span").forEach(head => {
-                            head.removeAttribute("style");
-                        }); */
                         az_bx.querySelectorAll("header").forEach(head => {
                             head.style.color = "";
                         });
@@ -611,23 +594,15 @@ if (location.href.search("azkar.html") > -1) {
                 });
             } else {
                 let selected = this.dataset.color;
+                data_font_color_bg.bgColor = selected;
+                getAndPutLocal("fb", data_font_color_bg.bgColor);
                 azkar_box.forEach(az_bx => {
                     // ------
-                    // az_bx.querySelectorAll(".title").forEach(el => el.style.backgroundColor = selected);
-                    // ------
-                    /* az_bx.querySelectorAll("header,.options").forEach(head => {
-                        head.style.backgroundColor = selected;
-                    }); */
                     az_bx.querySelectorAll("header").forEach(head => {
                         head.style.backgroundColor = selected;
                     });
                     if (selected == "default") {
                         // ------
-                        // az_bx.querySelectorAll(".title").forEach(el => el.removeAttribute("style"));
-                        // ------
-                        /* az_bx.querySelectorAll("header,.options").forEach(head => {
-                            head.removeAttribute("style");
-                        }); */
                         az_bx.querySelectorAll("header").forEach(head => {
                             head.style.backgroundColor = "";
                         });
@@ -635,18 +610,96 @@ if (location.href.search("azkar.html") > -1) {
                 });
             }
         });
+    });
 
-    });
-    /* Change Font Color */
-    const font_colors = document.querySelectorAll(".dropdown-playlist .sound-item .list-colors.font-plt .color-item");
-    // ----
-    font_colors.forEach(f_c => {
-        f_c.addEventListener("click", function(e) {
-            e.preventDefault();
-            // -----  
-            console.log(this.dataset.color);
+    /* Basics FN */
+    /* Font Size */
+    function fontSize(opr) {
+        azkar_box.forEach(az_bx => {
+            az_bx.querySelectorAll(".az-self .text-az").forEach(tx => {
+                if (opr === "+") {
+                    if (font_size >= 55) {
+                        font_size = 55;
+                    }
+                    tx.style.fontSize = font_size + "px";
+                } else if (opr === "-") {
+                    if (font_size <= 0) {
+                        font_size = 1;
+                        tx.style.fontSize = font_size + "px";
+                    } else {
+                        tx.style.fontSize = font_size + "px";
+                    }
+                }
+            });
         });
-    });
+    }
+    /* Get And Set Style To LocalStorage */
+    function getAndPutLocal(sort, data_change) {
+        let get_style = localStorage.getItem("styleAzkar");
+        if (get_style != null) {
+            let data = JSON.parse(get_style);
+            if (sort == "fc") {
+                data.fontColor = data_change;
+            } else if (sort == "fs") {
+                data.fontSize = data_change;
+            } else if (sort == "fb") {
+                data.bgColor = data_change;
+            }
+            localStorage.setItem("styleAzkar", JSON.stringify(data))
+        } else {
+            localStorage.setItem("styleAzkar", JSON.stringify(data_font_color_bg));
+        }
+    }
+    /* Save Style To LocalStorage */
+    let get_style = localStorage.getItem("styleAzkar");
+    if (get_style != null) {
+        let data_from_local = JSON.parse(get_style);
+        // Add Active To Color In Platte From Local
+        platte_font_colors.forEach(pl_c => {
+
+            // -----
+
+            if (pl_c.parentElement.classList.contains("font-plt")) {
+                if (pl_c.dataset.color == data_from_local.fontColor) {
+                    pl_c.parentElement.querySelectorAll("li").forEach(co => {
+                        if (co.classList.contains("active")) {
+                            co.classList.remove("active");
+                        }
+                    });
+                    pl_c.classList.add("active");
+                }
+            } else {
+                if (pl_c.dataset.color == data_from_local.bgColor) {
+                    pl_c.parentElement.querySelectorAll("li").forEach(co => {
+                        if (co.classList.contains("active")) {
+                            co.classList.remove("active");
+                        }
+                    });
+                    pl_c.classList.add("active");
+                }
+            }
+        });
+        // Background Color
+        azkar_box.forEach(az_bx => {
+            // ------
+            az_bx.querySelectorAll("header").forEach(head => {
+                head.style.backgroundColor = data_from_local.bgColor;
+                head.style.color = data_from_local.fontColor;
+                head.style.fontSize = data_from_local.fontSize + "px";
+            });
+            if (data_from_local.bgColor == "default") {
+                // ------
+                az_bx.querySelectorAll("header").forEach(head => {
+                    head.style.backgroundColor = "";
+                });
+            }
+            if (data_from_local.fontColor == "default") {
+                az_bx.querySelectorAll("header").forEach(head => {
+                    head.style.color = "";
+                });
+            }
+        });
+    }
 }
 
 /* document.createElement("audio").ended */

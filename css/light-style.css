@@ -1090,7 +1090,7 @@ a {
 }
 
 .azkars-section .az-bx.active {
-  max-height: 1000px;
+  max-height: 10000px;
   height: auto;
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
@@ -1158,7 +1158,7 @@ a {
           flex: 1;
   border: 2px solid #115973;
   border-left: none;
-  color: #082935;
+  color: #f1eddc;
   font-weight: 600;
   border-radius: 5px;
   /* تعديل ازرار العد ======= */
