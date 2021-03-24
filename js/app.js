@@ -547,14 +547,34 @@ if (location.href.search("azkar.html") > -1) {
     plus_font.addEventListener("click", (c) => {
         c.preventDefault();
         font_size += 1;
-        fontSize("+");
+        azkar_box.forEach(az_bx => {
+            az_bx.querySelectorAll(".az-self .text-az").forEach(tx => {
+                if (font_size >= 55) {
+                    font_size = 55;
+                }
+                tx.style.fontSize = font_size + "px";
+            });
+        });
+        alert("The Font-Size is " + font_size);
+        // fontSize("+");
         data_font_color_bg.fontSize = font_size;
         getAndPutLocal("fs", data_font_color_bg.fontSize);
     });
     minus_font.addEventListener("click", (c) => {
         c.preventDefault();
         font_size -= 1;
-        fontSize("-");
+        azkar_box.forEach(az_bx => {
+            az_bx.querySelectorAll(".az-self .text-az").forEach(tx => {
+                if (font_size <= 0) {
+                    font_size = 1;
+                    tx.style.fontSize = font_size + "px";
+                } else {
+                    tx.style.fontSize = font_size + "px";
+                }
+            });
+        });
+        alert("The Font-Size is " + font_size);
+        /* fontSize("-"); */
         data_font_color_bg.fontSize = font_size;
         getAndPutLocal("fs", data_font_color_bg.fontSize);
     });
@@ -616,7 +636,7 @@ if (location.href.search("azkar.html") > -1) {
 
     /* Basics FN */
     /* Font Size */
-    function fontSize(opr) {
+    /* function fontSize(opr) {
         azkar_box.forEach(az_bx => {
             az_bx.querySelectorAll(".az-self .text-az").forEach(tx => {
                 if (opr === "+") {
@@ -634,7 +654,7 @@ if (location.href.search("azkar.html") > -1) {
                 }
             });
         });
-    }
+    } */
     /* Get And Set Style To LocalStorage */
     function getAndPutLocal(sort, data_change) {
         let get_style = localStorage.getItem("styleAzkar");
