@@ -19,7 +19,7 @@ const ARTICLES = [{
         body: `
             هذة تكون المقاله الاولي او المقاله واحد أتيه من رابط الموقع            
             هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى
-            المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم بطه كتابته هنا
+            المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى <b>المقاله</b> الذى سيتم بطه كتابته هنا
             يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته
             هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم
             كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى
@@ -740,10 +740,12 @@ if (location.href.search("the-article.html") > -1) {
         minus_btn = document.querySelector(".bottom-nav .link-nav.minus-down"),
         changes = document.querySelectorAll(".font-change-size"),
         search_bx = document.querySelector(".header .search-bx"),
+        arrow_up_inner = document.querySelector(".scroll-up-inner"),
         arrow_up = document.querySelector(".scroll-up"),
         page_name = document.querySelector(".header .page-name"),
         page_title_head = document.querySelector("head title"),
         search_founded_ele = document.querySelector(".header .founded-search .founded-number");
+
     let font_size = 16;
     /* Get Article From Link */
     const URL_PARAMS = new URLSearchParams(window.location.search);
@@ -753,8 +755,8 @@ if (location.href.search("the-article.html") > -1) {
             if (article.title === title_link) {
                 page_name.textContent = title_link;
                 articles_text_outer.querySelector("h3").textContent = title_link;
-                articles_text_inner.querySelector(".the-article-self").textContent = article.body;
-                articles_text_outer.querySelector("p").textContent = article.body;
+                articles_text_inner.querySelector(".the-article-self").innerHTML = article.body;
+                articles_text_outer.querySelector("p").innerHTML = article.body;
                 page_title_head.textContent = `تطبيق موقع ميراث الأنبياء | ${title_link}`;
             }
         });
@@ -765,11 +767,12 @@ if (location.href.search("the-article.html") > -1) {
         articles_text_outer.querySelector("p").innerHTML = `من فضلك اذهب لصفحة <a href="articles.html" class="art-link font-change-color ">المقالات</a><br> او فى الاسفل ستجد مقالات أخرى`;
     }
     /* Searching In Article */
+    const article_text = articles_text_inner.querySelector("p.the-article-self"),
+        original_text = article_text.innerHTML;
     search_bx.querySelector(".search.icon").addEventListener("click", (c) => {
         c.preventDefault();
         // ----------
-        const input_search_val = search_bx.querySelector("input").value,
-            article_text = articles_text_inner.querySelector("p.the-article-self");
+        const input_search_val = search_bx.querySelector("input").value;
         let regex_search = new RegExp(`(${input_search_val})`, "g");
         if (input_search_val != "") {
             if (regex_search.test(article_text.textContent)) {
@@ -790,11 +793,15 @@ if (location.href.search("the-article.html") > -1) {
                     });
                 }
             } else {
-                article_text.innerHTML = article_text.textContent;
+                search_founded_ele.parentElement.classList.add("active");
                 search_founded_ele.textContent = 0;
+                article_text.innerHTML = original_text;
+                setTimeout(() => {
+                    search_founded_ele.parentElement.classList.remove("active")
+                }, 3000);
             }
         } else {
-            article_text.innerHTML = article_text.textContent;
+            article_text.innerHTML = original_text;
             search_founded_ele.parentElement.classList.remove("active");
         }
     });
@@ -807,13 +814,18 @@ if (location.href.search("the-article.html") > -1) {
         art_tx_ou_parent.classList.remove("active");
     });
     /* Gooo Up When Scrolling Down */
-    if (arrow_up) {
+    if (arrow_up || arrow_up_inner) {
         arrow_up.addEventListener("click", () => {
             document.querySelector(".article-outer-parent").scrollTo({
                 top: document.querySelector(".the-article-self").offsetLeft,
                 behavior: "smooth"
             });
-            console.log("Goods");
+        });
+        arrow_up_inner.addEventListener("click", () => {
+            window.scrollTo({
+                top: document.querySelector(".article-inner").offsetLeft,
+                behavior: "smooth"
+            });
         });
     }
     /* Copy The Content */
