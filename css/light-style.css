@@ -73,8 +73,8 @@ a {
   background-color: #115973;
   padding: 1rem 0;
   text-align: center;
-  /* تعديل اسم الصفحة */
-  /* السيرش الموجود فى صفحة المقالات فقط */
+  /* تعديل اسم الصفحة ========== */
+  /* السيرش الموجود فى صفحة المقالات فقط ==========*/
 }
 
 .header .page-name {
@@ -90,6 +90,15 @@ a {
   color: #10526a;
   top: 0.12em !important;
   right: .1em !important;
+}
+
+.header .founded-search {
+  color: #f1eddc;
+  display: none;
+}
+
+.header .founded-search.active {
+  display: block;
 }
 
 /* ================== -- 2) هذا الناف ايضا سيكون ثابت فى جميع الصفحات ============ */
@@ -1192,6 +1201,150 @@ a {
 
 .azkars-section .az-bx .az-self .options span.copy-content, .azkars-section .az-bx .az-self .options span.run-player {
   overflow: hidden;
+}
+
+/* 8) ===================== صفحة المقاله المنفرده ================ */
+.the-article-section {
+  background-image: url("../img/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* المقاله العاديه بدون الضغط عليها  ============ */
+  /* صندوق المقاللات الاخرى ================== */
+  /* المقاله عند الضغط عليها ================== */
+}
+
+.the-article-section p {
+  line-height: 2;
+}
+
+.the-article-section .article-inner {
+  background-color: #115973;
+  margin-bottom: 1rem;
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+  border-radius: 5px;
+  /* زر المشاركه والنسخ ================== */
+  /* تنسيق المقاله ====================== */
+}
+
+.the-article-section .article-inner .copy-and-share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.the-article-section .article-inner .copy-and-share .ln-cs {
+  overflow: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0.2rem 0.6rem;
+  color: #f1eddc;
+}
+
+.the-article-section .article-inner .copy-and-share .ln-cs.note {
+  -webkit-box-flex: 13;
+      -ms-flex: 13;
+          flex: 13;
+  text-align: center;
+  padding: 0.2rem 0;
+  font-weight: 600;
+}
+
+.the-article-section .article-inner .copy-and-share .ln-cs.share {
+  text-align: left;
+}
+
+.the-article-section .article-inner .the-article-self {
+  color: #f1eddc;
+  padding: 0.6rem;
+}
+
+.the-article-section .article-inner .the-article-self .art-link {
+  color: #f1eddc;
+  font-weight: bold;
+}
+
+.the-article-section .other-articles {
+  background-color: #10526a;
+  padding: 0.6rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+  text-align: center;
+  /* عنوان ======================= */
+  /* صندوق اللينكات ============== */
+}
+
+.the-article-section .other-articles .title-other {
+  color: #f1eddc;
+  font-size: 1rem;
+}
+
+.the-article-section .other-articles .ul-parent {
+  margin-top: 0.4rem;
+}
+
+.the-article-section .other-articles .ul-parent .item {
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  background-color: #115973;
+  border-radius: 5px;
+  color: #f1eddc;
+  margin-bottom: 0.4rem;
+  margin-left: 0.3rem;
+}
+
+.the-article-section .other-articles .ul-parent .item:last-child {
+  margin-left: 0;
+}
+
+.the-article-section .article-outer-parent {
+  display: none;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(16, 82, 106, 0.98);
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  padding: 0.4rem;
+  /* Active */
+}
+
+.the-article-section .article-outer-parent .article-outer-child {
+  background-color: #f1eddc;
+  border-radius: 5px;
+  /* تنسيق المقاله ====================== */
+  /* تنسيق السهم ==================== */
+}
+
+.the-article-section .article-outer-parent .article-outer-child .the-article-self {
+  color: #10526a;
+  padding: 0.6rem;
+}
+
+.the-article-section .article-outer-parent .article-outer-child .the-article-self .art-link {
+  color: #f1eddc;
+  font-weight: bold;
+}
+
+.the-article-section .article-outer-parent .article-outer-child .scroll-up {
+  background-color: #115973;
+  color: #f1eddc;
+  width: 40px;
+  text-align: center;
+  position: fixed;
+  bottom: 3%;
+  z-index: 2;
+  left: 10px;
+  opacity: 0.2;
+}
+
+.the-article-section .article-outer-parent.active {
+  display: block;
 }
 
 /* ======================= اشياء ثابته ======================== */

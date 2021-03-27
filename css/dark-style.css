@@ -30,6 +30,10 @@ body {
   color: #2a3b41;
 }
 
+.header .founded-search {
+  color: #f3ecec;
+}
+
 /* هذا الناف ايضا سيكون ثابت فى جميع الصفحات */
 /* الناف بار الاسفل */
 .bottom-nav {
@@ -455,6 +459,77 @@ body {
 .azkars-section .az-bx .az-self .options span.changable-counter .anm-number {
   background-color: #0a0e10;
   color: #f3ecec;
+}
+
+/* 8) ===================== صفحة المقاله المنفرده ================ */
+.the-article-section {
+  background: none;
+  background-color: #223035;
+  /* المقاله العاديه بدون الضغط عليها  ============ */
+  /* صندوق المقاللات الاخرى ================== */
+  /* المقاله عند الضغط عليها ================== */
+}
+
+.the-article-section .article-inner {
+  background-color: #2a3b41;
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+  /* زر المشاركه والنسخ ================== */
+  /* تنسيق المقاله ====================== */
+}
+
+.the-article-section .article-inner .copy-and-share .ln-cs {
+  color: #f3ecec;
+}
+
+.the-article-section .article-inner .the-article-self {
+  color: #f3ecec;
+}
+
+.the-article-section .article-inner .the-article-self .art-link {
+  color: #f3ecec;
+}
+
+.the-article-section .other-articles {
+  background-color: #223035;
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+  /* عنوان ======================= */
+  /* صندوق اللينكات ============== */
+}
+
+.the-article-section .other-articles .title-other {
+  color: #f3ecec;
+}
+
+.the-article-section .other-articles .ul-parent .item {
+  background-color: #2a3b41;
+  color: #f3ecec;
+}
+
+.the-article-section .article-outer-parent {
+  background-color: rgba(34, 48, 53, 0.98);
+}
+
+.the-article-section .article-outer-parent .article-outer-child {
+  background-color: #223035;
+  -webkit-box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.27);
+  /* تنسيق المقاله ====================== */
+  /* تنسيق السهم ==================== */
+}
+
+.the-article-section .article-outer-parent .article-outer-child .the-article-self {
+  color: #f3ecec;
+}
+
+.the-article-section .article-outer-parent .article-outer-child .the-article-self .art-link {
+  color: #f3ecec;
+}
+
+.the-article-section .article-outer-parent .article-outer-child .scroll-up {
+  background-color: #f3ecec;
+  color: #223035;
 }
 
 /*  تعديل قائمه الفهرس */

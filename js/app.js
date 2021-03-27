@@ -1,3 +1,65 @@
+// ! Articles (Title And Body)
+/*
+*   لاضافه مقاله او لمسح مقاله
+*   title  ستضع عنوان المقاله فى 
+*   body وتضع جسم المقاله فى ال  
+*   {} وهما الاثنين تضعهم بين هذين القوسين
+*   ,  وتفرق بين مقاله ومقاله بالعلامه الفصله هذة 
+!   ملاحظات :
+?   يجب ان يكون عنوان المقاله مثل الذى ستضعه فى اللينك فى صفحة المقالات                          -
+?  عند (صندوق المقالات الاخرى) the-article ستجد شرح كيف تضف عنوان المقاله فى اللينك فى صفحه     -
+*   شرح مختصر كيف تضع عنوان المقاله فى اللينك او الراابط
+* 1 ) the-article.html اسم الصفحه والذى سكيون  href  ستضع فى 
+* 2 ) (the-article?title=articel name) : ستضع بعد اسم الصفحه علامه استفهام + كلمه (تايتل) +عنوان المقاله ---- مثال
+*   سيكون الرابط هكذا
+*   <a href="the-article.html?title=المقاله واحد"></a>
+*/
+const ARTICLES = [{
+        title: "المقاله واحد",
+        body: `
+            هذة تكون المقاله الاولي او المقاله واحد أتيه من رابط الموقع            
+            هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى
+            المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم بطه كتابته هنا
+            يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته
+            هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم
+            كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى
+            سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله
+            الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى
+            المقاله الذى سيتم كتابته
+        
+        `
+    },
+    {
+        title: "المقاله اثنين",
+        body: `
+            هذة تكون المقاله الثانيه او المقاله اثنان أتيه من رابط الموقع            
+            هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى
+            المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم بطه كتابته هنا
+            يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته
+            هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم
+            كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى
+            سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله
+            الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى
+            المقاله الذى سيتم كتابته
+        
+        `
+    },
+    {
+        title: "المقاله ثلاثه",
+        body: `
+            هذة تكون المقاله الثالثه او المقاله ثلاثه أتيه من رابط الموقع            
+            هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى
+            المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم بطه كتابته هنا
+            يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته
+            هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم
+            كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى
+            سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله
+            الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى المقاله الذى سيتم كتابته هنا يكون محتوى
+            المقاله الذى سيتم كتابته
+        
+        `
+    }
+];
 // ? اشياء مشتركه فى جميع الصفحات =============================
 const bottom_nav = document.querySelector(".bottom-nav");
 window.onload = () => {
@@ -18,18 +80,7 @@ window.onload = () => {
     document.body.style.paddingBottom = bottom_nav.offsetHeight + "px";
 
 };
-/* الوان البار */
-function barColor(color) {
-    document.head.querySelector('[name="keywords"]').insertAdjacentHTML("afterend", `
 
-<meta name="theme-color" content=${color}>
-
-<meta name="msapplication-navbutton-color" content=${color}>
-
-<meta name="apple-mobile-web-app-status-bar-style" content=${color}>
-`);
-
-}
 /* عمل الوضع الليلي */
 const dark_btn = document.querySelector(".bottom-nav .dark-point"),
     light_btn = document.querySelector(".bottom-nav .white-point");
@@ -476,17 +527,7 @@ if (location.href.search("azkar.html") > -1) {
         cp_az.addEventListener("click", function(c) {
             c.preventDefault();
             // -----
-            let the_azkar = this.parentElement.parentElement.querySelector(".text-az"),
-                textArea = document.createElement("textarea");
-            textArea.value = the_azkar.textContent;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand("Copy");
-            this.innerHTML = `<i class="fas fa-check add-animation-scale "></i>`;
-            setTimeout(_ => {
-                this.innerHTML = `<i class="fas fa-copy add-animation-scale "></i>`;
-            }, 2000);
-            textArea.remove();
+            makeCopy(this, this.parentElement.parentElement.querySelector(".text-az"));
         });
     });
     /* Counter FN */
@@ -541,7 +582,6 @@ if (location.href.search("azkar.html") > -1) {
         };
 
     });
-
     /* Increas Size Of Font */
     let font_size = 16;
     plus_font.addEventListener("click", (c) => {
@@ -555,8 +595,6 @@ if (location.href.search("azkar.html") > -1) {
                 tx.style.fontSize = font_size + "px";
             });
         });
-        alert("The Font-Size is " + font_size);
-        // fontSize("+");
         data_font_color_bg.fontSize = font_size;
         getAndPutLocal("fs", data_font_color_bg.fontSize);
     });
@@ -573,8 +611,7 @@ if (location.href.search("azkar.html") > -1) {
                 }
             });
         });
-        alert("The Font-Size is " + font_size);
-        /* fontSize("-"); */
+
         data_font_color_bg.fontSize = font_size;
         getAndPutLocal("fs", data_font_color_bg.fontSize);
     });
@@ -633,45 +670,6 @@ if (location.href.search("azkar.html") > -1) {
             }
         });
     });
-
-    /* Basics FN */
-    /* Font Size */
-    /* function fontSize(opr) {
-        azkar_box.forEach(az_bx => {
-            az_bx.querySelectorAll(".az-self .text-az").forEach(tx => {
-                if (opr === "+") {
-                    if (font_size >= 55) {
-                        font_size = 55;
-                    }
-                    tx.style.fontSize = font_size + "px";
-                } else if (opr === "-") {
-                    if (font_size <= 0) {
-                        font_size = 1;
-                        tx.style.fontSize = font_size + "px";
-                    } else {
-                        tx.style.fontSize = font_size + "px";
-                    }
-                }
-            });
-        });
-    } */
-    /* Get And Set Style To LocalStorage */
-    function getAndPutLocal(sort, data_change) {
-        let get_style = localStorage.getItem("styleAzkar");
-        if (get_style != null) {
-            let data = JSON.parse(get_style);
-            if (sort == "fc") {
-                data.fontColor = data_change;
-            } else if (sort == "fs") {
-                data.fontSize = data_change;
-            } else if (sort == "fb") {
-                data.bgColor = data_change;
-            }
-            localStorage.setItem("styleAzkar", JSON.stringify(data))
-        } else {
-            localStorage.setItem("styleAzkar", JSON.stringify(data_font_color_bg));
-        }
-    }
     /* Save Style To LocalStorage */
     let get_style = localStorage.getItem("styleAzkar");
     if (get_style != null) {
@@ -722,6 +720,140 @@ if (location.href.search("azkar.html") > -1) {
             }
         });
     }
+}
+
+// 5- صفحة المقاله بمفردها ========================================
+if (location.href.search("the-article.html") > -1) {
+    /* Color The Navbar */
+    makeBackGround();
+    window.onscroll = () => {
+        makeBackGround();
+    };
+    /* Right Nav FN */
+    rightNavFN();
+    // ---------
+    const platte_font_colors = document.querySelectorAll(".dropdown-playlist .sound-item .list-colors .color-item"),
+        articles_text_inner = document.querySelector(".the-article-section .article-inner"),
+        articles_text_outer = document.querySelector(".the-article-section .article-outer-parent .the-article-self"),
+        art_tx_ou_parent = articles_text_outer.parentElement.parentElement,
+        plus_btn = document.querySelector(".bottom-nav .link-nav.plus-up"),
+        minus_btn = document.querySelector(".bottom-nav .link-nav.minus-down"),
+        changes = document.querySelectorAll(".font-change-size"),
+        search_bx = document.querySelector(".header .search-bx"),
+        arrow_up = document.querySelector(".scroll-up"),
+        page_name = document.querySelector(".header .page-name"),
+        page_title_head = document.querySelector("head title"),
+        search_founded_ele = document.querySelector(".header .founded-search .founded-number");
+    let font_size = 16;
+    /* Get Article From Link */
+    const URL_PARAMS = new URLSearchParams(window.location.search);
+    if (URL_PARAMS.has("title")) {
+        let title_link = URL_PARAMS.get("title");
+        ARTICLES.forEach(article => {
+            if (article.title === title_link) {
+                page_name.textContent = title_link;
+                articles_text_outer.querySelector("h3").textContent = title_link;
+                articles_text_inner.querySelector(".the-article-self").textContent = article.body;
+                articles_text_outer.querySelector("p").textContent = article.body;
+                page_title_head.textContent = `تطبيق موقع ميراث الأنبياء | ${title_link}`;
+            }
+        });
+    } else {
+        page_name.textContent = "عنوان المقاله";
+        page_title_head.textContent = `تطبيق موقع ميراث الأنبياء | عنوان المقالة`;
+        articles_text_inner.querySelector(".the-article-self").innerHTML = `من فضلك اذهب لصفحة <a href="articles.html" class="art-link font-change-color">المقالات</a><br> او فى الاسفل ستجد مقالات أخرى`;
+        articles_text_outer.querySelector("p").innerHTML = `من فضلك اذهب لصفحة <a href="articles.html" class="art-link font-change-color ">المقالات</a><br> او فى الاسفل ستجد مقالات أخرى`;
+    }
+    /* Searching In Article */
+    search_bx.querySelector(".search.icon").addEventListener("click", (c) => {
+        c.preventDefault();
+        // ----------
+        const input_search_val = search_bx.querySelector("input").value,
+            article_text = articles_text_inner.querySelector("p.the-article-self");
+        let regex_search = new RegExp(`(${input_search_val})`, "g");
+        if (input_search_val != "") {
+            if (regex_search.test(article_text.textContent)) {
+                let newText = article_text.textContent.replace(regex_search, `<strong class="found-search" style="font-size:1.2rem">${input_search_val}</strong>`);
+                article_text.innerHTML = newText;
+                let findElements = document.querySelectorAll(".found-search");
+                search_founded_ele.textContent = findElements.length;
+                search_founded_ele.parentElement.classList.add("active");
+                if (findElements.length == 1) {
+                    findElements[0].scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+                } else {
+                    window.scrollTo({
+                        top: findElements[1].offsetTop - 50,
+                        behavior: "smooth"
+                    });
+                }
+            } else {
+                article_text.innerHTML = article_text.textContent;
+                search_founded_ele.textContent = 0;
+            }
+        } else {
+            article_text.innerHTML = article_text.textContent;
+            search_founded_ele.parentElement.classList.remove("active");
+        }
+    });
+    /* Add Active On Article Which will read */
+    articles_text_inner.querySelector(".the-article-self").addEventListener("click", () => {
+        art_tx_ou_parent.classList.add("active");
+    });
+    /* Remove Active On Article Which will read */
+    articles_text_outer.addEventListener("click", () => {
+        art_tx_ou_parent.classList.remove("active");
+    });
+    /* Gooo Up When Scrolling Down */
+    if (arrow_up) {
+        arrow_up.addEventListener("click", () => {
+            document.querySelector(".article-outer-parent").scrollTo({
+                top: document.querySelector(".the-article-self").offsetLeft,
+                behavior: "smooth"
+            });
+            console.log("Goods");
+        });
+    }
+    /* Copy The Content */
+    articles_text_inner.querySelector(".copy-and-share .ln-cs.copy").addEventListener("click", function(c) {
+        c.preventDefault();
+        // --------
+        makeCopy(this, articles_text_inner.querySelector(".the-article-self"));
+    });
+    /* Add Colors To Platte  And Change Elements*/
+    addColorsToPlatte(platte_font_colors);
+    /* Change Font Size*/
+    plus_btn.addEventListener("click", (c) => {
+        c.preventDefault();
+        font_size += 1;
+        changes.forEach(tx => {
+            if (font_size >= 55) {
+                font_size = 55;
+            }
+            tx.style.fontSize = font_size + "px";
+        });
+        data_font_color_bg.fontSize = font_size;
+        getAndPutLocal("fs", data_font_color_bg.fontSize);
+    });
+    minus_btn.addEventListener("click", (c) => {
+        c.preventDefault();
+        font_size -= 1;
+        changes.forEach(tx => {
+            if (font_size <= 0) {
+                font_size = 1;
+                tx.style.fontSize = font_size + "px";
+            } else {
+                tx.style.fontSize = font_size + "px";
+            }
+        });
+        data_font_color_bg.fontSize = font_size;
+        getAndPutLocal("fs", data_font_color_bg.fontSize);
+    });
+    /* Get Data */
+    getFontColorBgSizeLocalStorage(platte_font_colors);
+
 }
 
 /* document.createElement("audio").ended */
@@ -817,4 +949,161 @@ function fahrsAndBest() {
             most_reading_list.classList.add("active");
         }
     });
+}
+/* الوان البار */
+function barColor(color) {
+    document.head.querySelector('[name="keywords"]').insertAdjacentHTML("afterend", `
+
+<meta name="theme-color" content=${color}>
+
+<meta name="msapplication-navbutton-color" content=${color}>
+
+<meta name="apple-mobile-web-app-status-bar-style" content=${color}>
+`);
+
+}
+
+
+/* Copy Method */
+function makeCopy(btn, textEl) {
+    let the_azkar = textEl,
+        textArea = document.createElement("textarea");
+    textArea.value = the_azkar.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    btn.innerHTML = `<i class="fas fa-check add-animation-scale "></i>`;
+    setTimeout(_ => {
+        btn.innerHTML = `<i class="fas fa-copy add-animation-scale "></i>`;
+    }, 2000);
+    textArea.remove();
+}
+/* Add Color To Platte */
+function addColorsToPlatte(element) {
+    const font_color = document.querySelectorAll(".font-change-color"),
+        bg_color = document.querySelectorAll(".bg-change-color");
+    element.forEach(plt => {
+        // ------
+        plt.style.backgroundColor = plt.dataset.color;
+        // ------
+        plt.addEventListener("click", function(e) {
+            e.preventDefault();
+            // ------
+            this.parentElement.querySelectorAll("li").forEach(co => {
+                co.classList.remove("active");
+            });
+            // ------
+            this.classList.add("active");
+            // ------
+            if (this.parentElement.classList.contains("font-plt")) {
+                // ------
+                let selected = this.dataset.color;
+                // ------
+                data_font_color_bg.fontColor = selected;
+                // ------
+                getAndPutLocal("fc", data_font_color_bg.fontColor);
+                // ------
+                font_color.forEach((el) => {
+                    el.style.color = selected;
+                });
+                // ------
+                if (selected === "default") {
+                    // ------
+                    font_color.forEach((el) => {
+                        el.style.color = "";
+                    });
+                }
+            } else {
+                let selected = this.dataset.color;
+                data_font_color_bg.bgColor = selected;
+                getAndPutLocal("fb", data_font_color_bg.bgColor);
+                bg_color.forEach(ele => {
+                    ele.style.backgroundColor = selected;
+                });
+                if (selected === "default") {
+                    // ------
+                    bg_color.forEach(ele => {
+                        ele.style.backgroundColor = "";
+                    });
+                }
+            }
+        });
+    });
+}
+
+/* Get And Set Style To LocalStorage */
+function getAndPutLocal(sort, data_change) {
+    let get_style = localStorage.getItem("styleAzkar");
+    if (get_style != null) {
+        let data = JSON.parse(get_style);
+        if (sort == "fc") {
+            data.fontColor = data_change;
+        } else if (sort == "fs") {
+            data.fontSize = data_change;
+        } else if (sort == "fb") {
+            data.bgColor = data_change;
+        }
+        localStorage.setItem("styleAzkar", JSON.stringify(data))
+    } else {
+        localStorage.setItem("styleAzkar", JSON.stringify(data_font_color_bg));
+    }
+}
+
+/* Get And put them into the body */
+function getFontColorBgSizeLocalStorage(platte) {
+    const font_color = document.querySelectorAll(".font-change-color"),
+        bg_color = document.querySelectorAll(".bg-change-color"),
+        fonts_size = document.querySelectorAll(".font-change-size");
+
+    /* Save Style To LocalStorage */
+    let get_style = localStorage.getItem("styleAzkar");
+    if (get_style != null) {
+        let data_from_local = JSON.parse(get_style);
+        // Add Active To Color In Platte From Local
+        platte.forEach(pl_c => {
+            // -----
+            if (pl_c.parentElement.classList.contains("font-plt")) {
+                if (pl_c.dataset.color == data_from_local.fontColor) {
+                    pl_c.parentElement.querySelectorAll("li").forEach(co => {
+                        if (co.classList.contains("active")) {
+                            co.classList.remove("active");
+                        }
+                    });
+                    pl_c.classList.add("active");
+                }
+            } else {
+                if (pl_c.dataset.color == data_from_local.bgColor) {
+                    pl_c.parentElement.querySelectorAll("li").forEach(co => {
+                        if (co.classList.contains("active")) {
+                            co.classList.remove("active");
+                        }
+                    });
+                    pl_c.classList.add("active");
+                }
+            }
+        });
+        // Background Color
+        // ------
+        font_color.forEach(color => {
+            color.style.color = data_from_local.fontColor;
+
+        });
+        bg_color.forEach(color => {
+            color.style.backgroundColor = data_from_local.bgColor;
+        });
+        fonts_size.forEach(f => {
+            f.style.fontSize = data_from_local.fontSize + "px";
+        });
+        if (data_from_local.bgColor == "default") {
+            // ------
+            bg_color.forEach(color => {
+                color.style.backgroundColor = "";
+            });
+        }
+        if (data_from_local.fontColor == "default") {
+            font_color.forEach(color => {
+                color.style.color = data_from_local.fontColor;
+            });
+        }
+    }
 }
