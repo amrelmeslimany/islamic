@@ -686,6 +686,7 @@ if (location.href.search("the-article.html") > -1) {
         search_founded_ele = document.querySelector(".header .founded-search .founded-number");
 
     let font_size = 16;
+
     /* Get Article From Link */
     const URL_PARAMS = new URLSearchParams(window.location.search);
     if (URL_PARAMS.has("title")) {
@@ -701,6 +702,45 @@ if (location.href.search("the-article.html") > -1) {
                     articles_text_inner.querySelector(".the-article-self").innerHTML = article.body;
                     articles_text_outer.querySelector("p").innerHTML = article.body;
                     page_title_head.textContent = `تطبيق موقع ميراث الأنبياء | ${title_link}`;
+                    const original_text = article.body;
+                    /* Searching In Article */
+                    const article_text = articles_text_inner.querySelector("p.the-article-self");
+                    search_bx.querySelector(".search.icon").addEventListener("click", (c) => {
+                        c.preventDefault();
+                        // ----------
+                        const input_search_val = search_bx.querySelector("input").value;
+                        let regex_search = new RegExp(`(${input_search_val})`, "g");
+                        if (input_search_val != "") {
+                            if (regex_search.test(article_text.textContent)) {
+                                let newText = article_text.textContent.replace(regex_search, `<strong class="found-search" style="font-size:1.2rem">${input_search_val}</strong>`);
+                                article_text.innerHTML = newText;
+                                let findElements = document.querySelectorAll(".found-search");
+                                search_founded_ele.textContent = findElements.length;
+                                search_founded_ele.parentElement.classList.add("active");
+                                if (findElements.length == 1) {
+                                    findElements[0].scrollIntoView({
+                                        behavior: "smooth",
+                                        block: "center"
+                                    });
+                                } else {
+                                    window.scrollTo({
+                                        top: findElements[1].offsetTop - 50,
+                                        behavior: "smooth"
+                                    });
+                                }
+                            } else {
+                                search_founded_ele.parentElement.classList.add("active");
+                                search_founded_ele.textContent = 0;
+                                article_text.innerHTML = original_text;
+                                setTimeout(() => {
+                                    search_founded_ele.parentElement.classList.remove("active")
+                                }, 3000);
+                            }
+                        } else {
+                            article_text.innerHTML = original_text;
+                            search_founded_ele.parentElement.classList.remove("active");
+                        }
+                    });
                 }
             });
         });
@@ -711,45 +751,7 @@ if (location.href.search("the-article.html") > -1) {
         articles_text_inner.querySelector(".the-article-self").innerHTML = `من فضلك اذهب لصفحة <a href="articles.html" class="art-link font-change-color">المقالات</a><br> او فى الاسفل ستجد مقالات أخرى`;
         articles_text_outer.querySelector("p").innerHTML = `من فضلك اذهب لصفحة <a href="articles.html" class="art-link font-change-color ">المقالات</a><br> او فى الاسفل ستجد مقالات أخرى`;
     }
-    /* Searching In Article */
-    const article_text = articles_text_inner.querySelector("p.the-article-self"),
-        original_text = article_text.innerHTML;
-    search_bx.querySelector(".search.icon").addEventListener("click", (c) => {
-        c.preventDefault();
-        // ----------
-        const input_search_val = search_bx.querySelector("input").value;
-        let regex_search = new RegExp(`(${input_search_val})`, "g");
-        if (input_search_val != "") {
-            if (regex_search.test(article_text.textContent)) {
-                let newText = article_text.textContent.replace(regex_search, `<strong class="found-search" style="font-size:1.2rem">${input_search_val}</strong>`);
-                article_text.innerHTML = newText;
-                let findElements = document.querySelectorAll(".found-search");
-                search_founded_ele.textContent = findElements.length;
-                search_founded_ele.parentElement.classList.add("active");
-                if (findElements.length == 1) {
-                    findElements[0].scrollIntoView({
-                        behavior: "smooth",
-                        block: "center"
-                    });
-                } else {
-                    window.scrollTo({
-                        top: findElements[1].offsetTop - 50,
-                        behavior: "smooth"
-                    });
-                }
-            } else {
-                search_founded_ele.parentElement.classList.add("active");
-                search_founded_ele.textContent = 0;
-                article_text.innerHTML = original_text;
-                setTimeout(() => {
-                    search_founded_ele.parentElement.classList.remove("active")
-                }, 3000);
-            }
-        } else {
-            article_text.innerHTML = original_text;
-            search_founded_ele.parentElement.classList.remove("active");
-        }
-    });
+
     /* Add Active On Article Which will read */
     articles_text_inner.querySelector(".the-article-self").addEventListener("click", () => {
         art_tx_ou_parent.classList.add("active");
