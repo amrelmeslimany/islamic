@@ -476,6 +476,7 @@ body {
           box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
   /* زر المشاركه والنسخ ================== */
   /* تنسيق المقاله ====================== */
+  /* السهم الاعلي ===================== */
 }
 
 .the-article-section .article-inner .copy-and-share .ln-cs {
@@ -487,6 +488,11 @@ body {
 }
 
 .the-article-section .article-inner .the-article-self .art-link {
+  color: #f3ecec;
+}
+
+.the-article-section .article-inner .scroll-up-inner {
+  background-color: #223035;
   color: #f3ecec;
 }
 
