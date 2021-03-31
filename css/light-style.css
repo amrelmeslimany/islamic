@@ -54,6 +54,16 @@ a {
   text-decoration: none;
 }
 
+/* --- عداد البحث ================================================ */
+.founded-search {
+  color: #f1eddc;
+  display: none;
+}
+
+.founded-search.active {
+  display: block;
+}
+
 /* 2) الهيدر سيكون ثابت فى جميع الصفحات ==================== */
 /* -- 2) تعديل الراس او بداية الصفحه (اللوجو واسم الصفحة) ====================== */
 /* -- 2) تعديل مقاس اللوجو  ============================ */
@@ -90,15 +100,6 @@ a {
   color: #10526a;
   top: 0.12em !important;
   right: .1em !important;
-}
-
-.header .founded-search {
-  color: #f1eddc;
-  display: none;
-}
-
-.header .founded-search.active {
-  display: block;
 }
 
 /* ================== -- 2) هذا الناف ايضا سيكون ثابت فى جميع الصفحات ============ */
@@ -1360,6 +1361,184 @@ a {
   display: block;
 }
 
+/* 9) ===================== صفحة اسماء الله الحسني ============ */
+.allah-names-section {
+  background-image: url("../img/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* الصندوق الخاص بالاسماء فقط ==========================*/
+  /* تعديل الاعمده ==== */
+  /* ======= تنسيق صندوق الذى يحتوي اسم الله */
+  /* الصندوق الخاص بالمعاني ========================== */
+}
+
+.allah-names-section [class*="col"] {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.allah-names-section .box-name {
+  background-color: #10526a;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  /* الاسم نفسه ===== */
+}
+
+.allah-names-section .box-name.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-animation: pulse 1.25s infinite forwards cubic-bezier(0.66, 0, 0, 1);
+          animation: pulse 1.25s infinite forwards cubic-bezier(0.66, 0, 0, 1);
+}
+
+.allah-names-section .box-name span {
+  display: block;
+  /* ======= الرقم */
+  /* تعديل علامه التعجب ======= */
+  /* علامه تشغيل الصوت ========= */
+}
+
+.allah-names-section .box-name span.number {
+  background-color: #115973;
+  padding: 0rem 0.5rem;
+  color: #f1eddc;
+  border-radius: 0 0 5px 0;
+  -webkit-box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.allah-names-section .box-name span.exc-mark {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  color: #f1eddc;
+}
+
+.allah-names-section .box-name span.run-audio {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  color: #f1eddc;
+}
+
+.allah-names-section .box-name .allah-name {
+  color: #f1eddc;
+}
+
+.allah-names-section .catch-all-definations {
+  /* تعديل الصندوق الاب =========== */
+}
+
+.allah-names-section .catch-all-definations .box-def {
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(16, 82, 106, 0.98);
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  padding: 0.4rem;
+  padding: 0;
+  -webkit-transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
+  top: -200%;
+  /* تعديل الناف الاعلي ======== */
+  /* السيرش الموجود فى صفحة المقالات فقط ==========*/
+  /* النصوص والمعاني */
+  /* زر الاغلاق */
+}
+
+.allah-names-section .catch-all-definations .box-def.active {
+  top: 0;
+}
+
+.allah-names-section .catch-all-definations .box-def .top-nav-def {
+  background-color: #115973;
+  padding: 0.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid rgba(241, 237, 220, 0.2);
+}
+
+.allah-names-section .catch-all-definations .box-def .top-nav-def .copy-btn,
+.allah-names-section .catch-all-definations .box-def .top-nav-def .run-audio,
+.allah-names-section .catch-all-definations .box-def .top-nav-def .share {
+  overflow: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  color: #f1eddc;
+}
+
+.allah-names-section .catch-all-definations .box-def .top-nav-def .def-word {
+  line-height: 2.4;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  text-align: center;
+  color: #f1eddc;
+}
+
+.allah-names-section .catch-all-definations .box-def .search-bx {
+  width: 100%;
+  background-color: #115973;
+  padding: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.allah-names-section .catch-all-definations .box-def .search-bx input:focus {
+  border-color: #136380 !important;
+}
+
+.allah-names-section .catch-all-definations .box-def .search-bx i.circular.icon {
+  color: #10526a;
+  top: 0.52em !important;
+  right: 0.5em !important;
+}
+
+.allah-names-section .catch-all-definations .box-def .bxs-th {
+  background-color: #115973;
+  color: #f1eddc;
+  border-radius: 5px;
+  padding: 0.4rem 0.4rem 0.8rem;
+  margin-bottom: 1rem;
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+}
+
+.allah-names-section .catch-all-definations .box-def .bxs-th h5 {
+  border-bottom: 1px solid rgba(241, 237, 220, 0.2);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.allah-names-section .catch-all-definations .box-def .bxs-th:last-child {
+  margin-bottom: 0;
+}
+
+.allah-names-section .catch-all-definations .box-def .close-box {
+  color: #f1eddc;
+  font-size: 2rem;
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 2rem;
+}
+
 /* ======================= اشياء ثابته ======================== */
 /* =============== ثابته فى بعض الصفحات | تعديل قائمه الفهرس ================= */
 .alfahrs-list {
@@ -1583,5 +1762,35 @@ a {
     opacity: 0;
     -webkit-transform: scale(0);
             transform: scale(0);
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }

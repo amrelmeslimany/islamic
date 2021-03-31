@@ -422,7 +422,7 @@ if (location.href.search("articles.html") > -1) {
     });
 }
 
-// 4- صفحة الاذكار ============================================
+// 5- صفحة الاذكار ============================================
 let data_font_color_bg = {
     fontSize: 16,
     fontColor: "default",
@@ -660,7 +660,7 @@ if (location.href.search("azkar.html") > -1) {
     }
 }
 
-// 5- صفحة المقاله بمفردها ========================================
+// 6- صفحة المقاله بمفردها ========================================
 if (location.href.search("the-article.html") > -1) {
 
     /* Color The Navbar */
@@ -671,7 +671,7 @@ if (location.href.search("the-article.html") > -1) {
     /* Right Nav FN */
     rightNavFN();
     // ---------
-    const platte_font_colors = document.querySelectorAll(".dropdown-playlist .sound-item .list-colors .color-item"),
+    const
         articles_text_inner = document.querySelector(".the-article-section .article-inner"),
         articles_text_outer = document.querySelector(".the-article-section .article-outer-parent .the-article-self"),
         art_tx_ou_parent = articles_text_outer.parentElement.parentElement,
@@ -782,7 +782,7 @@ if (location.href.search("the-article.html") > -1) {
         makeCopy(this, articles_text_inner.querySelector(".the-article-self"));
     });
     /* Add Colors To Platte  And Change Elements*/
-    addColorsToPlatte(platte_font_colors);
+    addColorsToPlatte();
     /* Change Font Size*/
     plus_btn.addEventListener("click", (c) => {
         c.preventDefault();
@@ -811,11 +811,188 @@ if (location.href.search("the-article.html") > -1) {
         getAndPutLocal("fs", data_font_color_bg.fontSize);
     });
     /* Get Data */
-    getFontColorBgSizeLocalStorage(platte_font_colors);
-
+    getFontColorBgSizeLocalStorage();
 }
 
-/* document.createElement("audio").ended */
+// 7- اسماء الله الحسني ========================================
+if (location.href.search("allah-names.html") > -1) {
+    const plus_btn = document.querySelector(".bottom-nav .link-nav.plus-up"),
+        minus_btn = document.querySelector(".bottom-nav .link-nav.minus-down"),
+        changes = document.querySelectorAll(".font-change-size"),
+        search_bx = document.querySelector(".header .search-bx"),
+        list_names_bx = document.querySelectorAll(".allah-names-section .box-name"),
+        catch_all_definations = document.querySelector(".catch-all-definations");
+    let font_size = 16,
+        length_arr = [];
+    /* Color The Navbar */
+    makeBackGround();
+    window.onscroll = () => {
+        makeBackGround();
+    };
+    /* Right Nav FN */
+    rightNavFN();
+    /* Add Colors To Platte  And Change Elements*/
+    addColorsToPlatte();
+    /* Change Font Size*/
+    plus_btn.addEventListener("click", (c) => {
+        c.preventDefault();
+        font_size += 1;
+        changes.forEach(tx => {
+            if (font_size >= 55) {
+                font_size = 55;
+            }
+            tx.style.fontSize = font_size + "px";
+        });
+        data_font_color_bg.fontSize = font_size;
+        getAndPutLocal("fs", data_font_color_bg.fontSize);
+    });
+    minus_btn.addEventListener("click", (c) => {
+        c.preventDefault();
+        font_size -= 1;
+        changes.forEach(tx => {
+            if (font_size <= 0) {
+                font_size = 1;
+                tx.style.fontSize = font_size + "px";
+            } else {
+                tx.style.fontSize = font_size + "px";
+            }
+        });
+        data_font_color_bg.fontSize = font_size;
+        getAndPutLocal("fs", data_font_color_bg.fontSize);
+    });
+    /* Get Data */
+    getFontColorBgSizeLocalStorage();
+    /* Search In Names */
+    search_bx.querySelector(".search.icon").addEventListener("click", function(c) {
+        length_arr = [];
+        c.preventDefault();
+        // ----------------
+        const search_value = search_bx.querySelector("input").value.trim(),
+            search_founded_ele = document.querySelector(".header .founded-search .founded-number");
+        // ----------------
+        list_names_bx.forEach((name_bx, i) => {
+            let text_name = name_bx.querySelector(".allah-name").textContent,
+                regex_search = new RegExp(`(${search_value})`, "g");
+            // ------------
+            if (search_value != "") {
+                if (regex_search.test(text_name)) {
+                    length_arr.push(i);
+                    name_bx.parentElement.style.display = "";
+                    search_founded_ele.innerHTML = length_arr.length;
+                    search_founded_ele.parentElement.classList.add("active");
+                } else {
+                    name_bx.parentElement.style.display = "none";
+                    if (length_arr.length == 0) {
+                        search_founded_ele.innerHTML = 0;
+                    }
+                    search_founded_ele.parentElement.classList.add("active");
+                }
+            } else {
+                name_bx.parentElement.style.display = "";
+                search_founded_ele.parentElement.classList.remove("active");
+            }
+        });
+    });
+    /* Open Definition Box */
+    list_names_bx.forEach(bx => {
+        // -----------------
+        catch_all_definations.querySelectorAll(".box-def").forEach(df => {
+            df.classList.remove("active");
+            df.querySelector(".close-box").addEventListener("click", function() {
+                df.classList.remove("active");
+                // -----------------
+            });
+        });
+        // -----------------
+        bx.querySelector(".allah-name").addEventListener("click", function() {
+            openDefBox(this);
+        });
+        // -----------------
+        bx.querySelector(".exc-mark").addEventListener("click", function() {
+            openDefBox(this);
+        });
+        // -----------------
+        bx.querySelector(".run-audio").addEventListener("click", function() {
+            let audio_tag = this.parentElement.querySelector("audio");
+            if (audio_tag.paused) {
+                audio_tag.play();
+                this.innerHTML = `<i class="fas fa-pause add-animation-scale"></i>`;
+            } else {
+                audio_tag.pause();
+                this.innerHTML = `<i class="fas fa-play add-animation-scale"></i>`;
+
+            }
+
+        });
+        bx.querySelector("audio").onended = () => {
+            bx.querySelector(".run-audio").innerHTML = `<i class="fas fa-play add-animation-scale"></i>`;
+        };
+    });
+
+    /* The Defnintion Box Handle */
+    catch_all_definations.querySelectorAll(".box-def").forEach(dfBox => {
+        // -------------- Copy FN
+        dfBox.querySelector(".copy-btn").addEventListener("click", function() {
+            let parent = this.parentElement.parentElement,
+                contents_array = [];
+            parent.querySelectorAll(".bxs-th").forEach(cn => {
+                contents_array.push(cn.textContent.trim());
+            });
+            let will_copy = contents_array.join(" -------- ").trim();
+            makeCopy(this, will_copy);
+        });
+        // -------------- Play - - Pause
+        dfBox.querySelector(".run-audio").addEventListener("click", function() {
+            let audio_tag = this.parentElement.querySelector("audio");
+            if (audio_tag.paused) {
+                audio_tag.play();
+                this.innerHTML = `<i class="fas fa-pause add-animation-scale"></i>`;
+            } else {
+                audio_tag.pause();
+                this.innerHTML = `<i class="fas fa-play add-animation-scale"></i>`;
+            }
+        });
+        dfBox.querySelector("audio").onended = () => {
+            dfBox.querySelector(".run-audio").innerHTML = `<i class="fas fa-play add-animation-scale"></i>`;
+        };
+        // -------------- Searching
+        dfBox.querySelector(".search-bx .icon").addEventListener("click", function() {
+            let search_value = this.parentElement.querySelector("input").value.trim(),
+                search_founded_ele = dfBox.querySelector(".founded-search .founded-number");
+            this.parentElement.parentElement.querySelectorAll(".fr-search").forEach((txt) => {
+                let regex_search = new RegExp(`(${search_value})`, "g");
+                // ------------
+                if (search_value != "") {
+                    if (regex_search.test(txt.textContent)) {
+                        let newText = txt.textContent.replace(regex_search, `<strong class="found-search" style="font-size:1.2rem">${search_value}</strong>`);
+                        search_founded_ele.innerHTML = "نعم, فى الاسفل";
+                        search_founded_ele.parentElement.classList.add("active");
+                        txt.innerHTML = newText;
+                    } else {
+                        search_founded_ele.innerHTML = "لا";
+                        search_founded_ele.parentElement.classList.add("active");
+                        txt.innerHTML = txt.textContent;
+                    }
+                } else {
+                    search_founded_ele.parentElement.classList.remove("active");
+                    txt.innerHTML = txt.textContent;
+                }
+            });
+        });
+    });
+    /* Functions */
+    function openDefBox(thisE) {
+        thisE.parentElement.parentElement.parentElement.querySelectorAll(".box-name").forEach(bxN => {
+            bxN.classList.remove("active")
+        });
+        thisE.parentElement.classList.add("active");
+        catch_all_definations.querySelectorAll(".box-def").forEach(df => {
+            df.classList.remove("active");
+        });
+        catch_all_definations.querySelector(`${thisE.dataset.definition}`).classList.add("active");
+    }
+
+}
 // Basics
 /* Coloring The top Navbar */
 function makeBackGround() {
@@ -927,7 +1104,11 @@ function barColor(color) {
 function makeCopy(btn, textEl) {
     let the_azkar = textEl,
         textArea = document.createElement("textarea");
-    textArea.value = the_azkar.textContent;
+    if (typeof the_azkar === "object") {
+        textArea.value = the_azkar.textContent;
+    } else {
+        textArea.value = the_azkar;
+    }
     document.body.appendChild(textArea);
     textArea.select();
     document.execCommand("Copy");
@@ -938,10 +1119,12 @@ function makeCopy(btn, textEl) {
     textArea.remove();
 }
 /* Add Color To Platte */
-function addColorsToPlatte(element) {
-    const font_color = document.querySelectorAll(".font-change-color"),
+function addColorsToPlatte() {
+
+    const platte_font_colors = document.querySelectorAll(".dropdown-playlist .sound-item .list-colors .color-item"),
+        font_color = document.querySelectorAll(".font-change-color"),
         bg_color = document.querySelectorAll(".bg-change-color");
-    element.forEach(plt => {
+    platte_font_colors.forEach(plt => {
         // ------
         plt.style.backgroundColor = plt.dataset.color;
         // ------
@@ -1009,8 +1192,10 @@ function getAndPutLocal(sort, data_change) {
 }
 
 /* Get And put them into the body */
-function getFontColorBgSizeLocalStorage(platte) {
-    const font_color = document.querySelectorAll(".font-change-color"),
+function getFontColorBgSizeLocalStorage() {
+    const
+        platte_font_colors = document.querySelectorAll(".dropdown-playlist .sound-item .list-colors .color-item"),
+        font_color = document.querySelectorAll(".font-change-color"),
         bg_color = document.querySelectorAll(".bg-change-color"),
         fonts_size = document.querySelectorAll(".font-change-size");
 
@@ -1019,7 +1204,7 @@ function getFontColorBgSizeLocalStorage(platte) {
     if (get_style != null) {
         let data_from_local = JSON.parse(get_style);
         // Add Active To Color In Platte From Local
-        platte.forEach(pl_c => {
+        platte_font_colors.forEach(pl_c => {
             // -----
             if (pl_c.parentElement.classList.contains("font-plt")) {
                 if (pl_c.dataset.color == data_from_local.fontColor) {

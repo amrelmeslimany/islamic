@@ -4,6 +4,19 @@ body {
   background-color: #1e2a2f !important;
 }
 
+/* السيرش الموجود فى صفحة المقالات فقط */
+.search-bx input:focus {
+  border-color: #2c3e45 !important;
+}
+
+.search-bx i.circular.icon {
+  color: #2a3b41;
+}
+
+.founded-search {
+  color: #f3ecec;
+}
+
 /* الهيدر سيكون ثابت فى جميع الصفحات */
 /* تعديل مقاس اللوجو */
 .logo-img-h {
@@ -15,22 +28,9 @@ body {
 .header {
   background-color: #2a3b41;
   /* تعديل اسم الصفحة */
-  /* السيرش الموجود فى صفحة المقالات فقط */
 }
 
 .header .page-name {
-  color: #f3ecec;
-}
-
-.header .search-bx input:focus {
-  border-color: #2c3e45 !important;
-}
-
-.header .search-bx i.circular.icon {
-  color: #2a3b41;
-}
-
-.header .founded-search {
   color: #f3ecec;
 }
 
@@ -536,6 +536,102 @@ body {
 .the-article-section .article-outer-parent .article-outer-child .scroll-up {
   background-color: #f3ecec;
   color: #223035;
+}
+
+/* 9) ===================== صفحة اسماء الله الحسني ============ */
+.allah-names-section {
+  background: none;
+  background-color: #223035;
+  /* الصندوق الخاص بالاسماء فقط ==========================*/
+  /* ======= تنسيق صندوق الذى يحتوي اسم الله */
+  /* الصندوق الخاص بالمعاني ========================== */
+}
+
+.allah-names-section .box-name {
+  background-color: #223035;
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+  /* الاسم نفسه ===== */
+}
+
+.allah-names-section .box-name span {
+  display: block;
+  /* ======= الرقم */
+  /* تعديل علامه التعجب ======= */
+  /* علامه تشغيل الصوت ========= */
+}
+
+.allah-names-section .box-name span.number {
+  background-color: #2a3b41;
+  color: #f3ecec;
+  -webkit-box-shadow: 0px 0.2rem 0.2rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.2rem rgba(0, 0, 0, 0.27);
+}
+
+.allah-names-section .box-name span.exc-mark {
+  color: #f3ecec;
+}
+
+.allah-names-section .box-name span.run-audio {
+  color: #f3ecec;
+}
+
+.allah-names-section .box-name .allah-name {
+  color: #f3ecec;
+}
+
+.allah-names-section .catch-all-definations {
+  /* تعديل الصندوق الاب =========== */
+}
+
+.allah-names-section .catch-all-definations .box-def {
+  background-color: rgba(34, 48, 53, 0.98);
+  /* تعديل الناف الاعلي ======== */
+  /* السيرش الموجود فى صفحة المقالات فقط ==========*/
+  /* النصوص والمعاني */
+  /* زر الاغلاق */
+}
+
+.allah-names-section .catch-all-definations .box-def .top-nav-def {
+  background-color: #2a3b41;
+  border-bottom: 1px solid rgba(243, 236, 236, 0.2);
+}
+
+.allah-names-section .catch-all-definations .box-def .top-nav-def .copy-btn,
+.allah-names-section .catch-all-definations .box-def .top-nav-def .run-audio,
+.allah-names-section .catch-all-definations .box-def .top-nav-def .share {
+  color: #f3ecec;
+}
+
+.allah-names-section .catch-all-definations .box-def .top-nav-def .def-word {
+  color: #f3ecec;
+}
+
+.allah-names-section .catch-all-definations .box-def .search-bx {
+  background-color: #2a3b41;
+}
+
+.allah-names-section .catch-all-definations .box-def .search-bx input:focus {
+  border-color: #2c3e45 !important;
+}
+
+.allah-names-section .catch-all-definations .box-def .search-bx i.circular.icon {
+  color: #223035;
+}
+
+.allah-names-section .catch-all-definations .box-def .bxs-th {
+  background-color: #2a3b41;
+  color: #f3ecec;
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+}
+
+.allah-names-section .catch-all-definations .box-def .bxs-th h5 {
+  border-bottom: 1px solid rgba(243, 236, 236, 0.2);
+}
+
+.allah-names-section .catch-all-definations .box-def .close-box {
+  color: #f3ecec;
 }
 
 /*  تعديل قائمه الفهرس */
