@@ -821,7 +821,12 @@ if (location.href.search("allah-names.html") > -1) {
         changes = document.querySelectorAll(".font-change-size"),
         search_bx = document.querySelector(".header .search-bx"),
         list_names_bx = document.querySelectorAll(".allah-names-section .box-name"),
-        catch_all_definations = document.querySelector(".catch-all-definations");
+        catch_all_definations = document.querySelector(".catch-all-definations"),
+        alsalf_part = document.querySelector(".footer-two .alsalf"),
+        salaf_box = document.querySelector(".box-salaf"),
+        salaf_content = salaf_box.querySelector(".bxs-th .content"),
+        salaf__content_html = salaf_content.innerHTML,
+        nozzom_part = document.querySelector(".footer-two .nozzom");
     let font_size = 16,
         length_arr = [];
     /* Color The Navbar */
@@ -864,8 +869,8 @@ if (location.href.search("allah-names.html") > -1) {
     getFontColorBgSizeLocalStorage();
     /* Search In Names */
     search_bx.querySelector(".search.icon").addEventListener("click", function(c) {
-        length_arr = [];
         c.preventDefault();
+        length_arr = [];
         // ----------------
         const search_value = search_bx.querySelector("input").value.trim(),
             search_founded_ele = document.querySelector(".header .founded-search .founded-number");
@@ -958,18 +963,24 @@ if (location.href.search("allah-names.html") > -1) {
         // -------------- Searching
         dfBox.querySelector(".search-bx .icon").addEventListener("click", function() {
             let search_value = this.parentElement.querySelector("input").value.trim(),
-                search_founded_ele = dfBox.querySelector(".founded-search .founded-number");
-            this.parentElement.parentElement.querySelectorAll(".fr-search").forEach((txt) => {
+                search_founded_ele = dfBox.querySelector(".founded-search .founded-number"),
+                finded_n = 0;
+
+            // ------
+            this.parentElement.parentElement.querySelectorAll(".fr-search").forEach((txt, i_p) => {
                 let regex_search = new RegExp(`(${search_value})`, "g");
                 // ------------
                 if (search_value != "") {
                     if (regex_search.test(txt.textContent)) {
                         let newText = txt.textContent.replace(regex_search, `<strong class="found-search" style="font-size:1.2rem">${search_value}</strong>`);
-                        search_founded_ele.innerHTML = "نعم, فى الاسفل";
-                        search_founded_ele.parentElement.classList.add("active");
                         txt.innerHTML = newText;
+                        finded_n += txt.querySelectorAll(".found-search").length;
+                        search_founded_ele.innerHTML = finded_n;
+                        search_founded_ele.parentElement.classList.add("active");
                     } else {
-                        search_founded_ele.innerHTML = "لا";
+                        if (finded_n == 0) {
+                            search_founded_ele.innerHTML = 0;
+                        }
                         search_founded_ele.parentElement.classList.add("active");
                         txt.innerHTML = txt.textContent;
                     }
@@ -977,9 +988,72 @@ if (location.href.search("allah-names.html") > -1) {
                     search_founded_ele.parentElement.classList.remove("active");
                     txt.innerHTML = txt.textContent;
                 }
+
             });
+
         });
     });
+    /*  ALSALF Part */
+    alsalf_part.addEventListener("click", function(c) {
+        c.preventDefault();
+        salaf_box.classList.add("active");
+    });
+    // -------------
+    salaf_box.querySelector(".close-box").addEventListener("click", function() {
+        salaf_box.classList.remove("active");
+    });
+    // -------------
+    salaf_box.querySelector(".copy-btn").addEventListener("click", function() {
+        makeCopy(this, salaf_content);
+    });
+    // -------------
+    salaf_box.querySelector(".search.icon").addEventListener("click", function() {
+        let search_value = this.parentElement.querySelector("input").value,
+            text_content = salaf_content.textContent,
+            regex_search = new RegExp(`(${search_value})`, "g"),
+            search_founded_ele = salaf_box.querySelector(".founded-search .founded-number");
+
+        // ------------
+        if (search_value != "") {
+            if (regex_search.test(text_content)) {
+                // --------------
+                let newText = text_content.replace(regex_search, `<strong class="found-search" style="font-size:1.2rem">${search_value}</strong>`);
+
+                // ----------
+                salaf_content.innerHTML = newText;
+                // ----------
+                let finded_search = this.parentElement.parentElement.querySelectorAll(".found-search").length;
+                search_founded_ele.innerHTML = finded_search;
+                search_founded_ele.parentElement.classList.add("active");
+            } else {
+                salaf_content.innerHTML = salaf__content_html;
+                search_founded_ele.innerHTML = 0;
+                search_founded_ele.parentElement.classList.add("active");
+            }
+        } else {
+            salaf_content.innerHTML = salaf__content_html;
+            search_founded_ele.parentElement.classList.remove("active");
+        }
+    });
+    // -------------
+    nozzom_part.addEventListener("click", function(c) {
+        c.preventDefault();
+        let audio = this.querySelector("audio");
+        if (audio.paused) {
+            this.querySelector("i").classList.remove("fa-play");
+            this.querySelector("i").classList.add("fa-pause");
+            audio.play();
+        } else {
+            this.querySelector("i").classList.add("fa-play");
+            this.querySelector("i").classList.remove("fa-pause");
+            audio.pause();
+        }
+    });
+    nozzom_part.querySelector("audio").onended = function() {
+
+        nozzom_part.querySelector("i").classList.add("fa-play");
+        nozzom_part.querySelector("i").classList.remove("fa-pause");
+    };
     /* Functions */
     function openDefBox(thisE) {
         thisE.parentElement.parentElement.parentElement.querySelectorAll(".box-name").forEach(bxN => {

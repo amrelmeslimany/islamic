@@ -691,3 +691,52 @@ body {
   color: #f3ecec;
   background-color: #2a3b41;
 }
+
+/* صندوق السلف ============== */
+.box-salaf {
+  background-color: rgba(34, 48, 53, 0.98);
+  /* السيرش الموجود فى صفحة المقالات فقط ==========*/
+  /* النصوص والمعاني */
+  /* زر الاغلاق */
+}
+
+.box-salaf .top-nav-def {
+  background-color: #2a3b41;
+  border-bottom: 1px solid rgba(243, 236, 236, 0.2);
+}
+
+.box-salaf .top-nav-def .copy-btn,
+.box-salaf .top-nav-def .share {
+  color: #f3ecec;
+}
+
+.box-salaf .top-nav-def .def-word {
+  color: #f3ecec;
+}
+
+.box-salaf .search-bx {
+  background-color: #2a3b41;
+}
+
+.box-salaf .search-bx input:focus {
+  border-color: #2c3e45 !important;
+}
+
+.box-salaf .search-bx i.circular.icon {
+  color: #223035;
+}
+
+.box-salaf .bxs-th {
+  background-color: #2a3b41;
+  color: #f3ecec;
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+}
+
+.box-salaf .bxs-th h5 {
+  border-bottom: 1px solid rgba(243, 236, 236, 0.2);
+}
+
+.box-salaf .close-box {
+  color: #f3ecec;
+}
