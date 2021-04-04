@@ -1,5 +1,6 @@
 // ? اشياء مشتركه فى جميع الصفحات =============================
 const bottom_nav = document.querySelector(".bottom-nav");
+let fixd;
 window.onload = () => {
     let mode_name = localStorage.getItem("darkMode");
     if (mode_name != null) {
@@ -83,20 +84,7 @@ close_btn_list.addEventListener("click", (e) => {
 if (location.href.search("radio.html") > -1) {
     makeBackGround();
     /* اضافة التاريخ والوقت */
-    try {
-        time_is_widget.init({
-            Mecca_z439: {
-                /* <br>DATE */
-                template: "TIME",
-                /* date_format: "dayname, monthname dnum, year", */
-                time_format: "12hours:minutes:seconds"
-            }
-        });
-    } catch (e) {
-        document.querySelector(".hejry-time .calender-hejry").insertAdjacentHTML("beforeend", `
-        <span>مشكله فى اظهار الوقت</span>
-        `);
-    }
+    historyDate();
     /* اظهار قائمة الاذاعات */
     /* Right Nav FN */
     rightNavFN();
@@ -155,72 +143,12 @@ if (location.href.search("radio.html") > -1) {
 
         });
     }
-
-    /* اظهار التاريخ الهجرى */
-    let fixd;
-
-    function isGregLeapYear(year) {
-        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
-    }
-
-    function gregToFixed(year, month, day) {
-        let a = Math.floor((year - 1) / 4);
-        let b = Math.floor((year - 1) / 100);
-        let c = Math.floor((year - 1) / 400);
-        let d = Math.floor((367 * month - 362) / 12);
-        if (month <= 2)
-            e = 0;
-        else if (month > 2 && isGregLeapYear(year))
-            e = -1;
-        else
-            e = -2;
-        return 1 - 1 + 365 * (year - 1) + a - b + c + d + e + day;
-    }
-
-    function Hijri(year, month, day) {
-        this.year = year;
-        this.month = month;
-        this.day = day;
-        this.toFixed = hijriToFixed;
-        this.toString = hijriToString;
-    }
-
-    function hijriToFixed() {
-        return this.day + Math.ceil(29.5 * (this.month - 1)) + (this.year - 1) * 354 + Math.floor((3 + 11 * this.year) / 30) + 227015 - 1;
-    }
-
-    function hijriToString() {
-        let months = new Array("محرم", "صفر", "ربيع أول", "ربيع ثانى", "جمادى أول", "جمادى ثانى", "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة");
-        return this.day + " " + months[this.month - 1] + " " + this.year;
-    }
-
-    function fixedToHijri(f) {
-        let i = new Hijri(1100, 1, 1);
-        i.year = Math.floor((30 * (f - 227015) + 10646) / 10631);
-        let i2 = new Hijri(i.year, 1, 1);
-        let m = Math.ceil((f - 29 - i2.toFixed()) / 29.5) + 1;
-        i.month = Math.min(m, 12);
-        i2.year = i.year;
-        i2.month = i.month;
-        i2.day = 1;
-        i.day = f - i2.toFixed() + 1;
-        return i;
-    }
-    let tod = new Date();
-    let y = tod.getFullYear();
-    let m = tod.getMonth();
-    let d = tod.getDate();
-    let dow = tod.getDay();
-    m++;
-    fixd = gregToFixed(y, m, d);
-    let h = new Hijri(1421, 11, 28);
-    h = fixedToHijri(fixd);
-    document.querySelector(".calender-hejry").insertAdjacentHTML("beforeend", `<span class="hjr-date">${h.toString()}</span>`);
     /* عمل لون لخلفية الناف الاعلى على حسب ال سكرول */
     window.onscroll = function() {
         makeBackGround();
     };
-
+    /* اظهار التاريخ الهجرى */
+    addDateHejryToPage();
 }
 
 // 3- صفحة المجلات ============================================
@@ -429,13 +357,6 @@ let data_font_color_bg = {
     bgColor: "default"
 };
 if (location.href.search("azkar.html") > -1) {
-    /* Color The Navbar */
-    makeBackGround();
-    window.onscroll = () => {
-        makeBackGround();
-    };
-    /* Right Nav FN */
-    rightNavFN();
     /* Select Sort Of Azkar You ganna read */
     const azkar_btn = document.querySelectorAll(".footer-two .link-ch-ad"),
         azkar_box = document.querySelectorAll(".azkars-section .az-bx"),
@@ -445,6 +366,13 @@ if (location.href.search("azkar.html") > -1) {
         plus_font = document.querySelector(".bottom-nav .n-links-box .plus-up"),
         minus_font = document.querySelector(".bottom-nav .n-links-box .minus-down"),
         platte_font_colors = document.querySelectorAll(".dropdown-playlist .sound-item .list-colors .color-item");
+    /* Color The Navbar */
+    makeBackGround();
+    window.onscroll = () => {
+        makeBackGround();
+    };
+    /* Right Nav FN */
+    rightNavFN();
     /* Make The FN */
     azkar_btn.forEach(function(az_bt) {
         //-----
@@ -684,18 +612,15 @@ if (location.href.search("the-article.html") > -1) {
         page_name = document.querySelector(".header .page-name"),
         page_title_head = document.querySelector("head title"),
         search_founded_ele = document.querySelector(".header .founded-search .founded-number");
-
     let font_size = 16;
-
     /* Get Article From Link */
     const URL_PARAMS = new URLSearchParams(window.location.search);
     if (URL_PARAMS.has("title")) {
         let title_link = URL_PARAMS.get("title");
         import ("./data.js")
         .then((data) => {
-            const ARTICLESS = data.ARTICLESS;
-            let article = new ARTICLESS();
-            article.getArticles.forEach(article => {
+            const ARTICLESS = data.ARTICLES;
+            ARTICLESS.forEach(article => {
                 if (article.title === title_link) {
                     page_name.textContent = title_link;
                     articles_text_outer.querySelector("h3").textContent = title_link;
@@ -925,9 +850,7 @@ if (location.href.search("allah-names.html") > -1) {
             } else {
                 audio_tag.pause();
                 this.innerHTML = `<i class="fas fa-play add-animation-scale"></i>`;
-
             }
-
         });
         bx.querySelector("audio").onended = () => {
             bx.querySelector(".run-audio").innerHTML = `<i class="fas fa-play add-animation-scale"></i>`;
@@ -967,30 +890,21 @@ if (location.href.search("allah-names.html") > -1) {
                 finded_n = 0;
 
             // ------
-            this.parentElement.parentElement.querySelectorAll(".fr-search").forEach((txt, i_p) => {
-                let regex_search = new RegExp(`(${search_value})`, "g");
-                // ------------
-                if (search_value != "") {
-                    if (regex_search.test(txt.textContent)) {
-                        let newText = txt.textContent.replace(regex_search, `<strong class="found-search" style="font-size:1.2rem">${search_value}</strong>`);
-                        txt.innerHTML = newText;
-                        finded_n += txt.querySelectorAll(".found-search").length;
+            this.parentElement.parentElement.querySelectorAll(".fr-search").forEach((txt) => {
+                let instance = new Mark(txt);
+                instance.unmark();
+                instance.mark(search_value, {
+                    className: "found-search-now",
+                    done: function(d) {
+                        finded_n += d;
                         search_founded_ele.innerHTML = finded_n;
                         search_founded_ele.parentElement.classList.add("active");
-                    } else {
-                        if (finded_n == 0) {
-                            search_founded_ele.innerHTML = 0;
-                        }
-                        search_founded_ele.parentElement.classList.add("active");
-                        txt.innerHTML = txt.textContent;
                     }
-                } else {
+                });
+                if (search_value == "") {
                     search_founded_ele.parentElement.classList.remove("active");
-                    txt.innerHTML = txt.textContent;
                 }
-
             });
-
         });
     });
     /*  ALSALF Part */
@@ -1067,7 +981,209 @@ if (location.href.search("allah-names.html") > -1) {
     }
 
 }
+// 8- السنن ========================================
+if (location.href.search("sonan.html") > -1) {
+    const plus_btn = document.querySelector(".bottom-nav .link-nav.plus-up"),
+        minus_btn = document.querySelector(".bottom-nav .link-nav.minus-down"),
+        changes = document.querySelectorAll(".font-change-size"),
+        search_bx = document.querySelector(".header .search-bx"),
+        footer_two = document.querySelectorAll(".footer-two .catch-them .link-ch-ad"),
+        parent_sonan = document.querySelectorAll(".sonan-section .sonan-boxs"),
+        all_sonan_content = document.querySelectorAll(".all-sonan-bx-cn .parent-bx");
+    let font_size = 16;
+    /* اضافة التاريخ والوقت */
+    historyDate();
+    addDateHejryToPage();
+    /* Color The Navbar */
+    makeBackGround();
+    window.onscroll = () => {
+        makeBackGround();
+    };
+    /* Right Nav FN */
+    rightNavFN();
+    /* Add Colors To Platte  And Change Elements*/
+    addColorsToPlatte();
+    /* Change Font Size*/
+    plus_btn.addEventListener("click", (c) => {
+        c.preventDefault();
+        font_size += 1;
+        changes.forEach(tx => {
+            if (font_size >= 55) {
+                font_size = 55;
+            }
+            tx.style.fontSize = font_size + "px";
+        });
+        data_font_color_bg.fontSize = font_size;
+        getAndPutLocal("fs", data_font_color_bg.fontSize);
+    });
+    minus_btn.addEventListener("click", (c) => {
+        c.preventDefault();
+        font_size -= 1;
+        changes.forEach(tx => {
+            if (font_size <= 0) {
+                font_size = 1;
+                tx.style.fontSize = font_size + "px";
+            } else {
+                tx.style.fontSize = font_size + "px";
+            }
+        });
+        data_font_color_bg.fontSize = font_size;
+        getAndPutLocal("fs", data_font_color_bg.fontSize);
+    });
+    /* Get Data */
+    getFontColorBgSizeLocalStorage();
+    /* Open Sonan box will you choose */
+    footer_two.forEach(link => {
+        link.addEventListener("click", function(c) {
+            c.preventDefault();
+            parent_sonan.forEach(pS => {
+                pS.classList.remove("active");
+            });
+            document.querySelector(`.sonan-section ${this.dataset.boxsonan}`).classList.add("active");
+        });
+    });
+    /* When Click On The Sona Button */
+    parent_sonan.forEach(pSona => {
+        pSona.querySelectorAll(".bx-sn-bt").forEach(c_btn => {
+            c_btn.addEventListener("click", function(c) {
+                c.preventDefault();
+                // -----------------
+                let content = this.dataset.boxcontent,
+                    childrenSona = this.parentElement.parentElement.parentElement,
+                    element_sona_content = childrenSona.querySelector(`.all-sonan-bx-cn ${content}`),
+                    btn_parent = this.parentElement.parentElement.querySelectorAll(".bx-sn-bt");
+                // -----------------
+                btn_parent.forEach(btn => {
+                    btn.classList.remove("active")
+                });
+                // -----------------
+                this.classList.add("active");
+                // -----------------
+                all_sonan_content.forEach(sona => {
+                    sona.classList.remove("active");
+                });
+                // -----------------
+                element_sona_content.classList.add("active");
+                // -----------------
+                window.scrollTo({
+                    top: element_sona_content.offsetTop - 70
+                });
+                // -----------------
+                element_sona_content.querySelector(".close-box").addEventListener("click", function(c) {
+                    c.preventDefault();
+                    element_sona_content.classList.remove("active");
+                });
+            });
+        });
+    });
+
+    /* Search In Names */
+    search_bx.querySelector(".search.icon").addEventListener("click", function(c) {
+        c.preventDefault();
+        // ----------------
+        const search_value = search_bx.querySelector("input").value.trim(),
+            search_founded_ele = document.querySelector(".header .founded-search .founded-number"),
+            length_f = [];
+        // ----------------
+        all_sonan_content.forEach(s => s.classList.remove("active"));
+        // ----------------
+        document.querySelectorAll(".sonan-section .sonan-boxs.active .bx-sn-bt").forEach((name_bx, i) => {
+            let text_name = name_bx.textContent,
+                regex_search = new RegExp(`(${search_value})`, "g")
+                // ------------
+            if (search_value != "") {
+                if (regex_search.test(text_name)) {
+                    name_bx.parentElement.style.display = "";
+                    length_f.push(i);
+
+
+                    search_founded_ele.innerHTML = length_f.length;
+                    search_founded_ele.parentElement.classList.add("active");
+                } else {
+                    name_bx.parentElement.style.display = "none";
+                    if (length_f.length == 0) {
+                        search_founded_ele.innerHTML = 0;
+                    }
+                    search_founded_ele.parentElement.classList.add("active");
+                }
+            } else {
+                name_bx.parentElement.style.display = "";
+                search_founded_ele.parentElement.classList.remove("active");
+            }
+        });
+    });
+    // -------------- Searching
+    all_sonan_content.forEach(active_box => {
+        // --------------------
+        active_box.querySelector(".search-bx .search.icon").addEventListener("click", function() {
+            let search_value = this.parentElement.querySelector("input").value.trim(),
+                search_founded_ele = active_box.querySelector(".founded-search .founded-number"),
+                finded_n = 0;
+
+
+            // ------
+            this.parentElement.parentElement.parentElement.querySelectorAll(".content-p").forEach((txt) => {
+                let instance = new Mark(txt);
+                instance.unmark();
+                instance.mark(search_value, {
+                    className: "found-search-now",
+                    done: function(d) {
+                        finded_n += d;
+                        search_founded_ele.innerHTML = finded_n;
+                        search_founded_ele.parentElement.classList.add("active");
+                    }
+                });
+                if (search_value == "") {
+                    search_founded_ele.parentElement.classList.remove("active");
+                }
+            });
+        });
+        // --------------------
+        active_box.querySelectorAll(".options .copy").forEach(c_btn => {
+            c_btn.addEventListener("click", function(c) {
+                c.preventDefault();
+                // -----------
+                let selected_text = this.parentElement.parentElement.querySelector(".content-p");
+                // -----------
+                makeCopy(this, selected_text);
+            });
+        });
+        // -------------------
+        active_box.querySelectorAll(".options .aduio-play").forEach(au_b => {
+            au_b.addEventListener("click", function() {
+                let audio_tag = this.parentElement.querySelector("audio");
+                if (audio_tag.paused) {
+                    audio_tag.play();
+                    this.innerHTML = `<i class="fas fa-pause add-animation-scale"></i>`;
+                } else {
+                    audio_tag.pause();
+                    this.innerHTML = `<i class="fas fa-play add-animation-scale"></i>`;
+                }
+            });
+            au_b.parentElement.querySelector("audio").onended = () => {
+                au_b.innerHTML = `<i class="fas fa-play add-animation-scale"></i>`;
+            };
+        });
+    });
+
+}
 // Basics
+/* History */
+function historyDate() {
+    try {
+        time_is_widget.init({
+            Mecca_z439: {
+                template: "TIME",
+                time_format: "12hours:minutes:seconds"
+            }
+        });
+    } catch (e) {
+        document.querySelector(".hejry-time .calender-hejry").insertAdjacentHTML("beforeend", `
+        <span>مشكله فى اظهار الوقت</span>
+        `);
+        console.log(e);
+    }
+}
 /* Coloring The top Navbar */
 function makeBackGround() {
     let top_nav = document.querySelector(".top-nav");
@@ -1172,8 +1288,6 @@ function barColor(color) {
 `);
 
 }
-
-
 /* Copy Method */
 function makeCopy(btn, textEl) {
     let the_azkar = textEl,
@@ -1325,3 +1439,72 @@ function getFontColorBgSizeLocalStorage() {
         }
     }
 }
+
+/* The Hijery Date */
+
+function isGregLeapYear(year) {
+    return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+}
+
+function gregToFixed(year, month, day) {
+    let a = Math.floor((year - 1) / 4);
+    let b = Math.floor((year - 1) / 100);
+    let c = Math.floor((year - 1) / 400);
+    let d = Math.floor((367 * month - 362) / 12);
+    let e;
+    if (month <= 2)
+        e = 0;
+    else if (month > 2 && isGregLeapYear(year))
+        e = -1;
+    else
+        e = -2;
+    return 1 - 1 + 365 * (year - 1) + a - b + c + d + e + day;
+}
+
+function Hijri(year, month, day) {
+    this.year = year;
+    this.month = month;
+    this.day = day;
+    this.toFixed = hijriToFixed;
+    this.toString = hijriToString;
+}
+
+function hijriToFixed() {
+    return this.day + Math.ceil(29.5 * (this.month - 1)) + (this.year - 1) * 354 + Math.floor((3 + 11 * this.year) / 30) + 227015 - 1;
+}
+
+function hijriToString() {
+    let months = new Array("محرم", "صفر", "ربيع أول", "ربيع ثانى", "جمادى أول", "جمادى ثانى", "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة");
+    return this.day + " " + months[this.month - 1] + " " + this.year;
+}
+
+function fixedToHijri(f) {
+    let i = new Hijri(1100, 1, 1);
+    i.year = Math.floor((30 * (f - 227015) + 10646) / 10631);
+    let i2 = new Hijri(i.year, 1, 1);
+    let m = Math.ceil((f - 29 - i2.toFixed()) / 29.5) + 1;
+    i.month = Math.min(m, 12);
+    i2.year = i.year;
+    i2.month = i.month;
+    i2.day = 1;
+    i.day = f - i2.toFixed() + 1;
+    return i;
+}
+
+function addDateHejryToPage() {
+    let tod = new Date();
+    let y = tod.getFullYear();
+    let m = tod.getMonth();
+    let d = tod.getDate();
+    m++;
+    fixd = gregToFixed(y, m, d);
+    let h = new Hijri(1421, 11, 28);
+    h = fixedToHijri(fixd);
+    document.querySelector(".calender-hejry").insertAdjacentHTML("beforeend", `<span class="hjr-date">${h.toString()}</span>`);
+}
+
+/* 
+
+    (<strong class="test">)(.*?)(<\/strong>)
+
+*/

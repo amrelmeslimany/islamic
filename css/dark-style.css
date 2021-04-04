@@ -13,6 +13,10 @@ body {
   color: #2a3b41;
 }
 
+.all-sonan-bx-cn .founded-search {
+  color: #f3ecec;
+}
+
 .founded-search {
   color: #f3ecec;
 }
@@ -631,6 +635,90 @@ body {
 }
 
 .allah-names-section .catch-all-definations .box-def .close-box {
+  color: #f3ecec;
+}
+
+/* 10) ===================== صفحة السنن ============ */
+.sonan-section {
+  background: none;
+  background-color: #26363b;
+  /* تعديل صناديق السنن المهجورة والموقوته ========= */
+}
+
+.sonan-section .sonan-boxs {
+  /* الازرار الخاصه بالسنن ============== */
+  /* الجزى الخاص بالمحتويات ========== */
+}
+
+.sonan-section .sonan-boxs .title-sbx {
+  background-color: #2a3b41;
+  color: #f3ecec;
+}
+
+.sonan-section .sonan-boxs .bx-sn-bt {
+  background: #2a3b41;
+  color: #f3ecec;
+  -webkit-box-shadow: 0px 0.2rem 0.6rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.6rem rgba(0, 0, 0, 0.27);
+}
+
+.sonan-section .sonan-boxs .bx-sn-bt:hover {
+  background-color: #202d32;
+}
+
+.sonan-section .sonan-boxs .bx-sn-bt.active {
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn {
+  /* الصندوق الاب للمحتويات  لكل عنصر */
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx {
+  background-color: #223035;
+  -webkit-box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.27);
+  /* تعديل الراس ========= */
+  /* تعديل المحتويات نفسها ======== */
+  /* زر الغلق ==================== */
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .nav-pbx {
+  background-color: #26363b;
+  color: #f3ecec;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .nav-pbx .search-bx input:focus {
+  border-color: #2c3e45 !important;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .nav-pbx .search-bx i.circular.icon {
+  color: #223035;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .parent-list-s {
+  padding: 0.5rem 0.25rem;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .parent-list-s .item-s {
+  background-color: #26363b;
+  color: #f3ecec;
+  -webkit-box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.5rem rgba(0, 0, 0, 0.27);
+  /* الاوبشنز ======= */
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .parent-list-s .item-s .options {
+  border-top: solid 1px rgba(34, 48, 53, 0.33);
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .parent-list-s .item-s .options .op {
+  background-color: #223035;
+  color: #f3ecec;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .close-box {
   color: #f3ecec;
 }
 

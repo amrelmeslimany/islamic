@@ -55,6 +55,10 @@ a {
 }
 
 /* --- عداد البحث ================================================ */
+.all-sonan-bx-cn .founded-search {
+  color: #10526a;
+}
+
 .founded-search {
   color: #f1eddc;
   display: none;
@@ -167,6 +171,7 @@ a {
 }
 
 .bottom-nav .n-links-box button.link-nav {
+  font-family: 'Cairo', sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -175,7 +180,7 @@ a {
   background: #10526a;
   border-radius: 7px;
   color: #f1eddc;
-  letter-spacing: 2px;
+  line-height: 1.3;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
@@ -339,6 +344,7 @@ a {
   margin-bottom: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  font-family: 'Cairo', sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -347,7 +353,7 @@ a {
   background: #115973;
   border-radius: 7px;
   color: #f1eddc;
-  letter-spacing: 2px;
+  line-height: 1.3;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
@@ -419,6 +425,7 @@ a {
 
 .footer-one .footer-fn.likes .btn-like {
   vertical-align: sub;
+  font-family: 'Cairo', sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -427,7 +434,7 @@ a {
   background: #115973;
   border-radius: 7px;
   color: #f1eddc;
-  letter-spacing: 2px;
+  line-height: 1.3;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
@@ -581,6 +588,7 @@ a {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  font-family: 'Cairo', sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -589,7 +597,7 @@ a {
   background: #10526a;
   border-radius: 7px;
   color: #f1eddc;
-  letter-spacing: 2px;
+  line-height: 1.3;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
@@ -651,6 +659,7 @@ a {
 }
 
 .app-radio .controlls-radio .settings-additions button.reload-btn {
+  font-family: 'Cairo', sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -659,7 +668,7 @@ a {
   background: transparent;
   border-radius: 7px;
   color: #f1eddc;
-  letter-spacing: 2px;
+  line-height: 1.3;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
@@ -1537,6 +1546,207 @@ a {
   display: block;
   margin: auto;
   margin-top: 2rem;
+}
+
+/* 10) ===================== صفحة السنن ============ */
+.sonan-section {
+  background-image: url("../img/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* تعديل نظام الجريد */
+  /* تعديل صناديق السنن المهجورة والموقوته ========= */
+}
+
+.sonan-section .container-fluid {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.sonan-section .sonan-boxs {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  overflow-y: hidden;
+  -webkit-transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  max-height: 0;
+  /* الازرار الخاصه بالسنن ============== */
+  /* الجزى الخاص بالمحتويات ========== */
+}
+
+.sonan-section .sonan-boxs.active {
+  max-height: 10000px;
+  height: auto;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  overflow-y: hidden;
+}
+
+.sonan-section .sonan-boxs .title-sbx {
+  margin-bottom: 1rem;
+  background-color: #10526a;
+  color: #f1eddc;
+  padding: 0rem 0.6rem .6rem;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.sonan-section .sonan-boxs .title-sbx p {
+  font-size: 0.8rem;
+}
+
+.sonan-section .sonan-boxs .bx-sn-bt {
+  font-family: 'Cairo', sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: none;
+  background: #10526a;
+  border-radius: 7px;
+  color: #f1eddc;
+  line-height: 1.3;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0.4rem 0.2rem;
+  height: 70px;
+  width: 95%;
+  margin: auto;
+}
+
+.sonan-section .sonan-boxs .bx-sn-bt:focus {
+  border: none;
+  outline: none;
+}
+
+.sonan-section .sonan-boxs .bx-sn-bt:hover {
+  background-color: #0d4154;
+}
+
+.sonan-section .sonan-boxs .bx-sn-bt.active {
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+  -webkit-animation: pulse infinite forwards 1.25s cubic-bezier(0.47, 0, 0.745, 0.715);
+          animation: pulse infinite forwards 1.25s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn {
+  /* الصندوق الاب للمحتويات  لكل عنصر */
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx {
+  background-color: #10526a;
+  padding: 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0.2rem 0.5rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.5rem rgba(3, 13, 17, 0.27);
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  overflow-y: hidden;
+  -webkit-transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  max-height: 0;
+  /* تعديل الراس ========= */
+  /* تعديل المحتويات نفسها ======== */
+  /* زر الغلق ==================== */
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx.active {
+  max-height: 10000px;
+  height: auto;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  overflow-y: hidden;
+  padding: 1rem 0.2rem;
+  margin: 0.5rem 0;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .nav-pbx {
+  margin-bottom: 1rem;
+  background-color: #f1eddc;
+  color: #10526a;
+  padding: 0rem 0.6rem .6rem;
+  border-radius: 2px;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .nav-pbx .search-bx input:focus {
+  border-color: #136380 !important;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .nav-pbx .search-bx i.circular.icon {
+  color: #10526a;
+  top: 0.12em !important;
+  right: .1em !important;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .nav-pbx p {
+  font-size: 0.8rem;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .parent-list-s {
+  padding: 0.5rem 0.25rem;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .parent-list-s .item-s {
+  background-color: #f1eddc;
+  color: #10526a;
+  padding: 0.4rem;
+  -webkit-box-shadow: 0px 0.2rem 0.5rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.5rem rgba(3, 13, 17, 0.27);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  /* البارجراف ======== */
+  /* الاوبشنز ======= */
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .parent-list-s .item-s:last-child {
+  margin-bottom: 0;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .parent-list-s .item-s .content-p {
+  margin-bottom: 0.5rem;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .parent-list-s .item-s .options {
+  border-top: solid 1px rgba(16, 82, 106, 0.33);
+  padding-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .parent-list-s .item-s .options .op {
+  overflow: hidden;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  background-color: #10526a;
+  color: #f1eddc;
+  border-radius: 5px;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .close-box {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #f1eddc;
+  margin-top: 1rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .close-box:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 /* ======================= اشياء ثابته ======================== */
