@@ -1050,7 +1050,7 @@ if (location.href.search("sonan.html") > -1) {
                 // -----------------
                 let content = this.dataset.boxcontent,
                     childrenSona = this.parentElement.parentElement.parentElement,
-                    element_sona_content = childrenSona.querySelector(`.all-sonan-bx-cn ${content}`),
+                    element_sona_content = childrenSona.querySelector(`${content}`),
                     btn_parent = this.parentElement.parentElement.querySelectorAll(".bx-sn-bt");
                 // -----------------
                 btn_parent.forEach(btn => {
@@ -1059,15 +1059,19 @@ if (location.href.search("sonan.html") > -1) {
                 // -----------------
                 this.classList.add("active");
                 // -----------------
+
                 all_sonan_content.forEach(sona => {
                     sona.classList.remove("active");
                 });
                 // -----------------
                 element_sona_content.classList.add("active");
                 // -----------------
-                window.scrollTo({
-                    top: element_sona_content.offsetTop - 70
-                });
+                setTimeout(function() {
+                    window.scrollTo({
+                        top: element_sona_content.offsetTop
+                    });
+                }, 500);
+
                 // -----------------
                 element_sona_content.querySelector(".close-box").addEventListener("click", function(c) {
                     c.preventDefault();
