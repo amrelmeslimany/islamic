@@ -1659,7 +1659,7 @@ a {
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
   overflow-y: hidden;
-  padding: 1rem 0.2rem;
+  padding: 0 0.2rem 1rem;
   margin: 0.5rem 0;
 }
 

@@ -1073,9 +1073,11 @@ if (location.href.search("sonan.html") > -1) {
                 }, 500);
 
                 // -----------------
-                element_sona_content.querySelector(".close-box").addEventListener("click", function(c) {
-                    c.preventDefault();
-                    element_sona_content.classList.remove("active");
+                element_sona_content.querySelectorAll(".close-box").forEach(cl_bx => {
+                    cl_bx.addEventListener("click", function(c) {
+                        c.preventDefault();
+                        element_sona_content.classList.remove("active");
+                    });
                 });
             });
         });
