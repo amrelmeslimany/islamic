@@ -69,8 +69,301 @@
     <!-- 4) السنن     -->
     <section class="sonan-section pt-3 pb-1">
         <div class="container-fluid">
+            <!-- 
+                ?        : القادمة  html  سلسه كود ال 
+
+                ---  صناديق انواع السنن
+                --------- 1) راس المحتوى الذى فيه العنوان
+                --------- 2) الازرار الذى تغفتح المواضيع
+                --------- 3) الصندوق الذى سيُفتح عند الضغط على الزر الخاص به الذى يحتوى على المقالات
+
+                !!!! ملحوظة :
+                !!!!  رقم 1 ورقم 2 مرتبطان ببعضهما
+             -->
             <!-- صندوق السنن المهجورة -->
-            <div class="sonan-boxs forgetten-sn active">
+            <div class="sonan-boxs daily-sn active">
+                <!-- الراس او العنوان -->
+                <div class="title-sbx">
+                    <h4>السنن اليومية</h4>
+                    <p>اضغط على سنه لكى تقرا المحتوى</p>
+                </div>
+                <!-- الازرار الخاصه بالسنن -->
+                <!-- 
+                    محلوظه : data-boxcontent يجب ان تكون منفرده
+                 -->
+                <div class="row no-gutters">
+                    <!-- قم بنسخ ذلك العنصر الذى فى الاسفل لاضافه عنصر جديد -->
+                    <div class="col-4 mb-2">
+                        <button class="bx-sn-bt font-change-color font-change-size bg-change-color" data-boxcontent=".s-wodoo">سنن الوضوء</button>
+                    </div>
+                    <div class="col-4 mb-2">
+                        <button class="bx-sn-bt font-change-color font-change-size bg-change-color" data-boxcontent=".s-azaan">سنن  الاذان</button>
+                    </div>
+                    <div class="col-4 mb-2">
+                        <button class="bx-sn-bt font-change-color font-change-size bg-change-color" data-boxcontent=".s-masjed">سنن الذهاب للمسجد</button>
+                    </div>
+                    <div class="col-4 mb-2">
+                        <button class="bx-sn-bt font-change-color font-change-size bg-change-color" data-boxcontent=".s-salah">سنن فى الصلاة</button>
+                    </div>
+                </div>
+                <!--  المقالا التى ستظهر عند الضغط على ازرار السنن التي تحتوى على المقالات او المحتوى-->
+                <div class="all-sonan-bx-cn">
+                    <div class="parent-bx s-wodoo">
+                        <i class="fas fa-times-circle close-box mb-3"></i>
+                        <!-- الناف الذى بالاعلي-->
+                        <div class="nav-pbx">
+                            <h4>سنن الوضوء</h4>
+                            <!-- Search -->
+                            <div class="ui icon input search-bx mt-2">
+                                <input type="text" class="text-right" placeholder="بحث...">
+                                <i class="circular search link icon"></i>
+                            </div>
+                            <span class="founded-search">تم ايجاد : <strong class="founded-number">52</strong> <br> <small>لارجاع الكل افرغ البحث</small></span>
+                        </div>
+                        <!-- المحتويات -->
+                        <ul class="parent-list-s">
+                            <!-- قم بنسخ هذا العنصر لتضيف محتوى جديد -->
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- زر الاغلاق -->
+                        <i class="fas fa-times-circle close-box"></i>
+                    </div>
+                    <div class="parent-bx s-azaan">
+                        <!-- الناف الذى بالاعلي -->
+                        <i class="fas fa-times-circle close-box mb-3"></i>
+                        <div class="nav-pbx">
+                            <h4>سنن الاذان</h4>
+                            <!-- Search -->
+                            <div class="ui icon input search-bx mt-2">
+                                <input type="text" class="text-right" placeholder="بحث...">
+                                <i class="circular search link icon"></i>
+                            </div>
+                            <span class="founded-search">تم ايجاد : <strong class="founded-number">52</strong> <br> <small>لارجاع الكل افرغ البحث</small></span>
+                        </div>
+                        <!-- المحتويات -->
+                        <ul class="parent-list-s">
+                            <!-- قم بنسخ هذا العنصر لتضيف محتوى جديد -->
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- زر الاغلاق -->
+                        <i class="fas fa-times-circle close-box"></i>
+                    </div>
+                    <div class="parent-bx s-masjed">
+                        <!-- الناف الذى بالاعلي -->
+                        <i class="fas fa-times-circle close-box mb-3"></i>
+                        <div class="nav-pbx">
+                            <h4>سنن الذهاب للمسجد</h4>
+                            <!-- Search -->
+                            <div class="ui icon input search-bx mt-2">
+                                <input type="text" class="text-right" placeholder="بحث...">
+                                <i class="circular search link icon"></i>
+                            </div>
+                            <span class="founded-search">تم ايجاد : <strong class="founded-number">52</strong> <br> <small>لارجاع الكل افرغ البحث</small></span>
+                        </div>
+                        <!-- المحتويات -->
+                        <ul class="parent-list-s">
+                            <!-- قم بنسخ هذا العنصر لتضيف محتوى جديد -->
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- زر الاغلاق -->
+                        <i class="fas fa-times-circle close-box"></i>
+                    </div>
+                    <div class="parent-bx s-salah">
+                        <!-- الناف الذى بالاعلي -->
+                        <i class="fas fa-times-circle close-box mb-3"></i>
+                        <div class="nav-pbx">
+                            <h4>سنن فى الصلاة</h4>
+                            <!-- Search -->
+                            <div class="ui icon input search-bx mt-2">
+                                <input type="text" class="text-right" placeholder="بحث...">
+                                <i class="circular search link icon"></i>
+                            </div>
+                            <span class="founded-search">تم ايجاد : <strong class="founded-number">52</strong> <br> <small>لارجاع الكل افرغ البحث</small></span>
+                        </div>
+                        <!-- المحتويات -->
+                        <ul class="parent-list-s">
+                            <!-- قم بنسخ هذا العنصر لتضيف محتوى جديد -->
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                            <li class="item-s bg-change-color">
+                                <!-- المحتوى نفسه -->
+                                <p class="content-p font-change-color font-change-size">يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه يوجد هنا المحتوى الخاص بالسنن المعينه</p>
+                                <!-- الخيارات -->
+                                <div class="options">
+                                    <audio src="./audios/allah.mp3"></audio>
+                                    <span class="op aduio-play"><i class="fas fa-play"></i></span>
+                                    <span class="op copy"><i class="fas fa-copy"></i></span>
+                                    <a href="#" target="_blank" class="op"><i class="fas fa-share"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- زر الاغلاق -->
+                        <i class="fas fa-times-circle close-box"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- صندوق السنن المهجورة -->
+            <div class="sonan-boxs forgetten-sn">
                 <!-- الراس او العنوان -->
                 <div class="title-sbx">
                     <h4>السنن المهجورة</h4>
@@ -639,6 +932,7 @@
     <!-- 5) الفوتر الاعلى   -->
     <section class="footer-two">
         <div class="catch-them">
+            <a href="#" class="link-ch-ad" data-boxsonan=".daily-sn">السنن اليومية</a>
             <a href="#" class="link-ch-ad" data-boxsonan=".forgetten-sn">السنن المهجورة</a>
             <a href="#" class="link-ch-ad" data-boxsonan=".timable-sn">السنن الموقوته</a>
         </div>

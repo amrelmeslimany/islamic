@@ -1731,6 +1731,11 @@ a {
   background-color: #10526a;
   color: #f1eddc;
   border-radius: 5px;
+  margin-left: 0.4rem;
+}
+
+.sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .parent-list-s .item-s .options .op:last-child {
+  margin-left: 0;
 }
 
 .sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .close-box {

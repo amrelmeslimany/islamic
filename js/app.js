@@ -987,6 +987,7 @@ if (location.href.search("sonan.html") > -1) {
         minus_btn = document.querySelector(".bottom-nav .link-nav.minus-down"),
         changes = document.querySelectorAll(".font-change-size"),
         search_bx = document.querySelector(".header .search-bx"),
+        header_pg = document.querySelector(".header .page-name"),
         footer_two = document.querySelectorAll(".footer-two .catch-them .link-ch-ad"),
         parent_sonan = document.querySelectorAll(".sonan-section .sonan-boxs"),
         all_sonan_content = document.querySelectorAll(".all-sonan-bx-cn .parent-bx");
@@ -1040,6 +1041,7 @@ if (location.href.search("sonan.html") > -1) {
                 pS.classList.remove("active");
             });
             document.querySelector(`.sonan-section ${this.dataset.boxsonan}`).classList.add("active");
+            header_pg.textContent = this.textContent;
         });
     });
     /* When Click On The Sona Button */
