@@ -152,7 +152,13 @@ if (location.href.search("radio.html") > -1) {
 }
 
 // 3- صفحة المجلات ============================================
-if (location.href.search("books.html") > -1) {
+if (
+    location.href.search("books.html") > -1 ||
+    location.href.search("cards.html") > -1 ||
+    location.href.search("discharges.html") > -1 ||
+    location.href.search("prayer-chains.html") > -1 ||
+    location.href.search("leaflets.html") > -1
+) {
     /* Color The Navbar */
     makeBackGround();
     window.onscroll = () => {
@@ -242,8 +248,20 @@ if (location.href.search("books.html") > -1) {
     /* Open Fahrs Function And Most Reading */
     fahrsAndBest();
 }
-// 4- صفحة المقالات ============================================
-if (location.href.search("articles.html") > -1) {
+/*
+    4- صفحة المقالات 
+    --  صفحة الفوائد 
+    --  صفحة الصوتيات 
+    --  صفحة الدروس 
+                    ============================================
+*/
+if (
+    location.href.search("articles.html") > -1 ||
+    location.href.search("benefits.html") > -1 ||
+    location.href.search("fatwas.html") > -1 ||
+    location.href.search("audios.html") > -1 ||
+    location.href.search("lessons.html") > -1
+) {
     /* Color The Navbar */
     makeBackGround();
     window.onscroll = () => {
@@ -589,7 +607,11 @@ if (location.href.search("azkar.html") > -1) {
 }
 
 // 6- صفحة المقاله بمفردها ========================================
-if (location.href.search("the-article.html") > -1) {
+if (
+    location.href.search("the-article.html") > -1 ||
+    location.href.search("the-benefit.html") > -1 ||
+    location.href.search("the-fatwa.html") > -1
+) {
 
     /* Color The Navbar */
     makeBackGround();
@@ -613,69 +635,79 @@ if (location.href.search("the-article.html") > -1) {
         page_title_head = document.querySelector("head title"),
         search_founded_ele = document.querySelector(".header .founded-search .founded-number");
     let font_size = 16;
-    /* Get Article From Link */
-    const URL_PARAMS = new URLSearchParams(window.location.search);
-    if (URL_PARAMS.has("title")) {
-        let title_link = URL_PARAMS.get("title");
-        import ("./data.js")
-        .then((data) => {
-            const ARTICLESS = data.ARTICLES;
-            ARTICLESS.forEach(article => {
-                if (article.title === title_link) {
-                    page_name.textContent = title_link;
-                    articles_text_outer.querySelector("h3").textContent = title_link;
-                    articles_text_inner.querySelector(".the-article-self").innerHTML = article.body;
-                    articles_text_outer.querySelector("p").innerHTML = article.body;
-                    page_title_head.textContent = `تطبيق موقع ميراث الأنبياء | ${title_link}`;
-                    const original_text = article.body;
-                    /* Searching In Article */
-                    const article_text = articles_text_inner.querySelector("p.the-article-self");
-                    search_bx.querySelector(".search.icon").addEventListener("click", (c) => {
-                        c.preventDefault();
-                        // ----------
-                        const input_search_val = search_bx.querySelector("input").value;
-                        let regex_search = new RegExp(`(${input_search_val})`, "g");
-                        if (input_search_val != "") {
-                            if (regex_search.test(article_text.textContent)) {
-                                let newText = article_text.textContent.replace(regex_search, `<strong class="found-search" style="font-size:1.2rem">${input_search_val}</strong>`);
-                                article_text.innerHTML = newText;
-                                let findElements = document.querySelectorAll(".found-search");
-                                search_founded_ele.textContent = findElements.length;
-                                search_founded_ele.parentElement.classList.add("active");
-                                if (findElements.length == 1) {
-                                    findElements[0].scrollIntoView({
-                                        behavior: "smooth",
-                                        block: "center"
-                                    });
+    if (location.href.search("the-article.html") > -1) {
+        getDataFromFiles('./articles-data.js', "ARTICLES", "المقاله", "articles.html", "مقالات");
+    } else if (location.href.search("the-benefit.html") > -1) {
+        getDataFromFiles('./benefits-data.js', "BENEFITS", "فائده", "benefits.html", "الفوائد");
+    } else if (location.href.search("the-fatwa.html") > -1) {
+        getDataFromFiles('./fatwas-data.js', "FATWAS", "فتوى", "fatwas.html", "الفتاوى");
+    }
+
+    function getDataFromFiles(fileName, variableName, pgN, pgLink, pgsN) {
+        const URL_PARAMS = new URLSearchParams(window.location.search);
+        if (URL_PARAMS.has("title")) {
+            let title_link = URL_PARAMS.get("title");
+            import (fileName)
+            .then((data) => {
+                const ARTICLESS = data[variableName];
+                ARTICLESS.forEach(article => {
+                    if (article.title === title_link) {
+                        page_name.textContent = title_link;
+                        articles_text_outer.querySelector("h3").textContent = title_link;
+                        articles_text_inner.querySelector(".the-article-self").innerHTML = article.body;
+                        articles_text_outer.querySelector("p").innerHTML = article.body;
+                        page_title_head.textContent = `تطبيق موقع ميراث الأنبياء | ${title_link}`;
+                        const original_text = article.body;
+                        /* Searching In Article */
+                        const article_text = articles_text_inner.querySelector("p.the-article-self");
+                        search_bx.querySelector(".search.icon").addEventListener("click", (c) => {
+                            c.preventDefault();
+                            // ----------
+                            const input_search_val = search_bx.querySelector("input").value;
+                            let regex_search = new RegExp(`(${input_search_val})`, "g");
+                            if (input_search_val != "") {
+                                if (regex_search.test(article_text.textContent)) {
+                                    let newText = article_text.textContent.replace(regex_search, `<strong class="found-search" style="font-size:1.2rem">${input_search_val}</strong>`);
+                                    article_text.innerHTML = newText;
+                                    let findElements = document.querySelectorAll(".found-search");
+                                    search_founded_ele.textContent = findElements.length;
+                                    search_founded_ele.parentElement.classList.add("active");
+                                    if (findElements.length == 1) {
+                                        findElements[0].scrollIntoView({
+                                            behavior: "smooth",
+                                            block: "center"
+                                        });
+                                    } else {
+                                        window.scrollTo({
+                                            top: findElements[1].offsetTop - 50,
+                                            behavior: "smooth"
+                                        });
+                                    }
                                 } else {
-                                    window.scrollTo({
-                                        top: findElements[1].offsetTop - 50,
-                                        behavior: "smooth"
-                                    });
+                                    search_founded_ele.parentElement.classList.add("active");
+                                    search_founded_ele.textContent = 0;
+                                    article_text.innerHTML = original_text;
+                                    setTimeout(() => {
+                                        search_founded_ele.parentElement.classList.remove("active")
+                                    }, 3000);
                                 }
                             } else {
-                                search_founded_ele.parentElement.classList.add("active");
-                                search_founded_ele.textContent = 0;
                                 article_text.innerHTML = original_text;
-                                setTimeout(() => {
-                                    search_founded_ele.parentElement.classList.remove("active")
-                                }, 3000);
+                                search_founded_ele.parentElement.classList.remove("active");
                             }
-                        } else {
-                            article_text.innerHTML = original_text;
-                            search_founded_ele.parentElement.classList.remove("active");
-                        }
-                    });
-                }
+                        });
+                    }
+                });
             });
-        });
 
-    } else {
-        page_name.textContent = "عنوان المقاله";
-        page_title_head.textContent = `تطبيق موقع ميراث الأنبياء | عنوان المقالة`;
-        articles_text_inner.querySelector(".the-article-self").innerHTML = `من فضلك اذهب لصفحة <a href="articles.html" class="art-link font-change-color">المقالات</a><br> او فى الاسفل ستجد مقالات أخرى`;
-        articles_text_outer.querySelector("p").innerHTML = `من فضلك اذهب لصفحة <a href="articles.html" class="art-link font-change-color ">المقالات</a><br> او فى الاسفل ستجد مقالات أخرى`;
+        } else {
+            page_name.textContent = `عنوان ${pgN}`;
+            page_title_head.textContent = `تطبيق موقع ميراث الأنبياء | عنوان ${pgN}`;
+            articles_text_inner.querySelector(".the-article-self").innerHTML = `من فضلك اذهب لصفحة <a href=${pgLink} class="art-link font-change-color">${pgsN}</a><br> او فى الاسفل ستجد ${pgsN} أخرى`;
+            articles_text_outer.querySelector("p").innerHTML = `من فضلك اذهب لصفحة <a href=${pgLink} class="art-link font-change-color ">${pgsN}</a><br> او فى الاسفل ستجد ${pgsN} أخرى`;
+        }
     }
+
 
     /* Add Active On Article Which will read */
     articles_text_inner.querySelector(".the-article-self").addEventListener("click", () => {
@@ -1510,9 +1542,3 @@ function addDateHejryToPage() {
     h = fixedToHijri(fixd);
     document.querySelector(".calender-hejry").insertAdjacentHTML("beforeend", `<span class="hjr-date">${h.toString()}</span>`);
 }
-
-/* 
-
-    (<strong class="test">)(.*?)(<\/strong>)
-
-*/
