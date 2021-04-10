@@ -89,58 +89,66 @@ if (location.href.search("radio.html") > -1) {
     /* Right Nav FN */
     rightNavFN();
     /* اضافة تنشيط الى الاذاعة الذى تعمل */
-    const all_sounds = document.querySelectorAll(".dropdown-playlist .list-sounds .sound-item");
+    const all_sounds = document.querySelectorAll(".dropdown-playlist .list-sounds .sound-item"),
+        btn_controls_bx = document.querySelector(".controlls-radio"),
+        play_btn = document.querySelector(".app-radio .controlls-radio .players .play-btn"),
+        refresh_btn = document.querySelector(".app-radio .controlls-radio .settings-additions .reload-btn"),
+        note_btn = document.querySelector(".bottom-nav .note-listen"),
+        note_box = document.querySelector(".write-note");
+    let radio_audio = document.querySelector(".app-radio .controlls-radio .players #radio-audio");
     if (all_sounds) {
         all_sounds.forEach(sound => {
             sound.querySelector(".title").addEventListener("click", () => {
                 all_sounds.forEach(s => s.classList.remove("active"));
                 sound.classList.add("active");
             });
+            sound.addEventListener("click", function(c) {
+                c.preventDefault();
+                c.stopPropagation();
+                // --------
+                let radioLink = this.dataset.radio,
+                    name_radio = this.querySelector("a.title").textContent.trim()
+                radio_audio.src = radioLink;
+                play_btn.click();
+                document.querySelector(".information-audio h4").innerHTML = name_radio;
+            });
         });
     }
     /* اضافه مسافه اسفل الكونترولز الازرار */
-    const btn_controls_bx = document.querySelector(".controlls-radio");
+
     btn_controls_bx.style.bottom = bottom_nav.offsetHeight + "px";
     /* تشغيل الاذاعو واضافه الصوت والخ */
-    const play_btn = document.querySelector(".app-radio .controlls-radio .players .play-btn"),
-        create_auido = document.createElement("audio");
-    create_auido.src = "https://radio.al7eah.net/8028/;";
     if (play_btn) {
         play_btn.addEventListener("click", function(e) {
             e.preventDefault();
-            if (play_btn.classList.contains("active")) {
-                this.classList.remove("active");
-                create_auido.pause();
-                this.innerHTML = `<i class="fas add-animation-scale  fa-play"></i>`;
-            } else {
-                this.classList.add("active");
-                create_auido.play();
+            if (radio_audio.paused) {
+                radio_audio.play();
                 this.innerHTML = `<i class="fas add-animation-scale  fa-pause"></i>`;
+            } else {
+                radio_audio.pause();
+                this.innerHTML = `<i class="fas add-animation-scale  fa-play"></i>`;
             }
         });
     }
+    radio_audio.onended = () => {
+        play_btn.innerHTML = `<i class="fas add-animation-scale  fa-play"></i>`;
+    };
+
     /* عمل تحديث للصفحة فى زر الريفرش */
-    const refresh_btn = document.querySelector(".app-radio .controlls-radio .settings-additions .reload-btn");
+
     if (refresh_btn) {
         refresh_btn.addEventListener("click", () => {
-            create_auido.currentTime = 0;
+            radio_audio.currentTime = 0;
         });
     }
 
     /* اظهار الملاحظات */
-    const note_btn = document.querySelector(".bottom-nav .note-listen"),
-        note_box = document.querySelector(".write-note");
+
+
     if (note_btn) {
         note_btn.addEventListener("click", function(e) {
             e.preventDefault();
-            if (this.classList.contains("active")) {
-                this.classList.remove("active");
-                note_box.style.display = "none";
-            } else {
-                this.classList.add("active");
-                note_box.style.display = "block";
-            }
-
+            note_box.classList.toggle("active");
         });
     }
     /* عمل لون لخلفية الناف الاعلى على حسب ال سكرول */
@@ -151,7 +159,12 @@ if (location.href.search("radio.html") > -1) {
     addDateHejryToPage();
 }
 
-// 3- صفحة المجلات ============================================
+/* 3- صفحة المجلات 
+    -- والكروت
+    -- والتفريغات
+    -- السلاسل الدعويه
+    -- والمقطافات
+                        ============================================ */
 if (
     location.href.search("books.html") > -1 ||
     location.href.search("cards.html") > -1 ||
@@ -642,7 +655,7 @@ if (
     } else if (location.href.search("the-fatwa.html") > -1) {
         getDataFromFiles('./fatwas-data.js', "FATWAS", "فتوى", "fatwas.html", "الفتاوى");
     }
-
+    /* Function To Get Data form files */
     function getDataFromFiles(fileName, variableName, pgN, pgLink, pgsN) {
         const URL_PARAMS = new URLSearchParams(window.location.search);
         if (URL_PARAMS.has("title")) {

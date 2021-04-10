@@ -63,9 +63,8 @@
                     </h4>
                 </div>
                 <div class="players">
-                    <!-- <a href="#"><button class="pl-btn next-btn"><i class="fas fa-arrow-right"></i></button></a>
-                    <a href="#"><button class="pl-btn play-btn"><i class="fas fa-play"></i></button></a>
-                    <a href="#"><button class="pl-btn previous-btn"><i class="fas fa-arrow-left"></i></button></a> -->
+                    <!-- Default link and src will come from radios list by js -->
+                    <audio id="radio-audio" src="./audios/rhman.mp3"></audio>
                     <a href="#" class="pl-btn next-btn"><i class="fas fa-arrow-right"></i></a>
                     <!-- هذا يعمل من الجافاسكربت زر التشغيل  -->
                     <a href="#" class="pl-btn play-btn"><i class="fas fa-play"></i></a>
@@ -171,12 +170,23 @@
         </div>
     </div>
     <!-- القائمة المنسدله للاذاعات -->
+    <!-- 
+
+        https://radio.al7eah.net/8028/
+        https://radio.al7eah.net/8029    | لا يعمل
+        https://radio.al7eah.net/8030   | لا يعمل
+
+     -->
     <section class="dropdown-playlist">
         <div class="container-fluid">
             <i class="fas fa-times-circle playlist-close"></i>
             <!-- الاذاعات -->
+            <!--
+                ! مهم
+                 data-radio ضع لينك الاذاعه فى الصفه الذى تسمي  
+                -->
             <ul class="list-sounds">
-                <li class="sound-item">
+                <li class="sound-item" data-radio="https://radio.al7eah.net/8028/;">
                     <div class="row no-gutters">
                         <div class="col-2">
                             <img src="https://semantic-ui.com/images/wireframe/square-image.png" alt="اذاعة القران" width="100%">
@@ -195,7 +205,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="sound-item">
+                <li class="sound-item" data-radio="https://radio.al7eah.net/8028/;">
                     <div class="row no-gutters">
                         <div class="col-2">
                             <img src="https://semantic-ui.com/images/wireframe/square-image.png" alt="اذاعة القران" width="100%">
@@ -214,7 +224,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="sound-item">
+                <li class="sound-item" data-radio="https://radio.al7eah.net/8028/;">
                     <div class="row no-gutters">
                         <div class="col-2">
                             <img src="https://semantic-ui.com/images/wireframe/square-image.png" alt="اذاعة القران" width="100%">
@@ -233,7 +243,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="sound-item">
+                <li class="sound-item" data-radio="https://radio.al7eah.net/8028/;">
                     <div class="row no-gutters">
                         <div class="col-2">
                             <img src="https://semantic-ui.com/images/wireframe/square-image.png" alt="اذاعة القران" width="100%">
@@ -252,7 +262,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="sound-item">
+                <li class="sound-item" data-radio="https://radio.al7eah.net/8028/;">
                     <div class="row no-gutters">
                         <div class="col-2">
                             <img src="https://semantic-ui.com/images/wireframe/square-image.png" alt="اذاعة القران" width="100%">

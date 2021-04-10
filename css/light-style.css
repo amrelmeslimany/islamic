@@ -812,7 +812,10 @@ a {
   -webkit-box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
           box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
   overflow: none;
-  display: none;
+  -webkit-transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -webkit-transform: translateX(-155%);
+          transform: translateX(-155%);
 }
 
 .write-note textarea {
@@ -873,6 +876,11 @@ a {
 
 .write-note textarea:focus::placeholder {
   opacity: 0;
+}
+
+.write-note.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 /* 5) ================= صفحة المجلات او الكتب ================== */
@@ -2104,5 +2112,23 @@ a {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+@-webkit-keyframes height-anm {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes height-anm {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
   }
 }
