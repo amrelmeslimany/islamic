@@ -88,6 +88,8 @@ body {
 /* هذه القائمه ايضا ستكون ثابتة فى جميع الصفحات */
 /* القائمة المنسدله */
 .dropdown-list-clalender {
+  background: -webkit-linear-gradient(220deg, #2a3b41, #3e5760);
+  background: -o-linear-gradient(220deg, #2a3b41, #3e5760);
   background: linear-gradient(230deg, #2a3b41, #3e5760);
   /* تعديل زر الاغلاق */
 }
@@ -219,6 +221,8 @@ body {
 /* لتعديل تطبيق الاذاعة */
 .app-radio {
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(42, 59, 65, 0.85)), to(rgba(14, 20, 22, 0.85)));
+  background: -webkit-linear-gradient(bottom, rgba(42, 59, 65, 0.85), rgba(14, 20, 22, 0.85));
+  background: -o-linear-gradient(bottom, rgba(42, 59, 65, 0.85), rgba(14, 20, 22, 0.85));
   background: linear-gradient(0deg, rgba(42, 59, 65, 0.85), rgba(14, 20, 22, 0.85));
   /* تعديل الصندوق الاب للازرار */
 }
@@ -284,6 +288,8 @@ body {
 
 /* لتعديل قائمه الاذاعات */
 .dropdown-playlist {
+  background: -webkit-linear-gradient(220deg, #2a3b41, #3e5760);
+  background: -o-linear-gradient(220deg, #2a3b41, #3e5760);
   background: linear-gradient(230deg, #2a3b41, #3e5760);
   /* تعديل زرار الغلق */
   /* تعديل القائمه نفسها */

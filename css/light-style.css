@@ -27,7 +27,7 @@ body {
           box-sizing: border-box;
   direction: rtl;
   /* الخطط الخاص بالصفحة ========================*/
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 
 /* -- 1) تعديل البارجرافات والعناوين فى اى صفحة ============================== */
@@ -103,7 +103,7 @@ a {
 .header .search-bx i.circular.icon {
   color: #10526a;
   top: 0.12em !important;
-  right: .1em !important;
+  right: 0.1em !important;
 }
 
 /* ================== -- 2) هذا الناف ايضا سيكون ثابت فى جميع الصفحات ============ */
@@ -158,7 +158,7 @@ a {
   border-radius: 5px 5px 0 0px;
   -webkit-box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
           box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   font-size: 0.6rem;
 }
 
@@ -171,7 +171,7 @@ a {
 }
 
 .bottom-nav .n-links-box button.link-nav {
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -182,6 +182,7 @@ a {
   color: #f1eddc;
   line-height: 1.3;
   -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
   overflow: hidden;
@@ -209,6 +210,8 @@ a {
   width: 100%;
   height: 0%;
   z-index: 800;
+  background: -webkit-linear-gradient(220deg, #115973, #187b9f);
+  background: -o-linear-gradient(220deg, #115973, #187b9f);
   background: linear-gradient(230deg, #115973, #187b9f);
   text-align: center;
   /* تعديل زر الاغلاق */
@@ -220,11 +223,13 @@ a {
   color: #f1eddc;
   margin-top: 1rem;
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
 }
 
 .dropdown-list-clalender .list-close:hover {
   -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
           transform: scale(1.1);
 }
 
@@ -241,11 +246,13 @@ a {
 
 .dropdown-list-clalender .list-ul .item:not(:last-child) {
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
 }
 
 .dropdown-list-clalender .list-ul .item:not(:last-child):hover {
   -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
           transform: scale(0.9);
 }
 
@@ -276,11 +283,13 @@ a {
 
 .dropdown-list-clalender .list-ul .item.socials a i {
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
 }
 
 .dropdown-list-clalender .list-ul .item.socials a i:hover {
   -webkit-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
           transform: translateY(-3px);
 }
 
@@ -315,6 +324,7 @@ a {
       -ms-flex: 1;
           flex: 1;
   -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -344,7 +354,7 @@ a {
   margin-bottom: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -355,6 +365,7 @@ a {
   color: #f1eddc;
   line-height: 1.3;
   -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
   overflow: hidden;
@@ -425,7 +436,7 @@ a {
 
 .footer-one .footer-fn.likes .btn-like {
   vertical-align: sub;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -436,6 +447,7 @@ a {
   color: #f1eddc;
   line-height: 1.3;
   -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
   overflow: hidden;
@@ -538,6 +550,8 @@ a {
 .app-radio {
   position: relative;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(17, 89, 115, 0.85)), to(rgba(9, 48, 62, 0.85)));
+  background: -webkit-linear-gradient(bottom, rgba(17, 89, 115, 0.85), rgba(9, 48, 62, 0.85));
+  background: -o-linear-gradient(bottom, rgba(17, 89, 115, 0.85), rgba(9, 48, 62, 0.85));
   background: linear-gradient(0deg, rgba(17, 89, 115, 0.85), rgba(9, 48, 62, 0.85));
   /* ===================== تعديل الصندوق الاب للازرار ================ */
 }
@@ -588,7 +602,7 @@ a {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -599,6 +613,7 @@ a {
   color: #f1eddc;
   line-height: 1.3;
   -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
   overflow: hidden;
@@ -659,7 +674,7 @@ a {
 }
 
 .app-radio .controlls-radio .settings-additions button.reload-btn {
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -670,6 +685,7 @@ a {
   color: #f1eddc;
   line-height: 1.3;
   -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
   overflow: hidden;
@@ -696,6 +712,8 @@ a {
   width: 100%;
   height: 0%;
   z-index: 800;
+  background: -webkit-linear-gradient(220deg, #115973, #187b9f);
+  background: -o-linear-gradient(220deg, #115973, #187b9f);
   background: linear-gradient(230deg, #115973, #187b9f);
   text-align: center;
   /* =============== تعديل زرار الغلق =========== */
@@ -708,11 +726,13 @@ a {
   color: #f1eddc;
   margin-top: 1rem;
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
 }
 
 .dropdown-playlist .playlist-close:hover {
   -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
           transform: scale(1.1);
 }
 
@@ -781,6 +801,7 @@ a {
   border-radius: 2px;
   opacity: 0.8;
   -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -813,8 +834,10 @@ a {
           box-shadow: 0px 0.2rem 0.2rem rgba(3, 13, 17, 0.27);
   overflow: none;
   -webkit-transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -o-transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   -webkit-transform: translateX(-155%);
+      -ms-transform: translateX(-155%);
           transform: translateX(-155%);
 }
 
@@ -837,29 +860,33 @@ a {
 .write-note textarea::-webkit-input-placeholder {
   color: rgba(241, 237, 220, 0.5);
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 
 .write-note textarea:-ms-input-placeholder {
   color: rgba(241, 237, 220, 0.5);
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 
 .write-note textarea::-ms-input-placeholder {
   color: rgba(241, 237, 220, 0.5);
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 
 .write-note textarea::placeholder {
   color: rgba(241, 237, 220, 0.5);
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 
 .write-note textarea:focus::-webkit-input-placeholder {
@@ -880,6 +907,7 @@ a {
 
 .write-note.active {
   -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
           transform: translateX(0);
 }
 
@@ -907,6 +935,7 @@ a {
   border-radius: 5px;
   overflow: hidden;
   -webkit-transform: scale(0);
+      -ms-transform: scale(0);
           transform: scale(0);
 }
 
@@ -923,6 +952,7 @@ a {
   -webkit-filter: brightness(95%);
           filter: brightness(95%);
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
 }
 
@@ -990,6 +1020,7 @@ a {
   margin-top: 0.4rem;
   margin-bottom: 0.8rem;
   -webkit-transform: scaleY(0);
+      -ms-transform: scaleY(0);
           transform: scaleY(0);
   height: 0;
   display: none;
@@ -1072,6 +1103,7 @@ a {
   color: rgba(241, 237, 220, 0.3);
   font-size: 1.1rem;
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
 }
 
@@ -1108,9 +1140,11 @@ a {
 
 .azkars-section .az-bx {
   -webkit-transform: scaleY(0);
+      -ms-transform: scaleY(0);
           transform: scaleY(0);
   overflow-y: hidden;
   -webkit-transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  -o-transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
   transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
   max-height: 0;
   /* title =========== */
@@ -1120,6 +1154,7 @@ a {
   max-height: 10000px;
   height: auto;
   -webkit-transform: scaleY(1);
+      -ms-transform: scaleY(1);
           transform: scaleY(1);
   overflow-y: hidden;
 }
@@ -1128,7 +1163,7 @@ a {
   margin-bottom: 1rem;
   background-color: #10526a;
   color: #f1eddc;
-  padding: 0rem 0.6rem .6rem;
+  padding: 0rem 0.6rem 0.6rem;
   border-radius: 2px;
   text-align: center;
 }
@@ -1411,6 +1446,7 @@ a {
 
 .allah-names-section .box-name.active {
   -webkit-transform: scale(1);
+      -ms-transform: scale(1);
           transform: scale(1);
   -webkit-animation: pulse 1.25s infinite forwards cubic-bezier(0.66, 0, 0, 1);
           animation: pulse 1.25s infinite forwards cubic-bezier(0.66, 0, 0, 1);
@@ -1469,6 +1505,7 @@ a {
   padding: 0.4rem;
   padding: 0;
   -webkit-transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
   transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
   top: -200%;
   /* تعديل الناف الاعلي ======== */
@@ -1573,9 +1610,11 @@ a {
 
 .sonan-section .sonan-boxs {
   -webkit-transform: scaleY(0);
+      -ms-transform: scaleY(0);
           transform: scaleY(0);
   overflow-y: hidden;
   -webkit-transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  -o-transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
   transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
   max-height: 0;
   /* الازرار الخاصه بالسنن ============== */
@@ -1586,6 +1625,7 @@ a {
   max-height: 10000px;
   height: auto;
   -webkit-transform: scaleY(1);
+      -ms-transform: scaleY(1);
           transform: scaleY(1);
   overflow-y: hidden;
 }
@@ -1594,7 +1634,7 @@ a {
   margin-bottom: 1rem;
   background-color: #10526a;
   color: #f1eddc;
-  padding: 0rem 0.6rem .6rem;
+  padding: 0rem 0.6rem 0.6rem;
   border-radius: 2px;
   text-align: center;
 }
@@ -1604,7 +1644,7 @@ a {
 }
 
 .sonan-section .sonan-boxs .bx-sn-bt {
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1615,6 +1655,7 @@ a {
   color: #f1eddc;
   line-height: 1.3;
   -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
   transition: 0.3s ease;
   cursor: pointer;
   overflow: hidden;
@@ -1651,9 +1692,11 @@ a {
   -webkit-box-shadow: 0px 0.2rem 0.5rem rgba(3, 13, 17, 0.27);
           box-shadow: 0px 0.2rem 0.5rem rgba(3, 13, 17, 0.27);
   -webkit-transform: scaleY(0);
+      -ms-transform: scaleY(0);
           transform: scaleY(0);
   overflow-y: hidden;
   -webkit-transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  -o-transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
   transition: 0.3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
   max-height: 0;
   /* تعديل الراس ========= */
@@ -1665,6 +1708,7 @@ a {
   max-height: 10000px;
   height: auto;
   -webkit-transform: scaleY(1);
+      -ms-transform: scaleY(1);
           transform: scaleY(1);
   overflow-y: hidden;
   padding: 0 0.2rem 1rem;
@@ -1675,7 +1719,7 @@ a {
   margin-bottom: 1rem;
   background-color: #f1eddc;
   color: #10526a;
-  padding: 0rem 0.6rem .6rem;
+  padding: 0rem 0.6rem 0.6rem;
   border-radius: 2px;
   text-align: center;
   width: 90%;
@@ -1689,7 +1733,7 @@ a {
 .sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .nav-pbx .search-bx i.circular.icon {
   color: #10526a;
   top: 0.12em !important;
-  right: .1em !important;
+  right: 0.1em !important;
 }
 
 .sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .nav-pbx p {
@@ -1754,12 +1798,64 @@ a {
   color: #f1eddc;
   margin-top: 1rem;
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
 }
 
 .sonan-section .sonan-boxs .all-sonan-bx-cn .parent-bx .close-box:hover {
   -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+/* 11) ===================== صفحة لدروس الصوتيه ============ */
+.audio-lessions-section {
+  background-image: url("../img/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* ! الصندوق الاب  =====================*/
+}
+
+.audio-lessions-section .audio-box {
+  background-color: #115973;
+  margin-bottom: 1rem;
+  padding: 0.4rem;
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(3, 13, 17, 0.27);
+  border-radius: 5px;
+  /*  عنوان الدرس ============== */
+  /* الخيارات ========== */
+}
+
+.audio-lessions-section .audio-box .title {
+  color: #f1eddc;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.audio-lessions-section .audio-box .options {
+  border-top: 1px solid #10526a;
+  padding-top: 0.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[4];
+      grid-template-columns: repeat(4, auto);
+}
+
+.audio-lessions-section .audio-box .options .option {
+  color: #f1eddc;
+  text-align: center;
+  border-left: 1px solid #10526a;
+  overflow: hidden;
+}
+
+.audio-lessions-section .audio-box .options .option i {
+  margin-left: 0.5rem;
+}
+
+.audio-lessions-section .audio-box .options .option:last-child {
+  border-left: none;
 }
 
 /* ======================= اشياء ثابته ======================== */
@@ -1820,6 +1916,7 @@ a {
   overflow: hidden;
   margin-right: 1rem;
   -webkit-transition: 1s;
+  -o-transition: 1s;
   transition: 1s;
 }
 
@@ -1944,6 +2041,7 @@ a {
   padding: 0;
   top: -200%;
   -webkit-transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
   transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
   /* السيرش الموجود فى صفحة المقالات فقط ==========*/
   /* النصوص والمعاني */
