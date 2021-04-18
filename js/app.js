@@ -1441,14 +1441,11 @@ if (location.href.search("sonan.html") > -1) {
 }
 // 9- الدروس الصوتية ========================================
 if (location.href.search("audio-lessions.html") > -1) {
-    const plus_btn = document.querySelector(".bottom-nav .link-nav.plus-up"),
-        minus_btn = document.querySelector(".bottom-nav .link-nav.minus-down"),
-        changes = document.querySelectorAll(".font-change-size"),
-        search_bx = document.querySelector(".header .search-bx"),
+    const search_bx = document.querySelector(".header .search-bx"),
         audio_box_dom = document.querySelectorAll(
             ".audio-lessions-section .audio-box"
         );
-    let font_size = 16;
+
     /* Color The Navbar */
     makeBackGround();
     window.onscroll = () => {
@@ -1456,37 +1453,6 @@ if (location.href.search("audio-lessions.html") > -1) {
     };
     /* Right Nav FN */
     rightNavFN();
-    /* Add Colors To Platte  And Change Elements*/
-    addColorsToPlatte();
-    /* Change Font Size*/
-    plus_btn.addEventListener("click", (c) => {
-        c.preventDefault();
-        font_size += 1;
-        changes.forEach((tx) => {
-            if (font_size >= 55) {
-                font_size = 55;
-            }
-            tx.style.fontSize = font_size + "px";
-        });
-        data_font_color_bg.fontSize = font_size;
-        getAndPutLocal("fs", data_font_color_bg.fontSize);
-    });
-    minus_btn.addEventListener("click", (c) => {
-        c.preventDefault();
-        font_size -= 1;
-        changes.forEach((tx) => {
-            if (font_size <= 0) {
-                font_size = 1;
-                tx.style.fontSize = font_size + "px";
-            } else {
-                tx.style.fontSize = font_size + "px";
-            }
-        });
-        data_font_color_bg.fontSize = font_size;
-        getAndPutLocal("fs", data_font_color_bg.fontSize);
-    });
-    /* Get Data */
-    getFontColorBgSizeLocalStorage();
 
     /* Search About Lessions */
 

@@ -728,6 +728,34 @@ body {
   color: #f3ecec;
 }
 
+/* 11) ===================== صفحة لدروس الصوتيه ============ */
+.audio-lessions-section {
+  background: none;
+  background-color: #26363b;
+  /* ! الصندوق الاب  =====================*/
+}
+
+.audio-lessions-section .audio-box {
+  background-color: #2a3b41;
+  -webkit-box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+          box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.27);
+  /*  عنوان الدرس ============== */
+  /* الخيارات ========== */
+}
+
+.audio-lessions-section .audio-box .title {
+  color: #f3ecec;
+}
+
+.audio-lessions-section .audio-box .options {
+  border-top: 1px solid #223035;
+}
+
+.audio-lessions-section .audio-box .options .option {
+  color: #f3ecec;
+  border-left: 1px solid #223035;
+}
+
 /*  تعديل قائمه الفهرس */
 .alfahrs-list {
   background-color: #1e2a2f;
