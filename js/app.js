@@ -1359,18 +1359,23 @@ if (location.href.search("sonan.html") > -1) {
     });
   });
 }
-// 9- الدروس  ========================================
-if (location.href.search("lesson.html") > -1) {
-  /* Get Id From Link */
-  const URL_PARAMS = new URLSearchParams(window.location.search),
+// 9- الدروس والصوتيات ========================================
+if (location.href.search("lesson.html") > -1 || location.href.search("audio.html") > -1) {
+  if (location.href.search("lesson.html") > -1 ){
+    getDataFromFiles("lessonid",`./lessons.js`,"lessons",`<a href="lessons.html" class="title">صفحة الدروس</a>`);
+  } else if ( location.href.search("audio.html") > -1) {
+    getDataFromFiles("audioid",`./audios.js`,"audios",`<a href="audios.html" class="title">صفحة الصوتيات</a>`);
+  }
+  function getDataFromFiles(paramID,fileNAME,dataVAR,message) {
+    const URL_PARAMS = new URLSearchParams(window.location.search),
     audio_box = document.querySelector(
       ".audio-lessions-section .container-fluid"
     );
 
-  if (URL_PARAMS.has("lessonid")) {
-    let title_link = URL_PARAMS.get("lessonid");
-    import(`./lessons.js`).then((data) => {
-      const LessonsData = data["lessons"];
+  if (URL_PARAMS.has(paramID)) {
+    let title_link = URL_PARAMS.get(paramID);
+    import(fileNAME).then((data) => {
+      const LessonsData = data[dataVAR];
       LessonsData.forEach((le_dt) => {
         if (le_dt["id"] == title_link) {
           le_dt.pageContent.forEach((elementL) => {
@@ -1397,11 +1402,14 @@ if (location.href.search("lesson.html") > -1) {
   } else {
     let lessonP = document.createElement("div");
     lessonP.className = "audio-box";
-    lessonP.innerHTML = `
+    lessonP.innerHTML = '<h4 class="title">اذهب  ' + message + '</h4>'
+    
+    /* `
     <h4 class="title">من فضلك اذهب الى <a href="lessons.html" class="title">صفحة الدروس</a></h4>
-          `;
+          ` */;
     audio_box.append(lessonP);
   }
+    }
 
   /* Color The Navbar */
   makeBackGround();
